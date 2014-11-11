@@ -1,0 +1,1 @@
+{"name":"leadsm24.rest.LEADSM24Resource","operations":[{"path":"/F1","httpMethod":"GET","notes":"","parameters":[]},{"path":"/F1A","httpMethod":"GET","notes":"","parameters":[]},{"path":"/F2","httpMethod":"GET","notes":"","parameters":[]}]}

@@ -1,0 +1,2 @@
+2014-10-31 11:29:55,195 [qtp321788455-1338] [admin     ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /F2 ? inputJSON={"language":"en","keywords":["adidas Boost","nike free"],"periodStart":0,"periodEnd":1414800000010} >> OK - 1.188 s
+2014-10-31 12:53:26,453 [qtp321788455-1422] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /F1 ? inputJSON={"shopName":["www.wiggle.com","www.holabirdsports.com"],"keywords":["adidas"],"periodStart":0,"periodEnd":1514800000000} >> OK - 11.23 s

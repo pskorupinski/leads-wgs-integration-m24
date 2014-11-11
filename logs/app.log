@@ -1,0 +1,1 @@
+2014-11-10 11:47:43,673 [qtp934740039-7302] [admin     ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /F1A ? inputJSON={"country":["UK","US"],"keywords":["nike"],"periodStart":0,"periodEnd":141480000010} >> OK - 11.12 s
