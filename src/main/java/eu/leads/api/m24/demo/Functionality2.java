@@ -1,4 +1,4 @@
-package eu.leads.api.m24.func;
+package eu.leads.api.m24.demo;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -11,6 +11,8 @@ import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
+import org.json.JSONObject;
+
 import com.datastax.driver.core.ResultSet;
 import com.datastax.driver.core.Row;
 import com.datastax.driver.core.Session;
@@ -19,11 +21,14 @@ import eu.leads.api.com.TimeConvertionUtils;
 import eu.leads.api.m24.FunctionalityAbst;
 import eu.leads.api.m24.FunctionalityAbstParams;
 import eu.leads.api.m24.FunctionalityAbstResultRow;
+import eu.leads.api.m24.demo.Functionality1A.UrlTsFqdnKeyword;
 import eu.leads.api.m24.model.Functionality1AParams;
 import eu.leads.api.m24.model.Functionality2Params;
 import eu.leads.api.m24.model.Functionality2ResultRow;
 import eu.leads.infext.Useful;
 import eu.leads.infext.datastore.DataStoreSingleton;
+import eu.leads.infext.datastore.impl.LeadsDataStore;
+import eu.leads.processor.web.QueryResults;
 
 public class Functionality2 extends FunctionalityAbst {
 	
@@ -107,57 +112,68 @@ public class Functionality2 extends FunctionalityAbst {
 		/*
 		 * 1. Filter pages with resource_type = article_content
 		 * 2. Filter by keywords
+		 * 3. Filter by language
+		 * 
+		 * SELECT uri, ts, sentiment, relevance 
+		 * FROM leads.keywords K
+		 * AND leads.page_core C
+		 * WHERE K.partid = ‘article:000’
+		 * AND C.lang = language
+		 * AND C.ts>=minTime AND C.ts <= maxTime
+		 * AND (K.keywords = keywords1 OR K.keywords = keywords2 OR …);
 		 */
-		List<String> keywords = params.keywords;
-		String language = params.language;
 		
-		for(String keyword : keywords) {
-			String query1 = "SELECT uri, ts, sentiment, relevance FROM leads.keywords\n"
-					+ "WHERE partid='"+ARTICLE+":000'\n"
-					+ "AND keywords = '"+keyword+"' ALLOW FILTERING;";		
-			System.out.println(query1);
-			ResultSet rs = session.execute(query1);
-			for(Row row : rs) {
+		String query1 = "SELECT K.uri AS uri, K.ts AS ts, K.keywords, "
+				+ "K.sentiment AS sentiment, K.relevance AS relevance"
+				+ "FROM leads.keywords K\n"
+				+ "JOIN leads.page_core C ON C.uri = K.uri AND C.ts = K.ts\n"
+				+ "WHERE K.partid='"+ARTICLE+":000'\n"
+				+ "AND C.lang = "+ params.language +"\n"
+				+ "AND K.ts>="+ params.periodStart +" AND K.ts <="+ params.periodEnd +"\n"
+				+ "AND (";
+		int keysNo = params.keywords.size();
+		for(int i=0; i<keysNo; i++) {
+			String keywords = params.keywords.get(i);
+			query1 += "K.keywords = '";
+			query1 += keywords;
+			if(i<keysNo-1) query1 += "' OR ";
+			else query1 += "');";
+		}
+		
+		System.out.println(query1);
+		
+		QueryResults rs = LeadsDataStore.send_query_and_wait(query1);
+		if(rs != null) {
+			List<String> rows = rs.getResult();
+			for(String row : rows) {
+				JSONObject jsonRow = new JSONObject(row);
 				KeywordRow tempRow = new KeywordRow();
-				tempRow.url = row.getString(0);
-				tempRow.keywords = keyword;
-				tempRow.timestamp = row.getLong(1);
-				tempRow.sentiment = row.getString(2);
-				tempRow.relevance = row.getString(3);
+				tempRow.url = jsonRow.getString("uri");
+				tempRow.timestamp  = new Long(jsonRow.getLong("ts"));
+				tempRow.keywords = jsonRow.getString("keywords");
+				tempRow.sentiment = jsonRow.getString("sentiment");
+				tempRow.relevance = jsonRow.getString("relevance");
 				transientResultsSet.add(tempRow);
 			}
 		}
 
-		SortedSet<Long> runbloggerList = new TreeSet<>();
 		
 		for(KeywordRow transientRow : transientResultsSet) {
-			String uri = transientRow.url;
-			String query2 = "SELECT uri FROM leads.page_core\n"
-					+ "WHERE uri='"+uri+"'\n"
-					+ "AND lang='"+language+"';";		
-			System.out.println(query2);
-			ResultSet rs = session.execute(query2);
+			String site = Useful.nutchUrlToFullyQualifiedDomainName(transientRow.url);
 			
-			if(rs.iterator().hasNext()) {
-				String site = Useful.nutchUrlToFullyQualifiedDomainName(uri);
-				
-				KeywordSiteWeekRows keywordSiteWeekRows = new KeywordSiteWeekRows();
-				keywordSiteWeekRows.keywords = transientRow.keywords;
-				keywordSiteWeekRows.site     = site;
-				keywordSiteWeekRows.week     = TimeConvertionUtils.timestampToWeek(transientRow.timestamp);
-				
-				if(site.contains("runblogger"))
-					runbloggerList.add(transientRow.timestamp);
-				
-				Map<String, List<KeywordRow>> urlMap = keywordSiteWeekRowsMap.get(keywordSiteWeekRows);
-				if(urlMap == null) urlMap = new HashMap<>();
-				List<KeywordRow> list = urlMap.get(transientRow.url);
-				if(list == null) list = new ArrayList<>();
-				
-				list.add(transientRow);
-				urlMap.put(transientRow.url, list);
-				keywordSiteWeekRowsMap.put(keywordSiteWeekRows, urlMap);
-			}
+			KeywordSiteWeekRows keywordSiteWeekRows = new KeywordSiteWeekRows();
+			keywordSiteWeekRows.keywords = transientRow.keywords;
+			keywordSiteWeekRows.site     = site;
+			keywordSiteWeekRows.week     = TimeConvertionUtils.timestampToWeek(transientRow.timestamp);
+			
+			Map<String, List<KeywordRow>> urlMap = keywordSiteWeekRowsMap.get(keywordSiteWeekRows);
+			if(urlMap == null) urlMap = new HashMap<>();
+			List<KeywordRow> list = urlMap.get(transientRow.url);
+			if(list == null) list = new ArrayList<>();
+			
+			list.add(transientRow);
+			urlMap.put(transientRow.url, list);
+			keywordSiteWeekRowsMap.put(keywordSiteWeekRows, urlMap);
 		}
 		
 		for(Entry<KeywordSiteWeekRows, Map<String, List<KeywordRow>>> entry : keywordSiteWeekRowsMap.entrySet()) {

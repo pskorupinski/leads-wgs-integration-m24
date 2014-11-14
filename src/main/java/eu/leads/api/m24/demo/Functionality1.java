@@ -1,4 +1,4 @@
-package eu.leads.api.m24.func;
+package eu.leads.api.m24.demo;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -7,6 +7,8 @@ import java.util.List;
 import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeSet;
+
+import org.json.JSONObject;
 
 import com.datastax.driver.core.ResultSet;
 import com.datastax.driver.core.Row;
@@ -22,6 +24,8 @@ import eu.leads.api.m24.model.Functionality1ResultRowAgreed;
 import eu.leads.infext.Useful;
 import eu.leads.infext.datastore.DataStoreSingleton;
 import eu.leads.infext.datastore.datastruct.UrlTimestamp;
+import eu.leads.infext.datastore.impl.LeadsDataStore;
+import eu.leads.processor.web.QueryResults;
 
 public class Functionality1 extends FunctionalityAbst {
 	
@@ -34,98 +38,99 @@ public class Functionality1 extends FunctionalityAbst {
 		Functionality1Params params = (Functionality1Params) paramsX;
 		SortedSet<FunctionalityAbstResultRow> resultsSet = new TreeSet<>();
 		
-		Session session = (Session) DataStoreSingleton.getDataStore().getFamilyStorageHandle(null);
-		
 		List<UrlTimestamp> urlsTsList = new ArrayList<>();
 		List<UrlTimestamp> urlsTsList2= new ArrayList<>();
+		
+		String minTime = params.periodStart;
+		String maxTime = params.periodEnd;
 		
 		/*
 		 * 1. Get all pages of the shop
 		 * 2. Filter by day
+		 * 3. Filter those with resource_type = ecom_prod_name
+		 * 4. Filter by keywords
+		 * 
+		 * 	SELECT C.uri, C.ts 
+		 *  FROM leads.page_core C
+		 *  JOIN leads.keywords K ON C.uri = K.uri AND C.ts = K.ts
+		 *  WHERE K.partid = ‘ecom_prod_name:000’
+		 *  AND (C.fqdnurl = shopUri1 OR C.fqdnurl = shopUri2 OR …)
+		 *  AND C.ts>=minTime AND C.ts <= maxTime
+		 *  AND (K.keywords = keywords1 OR K.keywords = keywords2 OR …);
 		 */
-		for(String shopName : params.shopName) {
+		
+		String query1 = "SELECT C.uri AS uri, C.ts AS ts\n" +
+			"FROM leads.page_core C\n" +
+			"JOIN leads.keywords K ON C.uri = K.uri AND C.ts = K.ts\n" +
+			"WHERE K.partid = 'ecom_prod_name:000'\n" +
+			"AND (";
+		int shopsNo = params.shopName.size();
+		for(int i=0; i<shopsNo; i++) {
+			String shopName = params.shopName.get(i);
 			String shopUri = Useful.fqdnToNutchUrl(shopName);
-			String minTime = params.periodStart;
-			String maxTime = params.periodEnd;
-			
-			String query1 = "SELECT uri, ts FROM leads.page_core WHERE fqdnurl='"+shopUri+"'"
-					+ " AND ts>="+minTime+" AND ts<="+maxTime+" ALLOW FILTERING;";
-//			System.out.println(query1);
-			ResultSet rs = session.execute(query1);
-			for(Row row : rs) {
-				String url = row.getString(0);
-				String ts  = new Long(row.getLong(1)).toString();
+			query1 += "C.fqdnurl = '";
+			query1 += shopUri;
+			if(i<shopsNo-1) query1 += "' OR ";
+			else query1 += "')\n";
+		}
+		query1 += "AND C.ts>="+ minTime +" AND C.ts <="+ maxTime +"\n" +
+			"AND (";
+		int keysNo = params.keywords.size();
+		for(int i=0; i<keysNo; i++) {
+			String keywords = params.keywords.get(i);
+			query1 += "K.keywords = '";
+			query1 += keywords;
+			if(i<keysNo-1) query1 += "' OR ";
+			else query1 += "');";
+		}
+
+//		System.out.println(query1);
+		
+		QueryResults rs = LeadsDataStore.send_query_and_wait(query1);
+		if(rs != null) {
+			List<String> rows = rs.getResult();
+			for(String row : rows) {
+				JSONObject jsonRow = new JSONObject(row);
+				String url = jsonRow.getString("uri");
+				String ts  = new Long(jsonRow.getLong("ts")).toString();
 				urlsTsList.add(new UrlTimestamp(url, ts));
 			}
 		}
 		
 		/*
-		 * 3. Filter those with resource_type = ecom_prod_name
-		 * 4. Filter by keywords
-		 */
-		int x = 0, y=0;
-		for(UrlTimestamp urlTs : urlsTsList) {
-			String url = urlTs.url;
-			String ts  = urlTs.timestamp;
-			List<String> keywords = params.keywords;
-			
-			String query2 = "SELECT uri, ts, partid FROM leads.keywords\n"
-					+ "WHERE uri='"+url+"'\n"
-					//+ "AND ts="+ts+"\n"
-					+ "AND partid='"+ECOM_PROD_NAME+":000'\n"
-					//+ "AND keywords IN (";
-					+ "AND keywords = ";
-			int i;
-//			for(i=0; i<keywords.size()-1;i++)
-//				query2 += "'" + keywords.get(i) + "',";
-//			query2 += "'" + keywords.get(i) + "') ALLOW FILTERING;";	
-			for(i=0; i<keywords.size();i++) {
-//				query2 += "'" + keywords.get(i) + "',";
-//				query2 += "'" + keywords.get(i) + "') ALLOW FILTERING;";
-				//System.out.println(query2);
-				ResultSet rs = session.execute(query2 + "'" + keywords.get(i) + "' ALLOW FILTERING;");
-				int z = 0;
-				for(Row row : rs) {
-					url = row.getString(0);
-					ts  = new Long(row.getLong(1)).toString();
-					urlsTsList2.add(new UrlTimestamp(url, ts));
-					z++;
-				}
-			}
-//			if(z>0) System.out.println("#### "+z+" "+url);
-//			y++;
-//			if(y%500==0) {
-//				System.out.println(y);
-//			}
-		}
-//		System.out.println("###### "+x);
-		
-		/*
 		 * 5. Get all resources for every page
+		 * 
+		 *  SELECT resourceparttype, resourcepartvalue FROM leads.resourcepart
+		 *  WHERE uri = uri AND ts = ts;
 		 */
 		for(UrlTimestamp urlTs : urlsTsList2) {
 			String url = urlTs.url;
 			String ts  = urlTs.timestamp;
 			
 			Functionality1ResultRowAgreed resultRow = new Functionality1ResultRowAgreed();
-			
-			String query3 = "SELECT resourceparttype, resourcepartvalue FROM leads.resourcepart\n"
+
+			String query2 = "SELECT resourceparttype, resourcepartvalue FROM leads.resourcepart\n"
 					+ "WHERE uri='"+url+"'\n"
 					+ "AND ts="+ts+";";
-//			System.out.println(query3);
-			ResultSet rs = session.execute(query3);	
-			
-			for(Row row : rs) {
-				String type = row.getString(0);
-				String value= row.getString(1);
-				if(type.equals(ECOM_PROD_NAME))
-					resultRow.prod_name = value;
-				else if(type.equals(ECOM_PROD_CURR))
-					resultRow.prod_price_cur = value;
-				else if(type.equals(ECOM_PROD_PRICE_MAX))
-					resultRow.prod_price_max = value;
-				else if(type.equals(ECOM_PROD_PRICE_MIN))
-					resultRow.prod_price_min = value;
+
+//			System.out.println(query2);
+
+			QueryResults rs2 = LeadsDataStore.send_query_and_wait(query2);
+			if(rs2 != null) {
+				List<String> rows2 = rs2.getResult();
+				for(String row : rows2) {
+					JSONObject jsonRow = new JSONObject(row);
+					String type = jsonRow.getString("resourceparttype");
+					String value= jsonRow.getString("resourcepartvalue");
+					if(type.equals(ECOM_PROD_NAME))
+						resultRow.prod_name = value;
+					else if(type.equals(ECOM_PROD_CURR))
+						resultRow.prod_price_cur = value;
+					else if(type.equals(ECOM_PROD_PRICE_MAX))
+						resultRow.prod_price_max = value;
+					else if(type.equals(ECOM_PROD_PRICE_MIN))
+						resultRow.prod_price_min = value;
+				}
 			}
 			
 			if(resultRow.prod_name != null

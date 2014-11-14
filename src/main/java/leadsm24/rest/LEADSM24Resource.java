@@ -3,30 +3,27 @@ package leadsm24.rest;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+import java.util.SortedSet;
 
 import leadsm24.Roles;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import eu.leads.api.m24.func.Functionality1;
-import eu.leads.api.m24.func.Functionality1.Functionality1Params;
-import eu.leads.api.m24.func.Functionality1.Functionality1ResultRowAgreed;
-import eu.leads.api.m24.func.Functionality1A;
-import eu.leads.api.m24.func.Functionality1A.Functionality1AParams;
-import eu.leads.api.m24.func.Functionality1A.Functionality1AReturnRow;
-import eu.leads.api.m24.func.Functionality1A.ShopKeywordRow;
-import eu.leads.api.m24.func.Functionality2;
-import eu.leads.api.m24.func.Functionality2.Functionality2Params;
-import eu.leads.api.m24.func.Functionality2.Functionality2ResultRow;
-import eu.leads.api.m24.func.Functionality2.KeywordRow;
+import eu.leads.api.m24.FunctionalityAbstResultRow;
+import eu.leads.api.m24.demo.Functionality1;
+import eu.leads.api.m24.demo.Functionality1A;
+import eu.leads.api.m24.demo.Functionality2;
+import eu.leads.api.m24.model.Functionality1AParams;
+import eu.leads.api.m24.model.Functionality1AReturnRow;
+import eu.leads.api.m24.model.Functionality1Params;
+import eu.leads.api.m24.model.Functionality1ResultRowAgreed;
+import eu.leads.api.m24.model.Functionality2Params;
+import eu.leads.api.m24.model.Functionality2ResultRow;
 import restx.annotations.GET;
-import restx.annotations.POST;
 import restx.annotations.RestxResource;
 import restx.factory.Component;
 import restx.security.PermitAll;
-import restx.security.RolesAllowed;
-import restx.security.RestxSession;
 
 @Component @RestxResource
 public class LEADSM24Resource {
@@ -57,10 +54,11 @@ public class LEADSM24Resource {
     	params.periodEnd  =new Long(jsonObj.getLong("periodEnd")).toString(); // 1414800000000
     	
     	Functionality1 f1 = new Functionality1();
-    	Set<Functionality1ResultRowAgreed> rows = f1.execute(params);
+    	Set<FunctionalityAbstResultRow> rows = f1.execute(params);
     	
     	JSONArray result = new JSONArray();
-    	for(Functionality1ResultRowAgreed row : rows) {
+    	for(FunctionalityAbstResultRow rowX : rows) {
+    		Functionality1ResultRowAgreed row = (Functionality1ResultRowAgreed) rowX;
     		JSONObject rowJson = new JSONObject();
     		rowJson.put("shop_name", row.shop_name);
     		rowJson.put("prod_name", row.prod_name);
@@ -94,10 +92,11 @@ public class LEADSM24Resource {
     	params.periodEnd  =new Long(jsonObj.getLong("periodEnd")).toString(); // 1414800000000
     	
     	Functionality1A f1a = new Functionality1A();
-    	Set<Functionality1AReturnRow> rows = f1a.execute(params);
+    	SortedSet<FunctionalityAbstResultRow> rows = f1a.execute(params);
     	
     	JSONArray result = new JSONArray();
-    	for(Functionality1AReturnRow row : rows) {
+    	for(FunctionalityAbstResultRow rowX : rows) {
+    		Functionality1AReturnRow row = (Functionality1AReturnRow) rowX;
     		JSONObject rowJson = new JSONObject();
     		rowJson.put("shop_name", row.shop_name);
     		rowJson.put("country", row.country_code);
@@ -126,10 +125,11 @@ public class LEADSM24Resource {
     	params.periodEnd  =new Long(jsonObj.getLong("periodEnd")).toString(); // 1414800000000
     	
     	Functionality2 f2 = new Functionality2();
-    	Set<Functionality2ResultRow> rows = f2.execute(params);
+    	SortedSet<FunctionalityAbstResultRow> rows = f2.execute(params);
     	
     	JSONArray result = new JSONArray();
-    	for(Functionality2ResultRow row : rows) {
+    	for(FunctionalityAbstResultRow rowX : rows) {
+    		Functionality2ResultRow row = (Functionality2ResultRow) rowX;
     		JSONObject rowJson = new JSONObject();
     		rowJson.put("site", row.site);
     		rowJson.put("keywords", row.keywords);

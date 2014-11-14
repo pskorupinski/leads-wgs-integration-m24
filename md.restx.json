@@ -27,10 +27,11 @@
             "io.restx:restx-specs-admin:${restx.version}",
             "io.restx:restx-admin:${restx.version}",
             "ch.qos.logback:logback-classic:1.0.13",
-	    "com.datastax.cassandra:cassandra-driver-core:2.1.0",
-	    "org.json:json:20140107",
-	    "org.jsoup:jsoup:1.7.3",
-	    "com.googlecode.lambdaj:lambdaj:2.3.3"
+		    "com.datastax.cassandra:cassandra-driver-core:2.1.0",
+		    "org.json:json:20140107",
+		    "org.jsoup:jsoup:1.7.3",
+		    "com.googlecode.lambdaj:lambdaj:2.3.3",
+		    "gr.tuc.softnet:webservice-client-library:1.0-SNAPSHOT"
         ],
         "test": [
             "io.restx:restx-specs-tests:${restx.version}",
