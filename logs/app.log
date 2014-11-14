@@ -1,1 +1,835 @@
 2014-11-10 11:47:43,673 [qtp934740039-7302] [admin     ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /F1A ? inputJSON={"country":["UK","US"],"keywords":["nike"],"periodStart":0,"periodEnd":141480000010} >> OK - 11.12 s
+2014-11-14 09:12:17,421 [main            ] [          ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+2014-11-14 09:12:18,485 [main            ] [          ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+2014-11-14 09:12:18,487 [main            ] [          ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8081/eu.leads.api/@/ui/
+ --
+
+2014-11-14 09:12:20,849 [main            ] [          ] WARN  / - unavailable
+java.lang.RuntimeException: java.lang.RuntimeException: Compilation failed:
+src/main/java/leadsm24/rest/LEADSM24Resource.java:10: error: package org.json does not exist
+import org.json.JSONArray;
+               ^
+src/main/java/leadsm24/rest/LEADSM24Resource.java:11: error: package org.json does not exist
+import org.json.JSONObject;
+               ^
+src/main/java/eu/leads/api/m24/demo/Functionality2.java:14: error: package org.json does not exist
+import org.json.JSONObject;
+               ^
+src/main/java/eu/leads/api/m24/demo/Functionality2.java:16: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.ResultSet;
+                               ^
+src/main/java/eu/leads/api/m24/demo/Functionality2.java:17: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Row;
+                               ^
+src/main/java/eu/leads/api/m24/demo/Functionality2.java:18: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Session;
+                               ^
+src/main/java/eu/leads/api/m24/demo/Functionality1A.java:13: error: package org.json does not exist
+import org.json.JSONObject;
+               ^
+src/main/java/eu/leads/api/m24/demo/Functionality1A.java:15: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.ResultSet;
+                               ^
+src/main/java/eu/leads/api/m24/demo/Functionality1A.java:16: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Row;
+                               ^
+src/main/java/eu/leads/api/m24/demo/Functionality1A.java:17: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Session;
+                               ^
+src/main/java/eu/leads/api/m24/demo/Functionality1A.java:29: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.QueryResults;
+                             ^
+src/main/java/eu/leads/api/m24/demo/Functionality2.java:31: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.QueryResults;
+                             ^
+src/main/java/eu/leads/api/m24/demo/Functionality1.java:11: error: package org.json does not exist
+import org.json.JSONObject;
+               ^
+src/main/java/eu/leads/api/m24/demo/Functionality1.java:13: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.ResultSet;
+                               ^
+src/main/java/eu/leads/api/m24/demo/Functionality1.java:14: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Row;
+                               ^
+src/main/java/eu/leads/api/m24/demo/Functionality1.java:15: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Session;
+                               ^
+src/main/java/eu/leads/api/m24/demo/Functionality1.java:28: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.QueryResults;
+                             ^
+src/main/java/eu/leads/api/m24/func/Functionality2.java:14: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.ResultSet;
+                               ^
+src/main/java/eu/leads/api/m24/func/Functionality2.java:15: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Row;
+                               ^
+src/main/java/eu/leads/api/m24/func/Functionality2.java:16: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Session;
+                               ^
+src/main/java/eu/leads/api/m24/func/Functionality1A.java:13: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.ResultSet;
+                               ^
+src/main/java/eu/leads/api/m24/func/Functionality1A.java:14: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Row;
+                               ^
+src/main/java/eu/leads/api/m24/func/Functionality1A.java:15: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Session;
+                               ^
+src/main/java/eu/leads/api/m24/func/Functionality1.java:11: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.ResultSet;
+                               ^
+src/main/java/eu/leads/api/m24/func/Functionality1.java:12: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Row;
+                               ^
+src/main/java/eu/leads/api/m24/func/Functionality1.java:13: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Session;
+                               ^
+src/main/java/eu/leads/infext/Useful.java:22: error: package org.json does not exist
+import org.json.JSONArray;
+               ^
+src/main/java/eu/leads/infext/Useful.java:23: error: package org.json does not exist
+import org.json.JSONException;
+               ^
+src/main/java/eu/leads/infext/Useful.java:24: error: package org.json does not exist
+import org.json.JSONObject;
+               ^
+src/main/java/eu/leads/infext/datastore/impl/LeadsDataStore.java:5: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.QueryResults;
+                             ^
+src/main/java/eu/leads/infext/datastore/impl/LeadsDataStore.java:6: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.QueryStatus;
+                             ^
+src/main/java/eu/leads/infext/datastore/impl/LeadsDataStore.java:7: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.WebServiceClient;
+                             ^
+src/main/java/eu/leads/infext/datastore/impl/LeadsDataStore.java:12: error: cannot find symbol
+    public static QueryResults send_query_and_wait(String sql) {
+                  ^
+  symbol:   class QueryResults
+  location: class eu.leads.infext.datastore.impl.LeadsDataStore
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:3: error: package ch.lambdaj does not exist
+import static ch.lambdaj.Lambda.filter;
+                        ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:3: error: static import only from classes and interfaces
+import static ch.lambdaj.Lambda.filter;
+^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:19: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.BoundStatement;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:20: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Cluster;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:21: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.ColumnDefinitions;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:22: error: package com.datastax.driver.core.ColumnDefinitions does not exist
+import com.datastax.driver.core.ColumnDefinitions.Definition;
+                                                 ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:23: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.DataType;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:24: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Host;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:25: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Metadata;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:26: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.PreparedStatement;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:27: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.ResultSet;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:28: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Row;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:29: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Session;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:30: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.SimpleStatement;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:31: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Statement;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:40: error: cannot find symbol
+	private Cluster cluster;
+	        ^
+  symbol:   class Cluster
+  location: class eu.leads.infext.datastore.impl.CassandraCQLDataStore
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:41: error: cannot find symbol
+	private Session session;
+	        ^
+  symbol:   class Session
+  location: class eu.leads.infext.datastore.impl.CassandraCQLDataStore
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:400: error: cannot find symbol
+	private Iterator<Row> urisIterator = null;
+	                 ^
+  symbol:   class Row
+  location: class eu.leads.infext.datastore.impl.CassandraCQLDataStore
+
+	at restx.classloader.CompilationManager.incrementalCompile(CompilationManager.java:340) ~[restx-classloader-0.33.1.jar:na]
+	at restx.RestxMainRouterFactory.build(RestxMainRouterFactory.java:381) ~[restx-core-0.33.1.jar:na]
+	at restx.RestxMainRouterFactory.newInstance(RestxMainRouterFactory.java:60) ~[restx-core-0.33.1.jar:na]
+	at restx.servlet.RestxMainRouterServlet.init(RestxMainRouterServlet.java:67) ~[restx-servlet-0.33.1.jar:na]
+	at org.eclipse.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:519) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletHolder.doStart(ServletHolder.java:331) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:747) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:265) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1250) [jetty-webapp-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:706) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:492) [jetty-webapp-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerCollection.doStart(HandlerCollection.java:229) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerCollection.doStart(HandlerCollection.java:229) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.Server.doStart(Server.java:277) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at restx.server.JettyWebServer.start(JettyWebServer.java:113) [restx-server-jetty-0.33.1.jar:na]
+	at restx.server.JettyWebServer.startAndAwait(JettyWebServer.java:118) [restx-server-jetty-0.33.1.jar:na]
+	at leadsm24.AppServer.main(AppServer.java:30) [classes/:na]
+java.lang.RuntimeException: Compilation failed:
+src/main/java/leadsm24/rest/LEADSM24Resource.java:10: error: package org.json does not exist
+import org.json.JSONArray;
+               ^
+src/main/java/leadsm24/rest/LEADSM24Resource.java:11: error: package org.json does not exist
+import org.json.JSONObject;
+               ^
+src/main/java/eu/leads/api/m24/demo/Functionality2.java:14: error: package org.json does not exist
+import org.json.JSONObject;
+               ^
+src/main/java/eu/leads/api/m24/demo/Functionality2.java:16: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.ResultSet;
+                               ^
+src/main/java/eu/leads/api/m24/demo/Functionality2.java:17: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Row;
+                               ^
+src/main/java/eu/leads/api/m24/demo/Functionality2.java:18: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Session;
+                               ^
+src/main/java/eu/leads/api/m24/demo/Functionality1A.java:13: error: package org.json does not exist
+import org.json.JSONObject;
+               ^
+src/main/java/eu/leads/api/m24/demo/Functionality1A.java:15: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.ResultSet;
+                               ^
+src/main/java/eu/leads/api/m24/demo/Functionality1A.java:16: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Row;
+                               ^
+src/main/java/eu/leads/api/m24/demo/Functionality1A.java:17: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Session;
+                               ^
+src/main/java/eu/leads/api/m24/demo/Functionality1A.java:29: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.QueryResults;
+                             ^
+src/main/java/eu/leads/api/m24/demo/Functionality2.java:31: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.QueryResults;
+                             ^
+src/main/java/eu/leads/api/m24/demo/Functionality1.java:11: error: package org.json does not exist
+import org.json.JSONObject;
+               ^
+src/main/java/eu/leads/api/m24/demo/Functionality1.java:13: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.ResultSet;
+                               ^
+src/main/java/eu/leads/api/m24/demo/Functionality1.java:14: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Row;
+                               ^
+src/main/java/eu/leads/api/m24/demo/Functionality1.java:15: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Session;
+                               ^
+src/main/java/eu/leads/api/m24/demo/Functionality1.java:28: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.QueryResults;
+                             ^
+src/main/java/eu/leads/api/m24/func/Functionality2.java:14: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.ResultSet;
+                               ^
+src/main/java/eu/leads/api/m24/func/Functionality2.java:15: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Row;
+                               ^
+src/main/java/eu/leads/api/m24/func/Functionality2.java:16: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Session;
+                               ^
+src/main/java/eu/leads/api/m24/func/Functionality1A.java:13: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.ResultSet;
+                               ^
+src/main/java/eu/leads/api/m24/func/Functionality1A.java:14: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Row;
+                               ^
+src/main/java/eu/leads/api/m24/func/Functionality1A.java:15: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Session;
+                               ^
+src/main/java/eu/leads/api/m24/func/Functionality1.java:11: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.ResultSet;
+                               ^
+src/main/java/eu/leads/api/m24/func/Functionality1.java:12: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Row;
+                               ^
+src/main/java/eu/leads/api/m24/func/Functionality1.java:13: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Session;
+                               ^
+src/main/java/eu/leads/infext/Useful.java:22: error: package org.json does not exist
+import org.json.JSONArray;
+               ^
+src/main/java/eu/leads/infext/Useful.java:23: error: package org.json does not exist
+import org.json.JSONException;
+               ^
+src/main/java/eu/leads/infext/Useful.java:24: error: package org.json does not exist
+import org.json.JSONObject;
+               ^
+src/main/java/eu/leads/infext/datastore/impl/LeadsDataStore.java:5: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.QueryResults;
+                             ^
+src/main/java/eu/leads/infext/datastore/impl/LeadsDataStore.java:6: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.QueryStatus;
+                             ^
+src/main/java/eu/leads/infext/datastore/impl/LeadsDataStore.java:7: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.WebServiceClient;
+                             ^
+src/main/java/eu/leads/infext/datastore/impl/LeadsDataStore.java:12: error: cannot find symbol
+    public static QueryResults send_query_and_wait(String sql) {
+                  ^
+  symbol:   class QueryResults
+  location: class eu.leads.infext.datastore.impl.LeadsDataStore
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:3: error: package ch.lambdaj does not exist
+import static ch.lambdaj.Lambda.filter;
+                        ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:3: error: static import only from classes and interfaces
+import static ch.lambdaj.Lambda.filter;
+^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:19: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.BoundStatement;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:20: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Cluster;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:21: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.ColumnDefinitions;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:22: error: package com.datastax.driver.core.ColumnDefinitions does not exist
+import com.datastax.driver.core.ColumnDefinitions.Definition;
+                                                 ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:23: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.DataType;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:24: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Host;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:25: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Metadata;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:26: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.PreparedStatement;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:27: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.ResultSet;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:28: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Row;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:29: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Session;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:30: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.SimpleStatement;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:31: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Statement;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:40: error: cannot find symbol
+	private Cluster cluster;
+	        ^
+  symbol:   class Cluster
+  location: class eu.leads.infext.datastore.impl.CassandraCQLDataStore
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:41: error: cannot find symbol
+	private Session session;
+	        ^
+  symbol:   class Session
+  location: class eu.leads.infext.datastore.impl.CassandraCQLDataStore
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:400: error: cannot find symbol
+	private Iterator<Row> urisIterator = null;
+	                 ^
+  symbol:   class Row
+  location: class eu.leads.infext.datastore.impl.CassandraCQLDataStore
+
+	at restx.classloader.CompilationManager.compile(CompilationManager.java:504) ~[restx-classloader-0.33.1.jar:na]
+	at restx.classloader.CompilationManager.access$700(CompilationManager.java:50) ~[restx-classloader-0.33.1.jar:na]
+	at restx.classloader.CompilationManager$8.call(CompilationManager.java:332) ~[restx-classloader-0.33.1.jar:na]
+	at restx.classloader.CompilationManager$8.call(CompilationManager.java:310) ~[restx-classloader-0.33.1.jar:na]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[na:1.8.0_20]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[na:1.8.0_20]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[na:1.8.0_20]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) ~[na:1.8.0_20]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) ~[na:1.8.0_20]
+	at java.lang.Thread.run(Thread.java:745) ~[na:1.8.0_20]
+2014-11-14 09:12:41,044 [Thread-1        ] [          ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+2014-11-14 09:15:48,539 [main            ] [          ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+2014-11-14 09:15:49,608 [main            ] [          ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+2014-11-14 09:15:49,609 [main            ] [          ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8081/eu.leads.api/@/ui/
+ --
+
+2014-11-14 09:15:51,749 [main            ] [          ] WARN  / - unavailable
+java.lang.RuntimeException: java.lang.RuntimeException: Compilation failed:
+src/main/java/leadsm24/rest/LEADSM24Resource.java:10: error: package org.json does not exist
+import org.json.JSONArray;
+               ^
+src/main/java/leadsm24/rest/LEADSM24Resource.java:11: error: package org.json does not exist
+import org.json.JSONObject;
+               ^
+src/main/java/eu/leads/api/m24/demo/Functionality2.java:14: error: package org.json does not exist
+import org.json.JSONObject;
+               ^
+src/main/java/eu/leads/api/m24/demo/Functionality2.java:16: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.ResultSet;
+                               ^
+src/main/java/eu/leads/api/m24/demo/Functionality2.java:17: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Row;
+                               ^
+src/main/java/eu/leads/api/m24/demo/Functionality2.java:18: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Session;
+                               ^
+src/main/java/eu/leads/api/m24/demo/Functionality1A.java:13: error: package org.json does not exist
+import org.json.JSONObject;
+               ^
+src/main/java/eu/leads/api/m24/demo/Functionality1A.java:15: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.ResultSet;
+                               ^
+src/main/java/eu/leads/api/m24/demo/Functionality1A.java:16: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Row;
+                               ^
+src/main/java/eu/leads/api/m24/demo/Functionality1A.java:17: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Session;
+                               ^
+src/main/java/eu/leads/api/m24/demo/Functionality1A.java:29: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.QueryResults;
+                             ^
+src/main/java/eu/leads/api/m24/demo/Functionality2.java:31: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.QueryResults;
+                             ^
+src/main/java/eu/leads/api/m24/demo/Functionality1.java:11: error: package org.json does not exist
+import org.json.JSONObject;
+               ^
+src/main/java/eu/leads/api/m24/demo/Functionality1.java:13: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.ResultSet;
+                               ^
+src/main/java/eu/leads/api/m24/demo/Functionality1.java:14: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Row;
+                               ^
+src/main/java/eu/leads/api/m24/demo/Functionality1.java:15: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Session;
+                               ^
+src/main/java/eu/leads/api/m24/demo/Functionality1.java:28: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.QueryResults;
+                             ^
+src/main/java/eu/leads/api/m24/func/Functionality2.java:14: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.ResultSet;
+                               ^
+src/main/java/eu/leads/api/m24/func/Functionality2.java:15: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Row;
+                               ^
+src/main/java/eu/leads/api/m24/func/Functionality2.java:16: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Session;
+                               ^
+src/main/java/eu/leads/api/m24/func/Functionality1A.java:13: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.ResultSet;
+                               ^
+src/main/java/eu/leads/api/m24/func/Functionality1A.java:14: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Row;
+                               ^
+src/main/java/eu/leads/api/m24/func/Functionality1A.java:15: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Session;
+                               ^
+src/main/java/eu/leads/api/m24/func/Functionality1.java:11: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.ResultSet;
+                               ^
+src/main/java/eu/leads/api/m24/func/Functionality1.java:12: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Row;
+                               ^
+src/main/java/eu/leads/api/m24/func/Functionality1.java:13: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Session;
+                               ^
+src/main/java/eu/leads/infext/Useful.java:22: error: package org.json does not exist
+import org.json.JSONArray;
+               ^
+src/main/java/eu/leads/infext/Useful.java:23: error: package org.json does not exist
+import org.json.JSONException;
+               ^
+src/main/java/eu/leads/infext/Useful.java:24: error: package org.json does not exist
+import org.json.JSONObject;
+               ^
+src/main/java/eu/leads/infext/datastore/impl/LeadsDataStore.java:5: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.QueryResults;
+                             ^
+src/main/java/eu/leads/infext/datastore/impl/LeadsDataStore.java:6: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.QueryStatus;
+                             ^
+src/main/java/eu/leads/infext/datastore/impl/LeadsDataStore.java:7: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.WebServiceClient;
+                             ^
+src/main/java/eu/leads/infext/datastore/impl/LeadsDataStore.java:12: error: cannot find symbol
+    public static QueryResults send_query_and_wait(String sql) {
+                  ^
+  symbol:   class QueryResults
+  location: class eu.leads.infext.datastore.impl.LeadsDataStore
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:3: error: package ch.lambdaj does not exist
+import static ch.lambdaj.Lambda.filter;
+                        ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:3: error: static import only from classes and interfaces
+import static ch.lambdaj.Lambda.filter;
+^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:19: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.BoundStatement;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:20: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Cluster;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:21: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.ColumnDefinitions;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:22: error: package com.datastax.driver.core.ColumnDefinitions does not exist
+import com.datastax.driver.core.ColumnDefinitions.Definition;
+                                                 ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:23: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.DataType;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:24: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Host;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:25: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Metadata;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:26: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.PreparedStatement;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:27: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.ResultSet;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:28: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Row;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:29: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Session;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:30: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.SimpleStatement;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:31: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Statement;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:40: error: cannot find symbol
+	private Cluster cluster;
+	        ^
+  symbol:   class Cluster
+  location: class eu.leads.infext.datastore.impl.CassandraCQLDataStore
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:41: error: cannot find symbol
+	private Session session;
+	        ^
+  symbol:   class Session
+  location: class eu.leads.infext.datastore.impl.CassandraCQLDataStore
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:400: error: cannot find symbol
+	private Iterator<Row> urisIterator = null;
+	                 ^
+  symbol:   class Row
+  location: class eu.leads.infext.datastore.impl.CassandraCQLDataStore
+
+	at restx.classloader.CompilationManager.incrementalCompile(CompilationManager.java:340) ~[restx-classloader-0.33.1.jar:na]
+	at restx.RestxMainRouterFactory.build(RestxMainRouterFactory.java:381) ~[restx-core-0.33.1.jar:na]
+	at restx.RestxMainRouterFactory.newInstance(RestxMainRouterFactory.java:60) ~[restx-core-0.33.1.jar:na]
+	at restx.servlet.RestxMainRouterServlet.init(RestxMainRouterServlet.java:67) ~[restx-servlet-0.33.1.jar:na]
+	at org.eclipse.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:519) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletHolder.doStart(ServletHolder.java:331) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:747) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:265) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1250) [jetty-webapp-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:706) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:492) [jetty-webapp-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerCollection.doStart(HandlerCollection.java:229) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerCollection.doStart(HandlerCollection.java:229) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.Server.doStart(Server.java:277) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at restx.server.JettyWebServer.start(JettyWebServer.java:113) [restx-server-jetty-0.33.1.jar:na]
+	at restx.server.JettyWebServer.startAndAwait(JettyWebServer.java:118) [restx-server-jetty-0.33.1.jar:na]
+	at leadsm24.AppServer.main(AppServer.java:30) [classes/:na]
+java.lang.RuntimeException: Compilation failed:
+src/main/java/leadsm24/rest/LEADSM24Resource.java:10: error: package org.json does not exist
+import org.json.JSONArray;
+               ^
+src/main/java/leadsm24/rest/LEADSM24Resource.java:11: error: package org.json does not exist
+import org.json.JSONObject;
+               ^
+src/main/java/eu/leads/api/m24/demo/Functionality2.java:14: error: package org.json does not exist
+import org.json.JSONObject;
+               ^
+src/main/java/eu/leads/api/m24/demo/Functionality2.java:16: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.ResultSet;
+                               ^
+src/main/java/eu/leads/api/m24/demo/Functionality2.java:17: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Row;
+                               ^
+src/main/java/eu/leads/api/m24/demo/Functionality2.java:18: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Session;
+                               ^
+src/main/java/eu/leads/api/m24/demo/Functionality1A.java:13: error: package org.json does not exist
+import org.json.JSONObject;
+               ^
+src/main/java/eu/leads/api/m24/demo/Functionality1A.java:15: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.ResultSet;
+                               ^
+src/main/java/eu/leads/api/m24/demo/Functionality1A.java:16: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Row;
+                               ^
+src/main/java/eu/leads/api/m24/demo/Functionality1A.java:17: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Session;
+                               ^
+src/main/java/eu/leads/api/m24/demo/Functionality1A.java:29: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.QueryResults;
+                             ^
+src/main/java/eu/leads/api/m24/demo/Functionality2.java:31: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.QueryResults;
+                             ^
+src/main/java/eu/leads/api/m24/demo/Functionality1.java:11: error: package org.json does not exist
+import org.json.JSONObject;
+               ^
+src/main/java/eu/leads/api/m24/demo/Functionality1.java:13: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.ResultSet;
+                               ^
+src/main/java/eu/leads/api/m24/demo/Functionality1.java:14: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Row;
+                               ^
+src/main/java/eu/leads/api/m24/demo/Functionality1.java:15: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Session;
+                               ^
+src/main/java/eu/leads/api/m24/demo/Functionality1.java:28: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.QueryResults;
+                             ^
+src/main/java/eu/leads/api/m24/func/Functionality2.java:14: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.ResultSet;
+                               ^
+src/main/java/eu/leads/api/m24/func/Functionality2.java:15: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Row;
+                               ^
+src/main/java/eu/leads/api/m24/func/Functionality2.java:16: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Session;
+                               ^
+src/main/java/eu/leads/api/m24/func/Functionality1A.java:13: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.ResultSet;
+                               ^
+src/main/java/eu/leads/api/m24/func/Functionality1A.java:14: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Row;
+                               ^
+src/main/java/eu/leads/api/m24/func/Functionality1A.java:15: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Session;
+                               ^
+src/main/java/eu/leads/api/m24/func/Functionality1.java:11: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.ResultSet;
+                               ^
+src/main/java/eu/leads/api/m24/func/Functionality1.java:12: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Row;
+                               ^
+src/main/java/eu/leads/api/m24/func/Functionality1.java:13: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Session;
+                               ^
+src/main/java/eu/leads/infext/Useful.java:22: error: package org.json does not exist
+import org.json.JSONArray;
+               ^
+src/main/java/eu/leads/infext/Useful.java:23: error: package org.json does not exist
+import org.json.JSONException;
+               ^
+src/main/java/eu/leads/infext/Useful.java:24: error: package org.json does not exist
+import org.json.JSONObject;
+               ^
+src/main/java/eu/leads/infext/datastore/impl/LeadsDataStore.java:5: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.QueryResults;
+                             ^
+src/main/java/eu/leads/infext/datastore/impl/LeadsDataStore.java:6: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.QueryStatus;
+                             ^
+src/main/java/eu/leads/infext/datastore/impl/LeadsDataStore.java:7: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.WebServiceClient;
+                             ^
+src/main/java/eu/leads/infext/datastore/impl/LeadsDataStore.java:12: error: cannot find symbol
+    public static QueryResults send_query_and_wait(String sql) {
+                  ^
+  symbol:   class QueryResults
+  location: class eu.leads.infext.datastore.impl.LeadsDataStore
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:3: error: package ch.lambdaj does not exist
+import static ch.lambdaj.Lambda.filter;
+                        ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:3: error: static import only from classes and interfaces
+import static ch.lambdaj.Lambda.filter;
+^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:19: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.BoundStatement;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:20: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Cluster;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:21: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.ColumnDefinitions;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:22: error: package com.datastax.driver.core.ColumnDefinitions does not exist
+import com.datastax.driver.core.ColumnDefinitions.Definition;
+                                                 ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:23: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.DataType;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:24: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Host;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:25: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Metadata;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:26: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.PreparedStatement;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:27: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.ResultSet;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:28: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Row;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:29: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Session;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:30: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.SimpleStatement;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:31: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Statement;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:40: error: cannot find symbol
+	private Cluster cluster;
+	        ^
+  symbol:   class Cluster
+  location: class eu.leads.infext.datastore.impl.CassandraCQLDataStore
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:41: error: cannot find symbol
+	private Session session;
+	        ^
+  symbol:   class Session
+  location: class eu.leads.infext.datastore.impl.CassandraCQLDataStore
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:400: error: cannot find symbol
+	private Iterator<Row> urisIterator = null;
+	                 ^
+  symbol:   class Row
+  location: class eu.leads.infext.datastore.impl.CassandraCQLDataStore
+
+	at restx.classloader.CompilationManager.compile(CompilationManager.java:504) ~[restx-classloader-0.33.1.jar:na]
+	at restx.classloader.CompilationManager.access$700(CompilationManager.java:50) ~[restx-classloader-0.33.1.jar:na]
+	at restx.classloader.CompilationManager$8.call(CompilationManager.java:332) ~[restx-classloader-0.33.1.jar:na]
+	at restx.classloader.CompilationManager$8.call(CompilationManager.java:310) ~[restx-classloader-0.33.1.jar:na]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[na:1.8.0_20]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[na:1.8.0_20]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[na:1.8.0_20]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) ~[na:1.8.0_20]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) ~[na:1.8.0_20]
+	at java.lang.Thread.run(Thread.java:745) ~[na:1.8.0_20]
+2014-11-14 09:15:59,284 [Thread-1        ] [          ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+2014-11-14 09:21:42,864 [main            ] [          ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+2014-11-14 09:21:44,388 [main            ] [          ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+2014-11-14 09:21:44,390 [main            ] [          ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8081/eu.leads.api/@/ui/
+ --
+
+2014-11-14 09:21:46,661 [main            ] [          ] WARN  / - unavailable
+java.lang.RuntimeException: java.lang.RuntimeException: Compilation failed:
+src/main/java/eu/leads/api/m24/demo/Functionality1A.java:29: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.QueryResults;
+                             ^
+src/main/java/eu/leads/api/m24/demo/Functionality2.java:31: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.QueryResults;
+                             ^
+src/main/java/eu/leads/api/m24/demo/Functionality1.java:28: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.QueryResults;
+                             ^
+src/main/java/eu/leads/infext/datastore/impl/LeadsDataStore.java:5: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.QueryResults;
+                             ^
+src/main/java/eu/leads/infext/datastore/impl/LeadsDataStore.java:6: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.QueryStatus;
+                             ^
+src/main/java/eu/leads/infext/datastore/impl/LeadsDataStore.java:7: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.WebServiceClient;
+                             ^
+src/main/java/eu/leads/infext/datastore/impl/LeadsDataStore.java:12: error: cannot find symbol
+    public static QueryResults send_query_and_wait(String sql) {
+                  ^
+  symbol:   class QueryResults
+  location: class eu.leads.infext.datastore.impl.LeadsDataStore
+
+	at restx.classloader.CompilationManager.incrementalCompile(CompilationManager.java:340) ~[restx-classloader-0.33.1.jar:na]
+	at restx.RestxMainRouterFactory.build(RestxMainRouterFactory.java:381) ~[restx-core-0.33.1.jar:na]
+	at restx.RestxMainRouterFactory.newInstance(RestxMainRouterFactory.java:60) ~[restx-core-0.33.1.jar:na]
+	at restx.servlet.RestxMainRouterServlet.init(RestxMainRouterServlet.java:67) ~[restx-servlet-0.33.1.jar:na]
+	at org.eclipse.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:519) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletHolder.doStart(ServletHolder.java:331) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:747) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:265) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1250) [jetty-webapp-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:706) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:492) [jetty-webapp-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerCollection.doStart(HandlerCollection.java:229) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerCollection.doStart(HandlerCollection.java:229) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.Server.doStart(Server.java:277) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at restx.server.JettyWebServer.start(JettyWebServer.java:113) [restx-server-jetty-0.33.1.jar:na]
+	at restx.server.JettyWebServer.startAndAwait(JettyWebServer.java:118) [restx-server-jetty-0.33.1.jar:na]
+	at leadsm24.AppServer.main(AppServer.java:30) [classes/:na]
+java.lang.RuntimeException: Compilation failed:
+src/main/java/eu/leads/api/m24/demo/Functionality1A.java:29: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.QueryResults;
+                             ^
+src/main/java/eu/leads/api/m24/demo/Functionality2.java:31: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.QueryResults;
+                             ^
+src/main/java/eu/leads/api/m24/demo/Functionality1.java:28: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.QueryResults;
+                             ^
+src/main/java/eu/leads/infext/datastore/impl/LeadsDataStore.java:5: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.QueryResults;
+                             ^
+src/main/java/eu/leads/infext/datastore/impl/LeadsDataStore.java:6: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.QueryStatus;
+                             ^
+src/main/java/eu/leads/infext/datastore/impl/LeadsDataStore.java:7: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.WebServiceClient;
+                             ^
+src/main/java/eu/leads/infext/datastore/impl/LeadsDataStore.java:12: error: cannot find symbol
+    public static QueryResults send_query_and_wait(String sql) {
+                  ^
+  symbol:   class QueryResults
+  location: class eu.leads.infext.datastore.impl.LeadsDataStore
+
+	at restx.classloader.CompilationManager.compile(CompilationManager.java:504) ~[restx-classloader-0.33.1.jar:na]
+	at restx.classloader.CompilationManager.access$700(CompilationManager.java:50) ~[restx-classloader-0.33.1.jar:na]
+	at restx.classloader.CompilationManager$8.call(CompilationManager.java:332) ~[restx-classloader-0.33.1.jar:na]
+	at restx.classloader.CompilationManager$8.call(CompilationManager.java:310) ~[restx-classloader-0.33.1.jar:na]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[na:1.8.0_20]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[na:1.8.0_20]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[na:1.8.0_20]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) ~[na:1.8.0_20]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) ~[na:1.8.0_20]
+	at java.lang.Thread.run(Thread.java:745) ~[na:1.8.0_20]
+2014-11-14 09:22:05,832 [Thread-1        ] [          ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced

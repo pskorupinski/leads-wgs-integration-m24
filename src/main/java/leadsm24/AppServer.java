@@ -12,8 +12,8 @@ import restx.server.JettyWebServer;
  * Reading the port from system env PORT makes it compatible with heroku.
  */
 public class AppServer {
-    public static final String WEB_INF_LOCATION = "/home/ubuntu/leadsdm/leadsm24rest/src/main/webapp/WEB-INF/web.xml";
-    public static final String WEB_APP_LOCATION = "/home/ubuntu/leadsdm/leadsm24rest/src/main/webapp";
+    public static final String WEB_INF_LOCATION = "/data/workspace/m24demo/leads-wgs-integration-m24/src/main/webapp/WEB-INF/web.xml";
+    public static final String WEB_APP_LOCATION = "/data/workspace/m24demo/leads-wgs-integration-m24/src/main/webapp";
 
     public static void main(String[] args) throws Exception {
         int port = Integer.valueOf(Optional.fromNullable(System.getenv("PORT")).or("8081").toString());
