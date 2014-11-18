@@ -124,11 +124,12 @@ public class Functionality1A extends FunctionalityAbst {
 		 * 2. Filter by keywords
 		 * 
 		 *  SELECT uri, ts, fqdnurl
-		 *  FROM leads.page_core C
-		 *  JOIN leads.keywords K ON C.uri = K.uri AND C.ts = K.ts
-		 *  WHERE partid = ‘ecom_prod_name:000’
-		 *  AND C.ts>=minTime AND C.ts <= maxTime
-		 *  AND (K.keywords = keywords1 OR K.keywords = keywords2 OR …);
+		 *  FROM page_core C
+		 *  JOIN keywords K ON C.uri = K.uri 
+		 *  WHERE C.ts = K.ts
+		 *  AND K.partid like ‘ecom_prod_name:000’
+		 *  AND C.ts >= minTime AND C.ts <= maxTime
+		 *  AND (K.keywords like keywords1 OR K.keywords like keywords2 OR …);
 		 */
 		
 		HashMap<ShopKeywordRow,Long> keywordRows = new HashMap<>();
@@ -136,15 +137,16 @@ public class Functionality1A extends FunctionalityAbst {
 		List<UrlTsFqdnKeyword> urlsTsFqdnKeywordList = new ArrayList<>();
 
 		String query1 = "SELECT C.uri AS uri, C.ts AS ts, C.fqdnurl AS fqdn, K.keywords AS keywords\n" +
-				"FROM leads.page_core C\n" +
-				"JOIN leads.keywords K ON C.uri = K.uri AND C.ts = K.ts\n" +
-				"WHERE partid = 'ecom_prod_name:000'\n"	+
+				"FROM page_core C\n" +
+				"JOIN keywords K ON C.uri = K.uri\n" + 
+				"WHERE C.ts = K.ts\n" +
+				"AND K.partid like 'ecom_prod_name:000'\n"	+
 				"AND C.ts>="+ params.periodStart +" AND C.ts <="+ params.periodEnd +"\n" +
 				"AND (";
 		int keysNo = params.keywords.size();
 		for(int i=0; i<keysNo; i++) {
 			String keywords = params.keywords.get(i);
-			query1 += "K.keywords = '";
+			query1 += "K.keywords like '";
 			query1 += keywords;
 			if(i<keysNo-1) query1 += "' OR ";
 			else query1 += "');";

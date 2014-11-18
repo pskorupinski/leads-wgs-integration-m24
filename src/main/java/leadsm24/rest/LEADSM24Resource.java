@@ -20,6 +20,7 @@ import eu.leads.api.m24.model.Functionality1Params;
 import eu.leads.api.m24.model.Functionality1ResultRowAgreed;
 import eu.leads.api.m24.model.Functionality2Params;
 import eu.leads.api.m24.model.Functionality2ResultRow;
+import eu.leads.infext.datastore.impl.LeadsDataStore;
 import restx.annotations.GET;
 import restx.annotations.RestxResource;
 import restx.factory.Component;
@@ -27,11 +28,16 @@ import restx.security.PermitAll;
 
 @Component @RestxResource
 public class LEADSM24Resource {
+	
+	private void init() {
+		LeadsDataStore.initialize("TODO", -1);
+	}
 
 
     @GET("/F1")
     @PermitAll
     public String functionality1(String inputJSON) {
+    	init();
     	
     	System.out.println(inputJSON);
     	
@@ -75,6 +81,8 @@ public class LEADSM24Resource {
     @GET("/F1A")
     @PermitAll
     public String functionality1A(String inputJSON) {
+    	init();
+    	
     	JSONObject jsonObj = new JSONObject(inputJSON);
     	Functionality1AParams params = new Functionality1AParams();
     	
@@ -112,6 +120,8 @@ public class LEADSM24Resource {
     @GET("/F2")
     @PermitAll
     public String functionality2(String inputJSON) {
+    	init();
+    	
     	JSONObject jsonObj = new JSONObject(inputJSON);
     	Functionality2Params params = new Functionality2Params();
     	

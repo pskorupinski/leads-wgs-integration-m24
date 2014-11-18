@@ -116,25 +116,27 @@ public class Functionality2 extends FunctionalityAbst {
 		 * 
 		 * SELECT uri, ts, sentiment, relevance 
 		 * FROM leads.keywords K
-		 * AND leads.page_core C
-		 * WHERE K.partid = ‘article:000’
-		 * AND C.lang = language
+		 * JOIN leads.page_core C ON C.uri = K.uri
+		 * WHERE C.ts = K.ts
+		 * AND K.partid like ‘article:000’
+		 * AND C.lang like language
 		 * AND C.ts>=minTime AND C.ts <= maxTime
-		 * AND (K.keywords = keywords1 OR K.keywords = keywords2 OR …);
+		 * AND (K.keywords like keywords1 OR K.keywords like keywords2 OR …);
 		 */
 		
 		String query1 = "SELECT K.uri AS uri, K.ts AS ts, K.keywords, "
-				+ "K.sentiment AS sentiment, K.relevance AS relevance"
+				+ "K.sentiment AS sentiment, K.relevance AS relevance\n"
 				+ "FROM leads.keywords K\n"
-				+ "JOIN leads.page_core C ON C.uri = K.uri AND C.ts = K.ts\n"
-				+ "WHERE K.partid='"+ARTICLE+":000'\n"
-				+ "AND C.lang = "+ params.language +"\n"
+				+ "JOIN leads.page_core C ON C.uri = K.uri\n"
+				+ "WHERE C.ts = K.ts\n"
+				+ "AND K.partid like '"+ARTICLE+":000'\n"
+				+ "AND C.lang like "+ params.language +"\n"
 				+ "AND K.ts>="+ params.periodStart +" AND K.ts <="+ params.periodEnd +"\n"
 				+ "AND (";
 		int keysNo = params.keywords.size();
 		for(int i=0; i<keysNo; i++) {
 			String keywords = params.keywords.get(i);
-			query1 += "K.keywords = '";
+			query1 += "K.keywords like '";
 			query1 += keywords;
 			if(i<keysNo-1) query1 += "' OR ";
 			else query1 += "');";

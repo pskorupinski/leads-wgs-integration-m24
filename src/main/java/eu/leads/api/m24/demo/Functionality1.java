@@ -51,24 +51,26 @@ public class Functionality1 extends FunctionalityAbst {
 		 * 4. Filter by keywords
 		 * 
 		 * 	SELECT C.uri, C.ts 
-		 *  FROM leads.page_core C
-		 *  JOIN leads.keywords K ON C.uri = K.uri AND C.ts = K.ts
-		 *  WHERE K.partid = ‘ecom_prod_name:000’
-		 *  AND (C.fqdnurl = shopUri1 OR C.fqdnurl = shopUri2 OR …)
-		 *  AND C.ts>=minTime AND C.ts <= maxTime
-		 *  AND (K.keywords = keywords1 OR K.keywords = keywords2 OR …);
+		 *  FROM page_core C
+		 *  JOIN keywords K ON C.uri = K.uri 
+		 *  WHERE C.ts = K.ts
+		 *  AND K.partid like ‘ecom_prod_name:000’
+		 *  AND (C.fqdnurl like shopUri1 OR C.fqdnurl like shopUri2 OR …)
+		 *  AND C.ts >= minTime AND C.ts <= maxTime
+		 *  AND (K.keywords like keywords1 OR K.keywords like keywords2 OR …);
 		 */
 		
 		String query1 = "SELECT C.uri AS uri, C.ts AS ts\n" +
 			"FROM leads.page_core C\n" +
-			"JOIN leads.keywords K ON C.uri = K.uri AND C.ts = K.ts\n" +
-			"WHERE K.partid = 'ecom_prod_name:000'\n" +
+			"JOIN leads.keywords K ON C.uri = K.uri\n" + 
+			"WHERE C.ts = K.ts\n" +
+			"AND K.partid like 'ecom_prod_name:000'\n" +
 			"AND (";
 		int shopsNo = params.shopName.size();
 		for(int i=0; i<shopsNo; i++) {
 			String shopName = params.shopName.get(i);
 			String shopUri = Useful.fqdnToNutchUrl(shopName);
-			query1 += "C.fqdnurl = '";
+			query1 += "C.fqdnurl like '";
 			query1 += shopUri;
 			if(i<shopsNo-1) query1 += "' OR ";
 			else query1 += "')\n";
@@ -78,7 +80,7 @@ public class Functionality1 extends FunctionalityAbst {
 		int keysNo = params.keywords.size();
 		for(int i=0; i<keysNo; i++) {
 			String keywords = params.keywords.get(i);
-			query1 += "K.keywords = '";
+			query1 += "K.keywords like '";
 			query1 += keywords;
 			if(i<keysNo-1) query1 += "' OR ";
 			else query1 += "');";
