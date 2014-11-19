@@ -833,3 +833,341 @@ src/main/java/eu/leads/infext/datastore/impl/LeadsDataStore.java:12: error: cann
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) ~[na:1.8.0_20]
 	at java.lang.Thread.run(Thread.java:745) ~[na:1.8.0_20]
 2014-11-14 09:22:05,832 [Thread-1        ] [          ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+2014-11-18 18:42:53,634 [main            ] [          ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+2014-11-18 18:42:55,892 [main            ] [          ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+2014-11-18 18:42:55,894 [main            ] [          ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8081/eu.leads.api/@/ui/
+ --
+
+2014-11-18 18:43:00,909 [main            ] [          ] WARN  / - unavailable
+java.lang.RuntimeException: java.lang.RuntimeException: Compilation failed:
+src/main/java/eu/leads/api/m24/demo/Functionality1A.java:29: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.QueryResults;
+                             ^
+src/main/java/eu/leads/api/m24/demo/Functionality2.java:31: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.QueryResults;
+                             ^
+src/main/java/eu/leads/api/m24/demo/Functionality1.java:28: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.QueryResults;
+                             ^
+src/main/java/eu/leads/infext/datastore/impl/LeadsDataStore.java:6: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.QueryResults;
+                             ^
+src/main/java/eu/leads/infext/datastore/impl/LeadsDataStore.java:7: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.QueryStatus;
+                             ^
+src/main/java/eu/leads/infext/datastore/impl/LeadsDataStore.java:8: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.WebServiceClient;
+                             ^
+src/main/java/eu/leads/infext/datastore/impl/LeadsDataStore.java:29: error: cannot find symbol
+    public static QueryResults send_query_and_wait(String sql) {
+                  ^
+  symbol:   class QueryResults
+  location: class eu.leads.infext.datastore.impl.LeadsDataStore
+
+	at restx.classloader.CompilationManager.incrementalCompile(CompilationManager.java:340) ~[restx-classloader-0.33.1.jar:na]
+	at restx.RestxMainRouterFactory.build(RestxMainRouterFactory.java:381) ~[restx-core-0.33.1.jar:na]
+	at restx.RestxMainRouterFactory.newInstance(RestxMainRouterFactory.java:60) ~[restx-core-0.33.1.jar:na]
+	at restx.servlet.RestxMainRouterServlet.init(RestxMainRouterServlet.java:67) ~[restx-servlet-0.33.1.jar:na]
+	at org.eclipse.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:519) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletHolder.doStart(ServletHolder.java:331) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:747) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:265) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1250) [jetty-webapp-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:706) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:492) [jetty-webapp-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerCollection.doStart(HandlerCollection.java:229) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerCollection.doStart(HandlerCollection.java:229) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.Server.doStart(Server.java:277) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at restx.server.JettyWebServer.start(JettyWebServer.java:113) [restx-server-jetty-0.33.1.jar:na]
+	at restx.server.JettyWebServer.startAndAwait(JettyWebServer.java:118) [restx-server-jetty-0.33.1.jar:na]
+	at leadsm24.AppServer.main(AppServer.java:30) [classes/:na]
+java.lang.RuntimeException: Compilation failed:
+src/main/java/eu/leads/api/m24/demo/Functionality1A.java:29: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.QueryResults;
+                             ^
+src/main/java/eu/leads/api/m24/demo/Functionality2.java:31: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.QueryResults;
+                             ^
+src/main/java/eu/leads/api/m24/demo/Functionality1.java:28: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.QueryResults;
+                             ^
+src/main/java/eu/leads/infext/datastore/impl/LeadsDataStore.java:6: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.QueryResults;
+                             ^
+src/main/java/eu/leads/infext/datastore/impl/LeadsDataStore.java:7: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.QueryStatus;
+                             ^
+src/main/java/eu/leads/infext/datastore/impl/LeadsDataStore.java:8: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.WebServiceClient;
+                             ^
+src/main/java/eu/leads/infext/datastore/impl/LeadsDataStore.java:29: error: cannot find symbol
+    public static QueryResults send_query_and_wait(String sql) {
+                  ^
+  symbol:   class QueryResults
+  location: class eu.leads.infext.datastore.impl.LeadsDataStore
+
+	at restx.classloader.CompilationManager.compile(CompilationManager.java:504) ~[restx-classloader-0.33.1.jar:na]
+	at restx.classloader.CompilationManager.access$700(CompilationManager.java:50) ~[restx-classloader-0.33.1.jar:na]
+	at restx.classloader.CompilationManager$8.call(CompilationManager.java:332) ~[restx-classloader-0.33.1.jar:na]
+	at restx.classloader.CompilationManager$8.call(CompilationManager.java:310) ~[restx-classloader-0.33.1.jar:na]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[na:1.8.0_20]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[na:1.8.0_20]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[na:1.8.0_20]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) ~[na:1.8.0_20]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) ~[na:1.8.0_20]
+	at java.lang.Thread.run(Thread.java:745) ~[na:1.8.0_20]
+2014-11-18 18:43:09,676 [Thread-1        ] [          ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+2014-11-18 18:43:43,481 [main            ] [          ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+2014-11-18 18:43:43,958 [main            ] [          ] WARN  / - unavailable
+java.lang.RuntimeException: restx.factory.FactoryMachine: Provider leadsm24.AppModuleFactoryMachine not found.
+		>> This may be because you renamed or removed it.
+		>> Try to clean and rebuild your application and reload/relaunch.
+
+		>> If the problem persists, check these resources:
+			- file:/data/workspace/m24demo/leads-wgs-integration-m24/target/restx/classes/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-i18n-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-specs-tests-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-monitor-codahale-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-apidocs-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-stats-admin-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-admin-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-server-jetty-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-specs-admin-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-monitor-admin-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-security-basic-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-log-admin-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-core-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-factory-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-servlet-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-i18n-admin-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-factory-admin-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+
+	at restx.factory.Factory$FactoryMachinesServiceLoader.getMachines(Factory.java:1558) ~[restx-factory-0.33.1.jar:na]
+	at restx.factory.Factory$Builder.addFromServiceLoader(Factory.java:264) ~[restx-factory-0.33.1.jar:na]
+	at restx.RestxMainRouterFactory.newFactoryBuilder(RestxMainRouterFactory.java:525) ~[restx-core-0.33.1.jar:na]
+	at restx.RestxMainRouterFactory.newFactoryBuilder(RestxMainRouterFactory.java:500) ~[restx-core-0.33.1.jar:na]
+	at restx.RestxMainRouterFactory.newInstance(RestxMainRouterFactory.java:57) ~[restx-core-0.33.1.jar:na]
+	at restx.servlet.RestxMainRouterServlet.init(RestxMainRouterServlet.java:67) ~[restx-servlet-0.33.1.jar:na]
+	at org.eclipse.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:519) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletHolder.doStart(ServletHolder.java:331) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:747) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:265) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1250) [jetty-webapp-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:706) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:492) [jetty-webapp-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerCollection.doStart(HandlerCollection.java:229) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerCollection.doStart(HandlerCollection.java:229) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.Server.doStart(Server.java:277) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at restx.server.JettyWebServer.start(JettyWebServer.java:113) [restx-server-jetty-0.33.1.jar:na]
+	at restx.server.JettyWebServer.startAndAwait(JettyWebServer.java:118) [restx-server-jetty-0.33.1.jar:na]
+	at leadsm24.AppServer.main(AppServer.java:30) [classes/:na]
+Caused by: java.util.ServiceConfigurationError: restx.factory.FactoryMachine: Provider leadsm24.AppModuleFactoryMachine not found
+	at java.util.ServiceLoader.fail(ServiceLoader.java:239) ~[na:1.8.0_20]
+	at java.util.ServiceLoader.access$300(ServiceLoader.java:185) ~[na:1.8.0_20]
+	at java.util.ServiceLoader$LazyIterator.nextService(ServiceLoader.java:372) ~[na:1.8.0_20]
+	at java.util.ServiceLoader$LazyIterator.next(ServiceLoader.java:404) ~[na:1.8.0_20]
+	at java.util.ServiceLoader$1.next(ServiceLoader.java:480) ~[na:1.8.0_20]
+	at com.google.common.collect.ImmutableList.copyOf(ImmutableList.java:271) ~[guava-17.0.jar:na]
+	at com.google.common.collect.ImmutableList.copyOf(ImmutableList.java:226) ~[guava-17.0.jar:na]
+	at restx.factory.Factory$FactoryMachinesServiceLoader.getMachines(Factory.java:1543) ~[restx-factory-0.33.1.jar:na]
+	... 24 common frames omitted
+2014-11-18 18:44:46,853 [Thread-1        ] [          ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+2014-11-18 18:48:34,420 [main            ] [          ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+2014-11-18 18:48:35,110 [main            ] [          ] WARN  / - unavailable
+java.lang.RuntimeException: restx.factory.FactoryMachine: Provider leadsm24.AppModuleFactoryMachine not found.
+		>> This may be because you renamed or removed it.
+		>> Try to clean and rebuild your application and reload/relaunch.
+
+		>> If the problem persists, check these resources:
+			- file:/data/workspace/m24demo/leads-wgs-integration-m24/target/restx/classes/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-i18n-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-specs-tests-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-monitor-codahale-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-apidocs-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-stats-admin-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-admin-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-server-jetty-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-specs-admin-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-monitor-admin-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-security-basic-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-log-admin-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-core-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-factory-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-servlet-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-i18n-admin-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-factory-admin-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+
+	at restx.factory.Factory$FactoryMachinesServiceLoader.getMachines(Factory.java:1558) ~[restx-factory-0.33.1.jar:na]
+	at restx.factory.Factory$Builder.addFromServiceLoader(Factory.java:264) ~[restx-factory-0.33.1.jar:na]
+	at restx.RestxMainRouterFactory.newFactoryBuilder(RestxMainRouterFactory.java:525) ~[restx-core-0.33.1.jar:na]
+	at restx.RestxMainRouterFactory.newFactoryBuilder(RestxMainRouterFactory.java:500) ~[restx-core-0.33.1.jar:na]
+	at restx.RestxMainRouterFactory.newInstance(RestxMainRouterFactory.java:57) ~[restx-core-0.33.1.jar:na]
+	at restx.servlet.RestxMainRouterServlet.init(RestxMainRouterServlet.java:67) ~[restx-servlet-0.33.1.jar:na]
+	at org.eclipse.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:519) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletHolder.doStart(ServletHolder.java:331) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:747) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:265) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1250) [jetty-webapp-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:706) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:492) [jetty-webapp-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerCollection.doStart(HandlerCollection.java:229) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerCollection.doStart(HandlerCollection.java:229) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.Server.doStart(Server.java:277) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at restx.server.JettyWebServer.start(JettyWebServer.java:113) [restx-server-jetty-0.33.1.jar:na]
+	at restx.server.JettyWebServer.startAndAwait(JettyWebServer.java:118) [restx-server-jetty-0.33.1.jar:na]
+	at leadsm24.AppServer.main(AppServer.java:30) [classes/:na]
+Caused by: java.util.ServiceConfigurationError: restx.factory.FactoryMachine: Provider leadsm24.AppModuleFactoryMachine not found
+	at java.util.ServiceLoader.fail(ServiceLoader.java:239) ~[na:1.8.0_20]
+	at java.util.ServiceLoader.access$300(ServiceLoader.java:185) ~[na:1.8.0_20]
+	at java.util.ServiceLoader$LazyIterator.nextService(ServiceLoader.java:372) ~[na:1.8.0_20]
+	at java.util.ServiceLoader$LazyIterator.next(ServiceLoader.java:404) ~[na:1.8.0_20]
+	at java.util.ServiceLoader$1.next(ServiceLoader.java:480) ~[na:1.8.0_20]
+	at com.google.common.collect.ImmutableList.copyOf(ImmutableList.java:271) ~[guava-17.0.jar:na]
+	at com.google.common.collect.ImmutableList.copyOf(ImmutableList.java:226) ~[guava-17.0.jar:na]
+	at restx.factory.Factory$FactoryMachinesServiceLoader.getMachines(Factory.java:1543) ~[restx-factory-0.33.1.jar:na]
+	... 24 common frames omitted
+2014-11-18 18:49:22,591 [Thread-1        ] [          ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+2014-11-18 18:55:57,676 [main            ] [          ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+2014-11-18 18:55:58,098 [main            ] [          ] WARN  / - unavailable
+java.lang.RuntimeException: restx.factory.FactoryMachine: Provider leadsm24.AppModuleFactoryMachine not found.
+		>> This may be because you renamed or removed it.
+		>> Try to clean and rebuild your application and reload/relaunch.
+
+		>> If the problem persists, check these resources:
+			- file:/data/workspace/m24demo/leads-wgs-integration-m24/target/restx/classes/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-i18n-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-specs-tests-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-monitor-codahale-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-apidocs-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-stats-admin-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-admin-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-server-jetty-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-specs-admin-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-monitor-admin-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-security-basic-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-log-admin-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-core-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-factory-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-servlet-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-i18n-admin-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-factory-admin-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+
+	at restx.factory.Factory$FactoryMachinesServiceLoader.getMachines(Factory.java:1558) ~[restx-factory-0.33.1.jar:na]
+	at restx.factory.Factory$Builder.addFromServiceLoader(Factory.java:264) ~[restx-factory-0.33.1.jar:na]
+	at restx.RestxMainRouterFactory.newFactoryBuilder(RestxMainRouterFactory.java:525) ~[restx-core-0.33.1.jar:na]
+	at restx.RestxMainRouterFactory.newFactoryBuilder(RestxMainRouterFactory.java:500) ~[restx-core-0.33.1.jar:na]
+	at restx.RestxMainRouterFactory.newInstance(RestxMainRouterFactory.java:57) ~[restx-core-0.33.1.jar:na]
+	at restx.servlet.RestxMainRouterServlet.init(RestxMainRouterServlet.java:67) ~[restx-servlet-0.33.1.jar:na]
+	at org.eclipse.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:519) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletHolder.doStart(ServletHolder.java:331) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:747) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:265) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1250) [jetty-webapp-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:706) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:492) [jetty-webapp-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerCollection.doStart(HandlerCollection.java:229) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerCollection.doStart(HandlerCollection.java:229) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.Server.doStart(Server.java:277) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at restx.server.JettyWebServer.start(JettyWebServer.java:113) [restx-server-jetty-0.33.1.jar:na]
+	at restx.server.JettyWebServer.startAndAwait(JettyWebServer.java:118) [restx-server-jetty-0.33.1.jar:na]
+	at leadsm24.AppServer.main(AppServer.java:30) [classes/:na]
+Caused by: java.util.ServiceConfigurationError: restx.factory.FactoryMachine: Provider leadsm24.AppModuleFactoryMachine not found
+	at java.util.ServiceLoader.fail(ServiceLoader.java:239) ~[na:1.8.0_20]
+	at java.util.ServiceLoader.access$300(ServiceLoader.java:185) ~[na:1.8.0_20]
+	at java.util.ServiceLoader$LazyIterator.nextService(ServiceLoader.java:372) ~[na:1.8.0_20]
+	at java.util.ServiceLoader$LazyIterator.next(ServiceLoader.java:404) ~[na:1.8.0_20]
+	at java.util.ServiceLoader$1.next(ServiceLoader.java:480) ~[na:1.8.0_20]
+	at com.google.common.collect.ImmutableList.copyOf(ImmutableList.java:271) ~[guava-17.0.jar:na]
+	at com.google.common.collect.ImmutableList.copyOf(ImmutableList.java:226) ~[guava-17.0.jar:na]
+	at restx.factory.Factory$FactoryMachinesServiceLoader.getMachines(Factory.java:1543) ~[restx-factory-0.33.1.jar:na]
+	... 24 common frames omitted
+2014-11-18 18:56:21,829 [Thread-1        ] [          ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+2014-11-18 19:08:59,341 [main            ] [          ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+2014-11-18 19:08:59,730 [main            ] [          ] WARN  / - unavailable
+java.lang.RuntimeException: restx.factory.FactoryMachine: Provider leadsm24.AppModuleFactoryMachine not found.
+		>> This may be because you renamed or removed it.
+		>> Try to clean and rebuild your application and reload/relaunch.
+
+		>> If the problem persists, check these resources:
+			- file:/data/workspace/m24demo/leads-wgs-integration-m24/target/restx/classes/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-i18n-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-specs-tests-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-monitor-codahale-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-apidocs-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-stats-admin-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-admin-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-server-jetty-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-specs-admin-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-monitor-admin-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-security-basic-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-log-admin-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-core-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-factory-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-servlet-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-i18n-admin-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+			- jar:file:/data/workspace/m24demo/leads-wgs-integration-m24/target/dependency/restx-factory-admin-0.33.1.jar!/META-INF/services/restx.factory.FactoryMachine
+
+	at restx.factory.Factory$FactoryMachinesServiceLoader.getMachines(Factory.java:1558) ~[restx-factory-0.33.1.jar:na]
+	at restx.factory.Factory$Builder.addFromServiceLoader(Factory.java:264) ~[restx-factory-0.33.1.jar:na]
+	at restx.RestxMainRouterFactory.newFactoryBuilder(RestxMainRouterFactory.java:525) ~[restx-core-0.33.1.jar:na]
+	at restx.RestxMainRouterFactory.newFactoryBuilder(RestxMainRouterFactory.java:500) ~[restx-core-0.33.1.jar:na]
+	at restx.RestxMainRouterFactory.newInstance(RestxMainRouterFactory.java:57) ~[restx-core-0.33.1.jar:na]
+	at restx.servlet.RestxMainRouterServlet.init(RestxMainRouterServlet.java:67) ~[restx-servlet-0.33.1.jar:na]
+	at org.eclipse.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:519) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletHolder.doStart(ServletHolder.java:331) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:747) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:265) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1250) [jetty-webapp-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:706) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:492) [jetty-webapp-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerCollection.doStart(HandlerCollection.java:229) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerCollection.doStart(HandlerCollection.java:229) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.Server.doStart(Server.java:277) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at restx.server.JettyWebServer.start(JettyWebServer.java:113) [restx-server-jetty-0.33.1.jar:na]
+	at restx.server.JettyWebServer.startAndAwait(JettyWebServer.java:118) [restx-server-jetty-0.33.1.jar:na]
+	at leadsm24.AppServer.main(AppServer.java:30) [classes/:na]
+Caused by: java.util.ServiceConfigurationError: restx.factory.FactoryMachine: Provider leadsm24.AppModuleFactoryMachine not found
+	at java.util.ServiceLoader.fail(ServiceLoader.java:239) ~[na:1.8.0_20]
+	at java.util.ServiceLoader.access$300(ServiceLoader.java:185) ~[na:1.8.0_20]
+	at java.util.ServiceLoader$LazyIterator.nextService(ServiceLoader.java:372) ~[na:1.8.0_20]
+	at java.util.ServiceLoader$LazyIterator.next(ServiceLoader.java:404) ~[na:1.8.0_20]
+	at java.util.ServiceLoader$1.next(ServiceLoader.java:480) ~[na:1.8.0_20]
+	at com.google.common.collect.ImmutableList.copyOf(ImmutableList.java:271) ~[guava-17.0.jar:na]
+	at com.google.common.collect.ImmutableList.copyOf(ImmutableList.java:226) ~[guava-17.0.jar:na]
+	at restx.factory.Factory$FactoryMachinesServiceLoader.getMachines(Factory.java:1543) ~[restx-factory-0.33.1.jar:na]
+	... 24 common frames omitted
+2014-11-18 19:11:13,513 [Thread-1        ] [          ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced

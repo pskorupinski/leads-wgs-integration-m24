@@ -10,6 +10,7 @@ import leadsm24.Roles;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import eu.leads.api.m24.FunctionalityAbst;
 import eu.leads.api.m24.FunctionalityAbstResultRow;
 import eu.leads.api.m24.demo.Functionality1;
 import eu.leads.api.m24.demo.Functionality1A;
@@ -29,15 +30,15 @@ import restx.security.PermitAll;
 @Component @RestxResource
 public class LEADSM24Resource {
 	
-	private void init() {
-		LeadsDataStore.initialize("TODO", -1);
-	}
+//	private void init() {
+//		//LeadsDataStore.initialize("TODO", -1);
+//	}
 
 
     @GET("/F1")
     @PermitAll
     public String functionality1(String inputJSON) {
-    	init();
+//    	init();
     	
     	System.out.println(inputJSON);
     	
@@ -59,7 +60,7 @@ public class LEADSM24Resource {
     	params.periodStart=new Long(jsonObj.getLong("periodStart")).toString(); // 0
     	params.periodEnd  =new Long(jsonObj.getLong("periodEnd")).toString(); // 1414800000000
     	
-    	Functionality1 f1 = new Functionality1();
+    	FunctionalityAbst f1 = new eu.leads.api.m24.func.Functionality1();
     	Set<FunctionalityAbstResultRow> rows = f1.execute(params);
     	
     	JSONArray result = new JSONArray();
@@ -81,7 +82,7 @@ public class LEADSM24Resource {
     @GET("/F1A")
     @PermitAll
     public String functionality1A(String inputJSON) {
-    	init();
+//    	init();
     	
     	JSONObject jsonObj = new JSONObject(inputJSON);
     	Functionality1AParams params = new Functionality1AParams();
@@ -99,7 +100,7 @@ public class LEADSM24Resource {
     	params.periodStart=new Long(jsonObj.getLong("periodStart")).toString(); // 0
     	params.periodEnd  =new Long(jsonObj.getLong("periodEnd")).toString(); // 1414800000000
     	
-    	Functionality1A f1a = new Functionality1A();
+    	FunctionalityAbst f1a = new eu.leads.api.m24.func.Functionality1A();
     	SortedSet<FunctionalityAbstResultRow> rows = f1a.execute(params);
     	
     	JSONArray result = new JSONArray();
@@ -120,7 +121,7 @@ public class LEADSM24Resource {
     @GET("/F2")
     @PermitAll
     public String functionality2(String inputJSON) {
-    	init();
+//    	init();
     	
     	JSONObject jsonObj = new JSONObject(inputJSON);
     	Functionality2Params params = new Functionality2Params();
@@ -134,7 +135,7 @@ public class LEADSM24Resource {
     	params.periodStart=new Long(jsonObj.getLong("periodStart")).toString(); // 0
     	params.periodEnd  =new Long(jsonObj.getLong("periodEnd")).toString(); // 1414800000000
     	
-    	Functionality2 f2 = new Functionality2();
+    	FunctionalityAbst f2 = new eu.leads.api.m24.func.Functionality2();
     	SortedSet<FunctionalityAbstResultRow> rows = f2.execute(params);
     	
     	JSONArray result = new JSONArray();
