@@ -31,7 +31,7 @@
 		    "org.json:json:20140107",
 		    "org.jsoup:jsoup:1.7.3",
 		    "com.googlecode.lambdaj:lambdaj:2.3.3",
-		    "gr.tuc.softnet:webservice-client-library:1.0-SNAPSHOT"
+		    "gr.tuc.softnet:webclient:1"
         ],
         "test": [
             "io.restx:restx-specs-tests:${restx.version}",

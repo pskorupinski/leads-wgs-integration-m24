@@ -1,5 +1,8 @@
 package leadsm24.rest;
 
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -30,15 +33,26 @@ import restx.security.PermitAll;
 @Component @RestxResource
 public class LEADSM24Resource {
 	
-//	private void init() {
-//		//LeadsDataStore.initialize("TODO", -1);
-//	}
+	private PrintStream err = System.err;
+
+	private void init() {
+		LeadsDataStore.initialize("http://clu25.softnet.tuc.gr", 8080);
+//    	System.setOut(new PrintStream(new OutputStream() {
+//			@Override
+//			public void write(int b) throws IOException {}
+//		}));
+//    	System.setErr(new PrintStream(new OutputStream() {
+//			@Override
+//			public void write(int b) throws IOException {}
+//		}));
+	}
 
 
     @GET("/F1")
     @PermitAll
     public String functionality1(String inputJSON) {
-//    	init();
+    	init();
+    	long start = System.currentTimeMillis();
     	
     	System.out.println(inputJSON);
     	
@@ -60,7 +74,9 @@ public class LEADSM24Resource {
     	params.periodStart=new Long(jsonObj.getLong("periodStart")).toString(); // 0
     	params.periodEnd  =new Long(jsonObj.getLong("periodEnd")).toString(); // 1414800000000
     	
-    	FunctionalityAbst f1 = new eu.leads.api.m24.func.Functionality1();
+//    	FunctionalityAbst f1 = new eu.leads.api.m24.func.Functionality1();
+    	FunctionalityAbst f1 = new eu.leads.api.m24.demo.Functionality1();
+//    	FunctionalityAbst f1 = new eu.leads.api.m24.demotest.Functionality1();
     	Set<FunctionalityAbstResultRow> rows = f1.execute(params);
     	
     	JSONArray result = new JSONArray();
@@ -76,13 +92,17 @@ public class LEADSM24Resource {
     		result.put(rowJson);
     	}
     	
+    	long end = System.currentTimeMillis();
+    	err.println("### Functionality 1 time: "+(end-start));
+    	
         return result.toString();
     }
     
     @GET("/F1A")
     @PermitAll
     public String functionality1A(String inputJSON) {
-//    	init();
+    	init();
+    	long start = System.currentTimeMillis();
     	
     	JSONObject jsonObj = new JSONObject(inputJSON);
     	Functionality1AParams params = new Functionality1AParams();
@@ -100,7 +120,9 @@ public class LEADSM24Resource {
     	params.periodStart=new Long(jsonObj.getLong("periodStart")).toString(); // 0
     	params.periodEnd  =new Long(jsonObj.getLong("periodEnd")).toString(); // 1414800000000
     	
-    	FunctionalityAbst f1a = new eu.leads.api.m24.func.Functionality1A();
+//    	FunctionalityAbst f1a = new eu.leads.api.m24.func.Functionality1A();
+    	FunctionalityAbst f1a = new eu.leads.api.m24.demo.Functionality1A();
+//    	FunctionalityAbst f1a = new eu.leads.api.m24.demotest.Functionality1A();
     	SortedSet<FunctionalityAbstResultRow> rows = f1a.execute(params);
     	
     	JSONArray result = new JSONArray();
@@ -115,13 +137,17 @@ public class LEADSM24Resource {
     		result.put(rowJson);
     	}
     	
+    	long end = System.currentTimeMillis();
+    	err.println("### Functionality 1A time: "+(end-start));
+    	
         return result.toString();
     }
     
     @GET("/F2")
     @PermitAll
     public String functionality2(String inputJSON) {
-//    	init();
+    	init();
+    	long start = System.currentTimeMillis();
     	
     	JSONObject jsonObj = new JSONObject(inputJSON);
     	Functionality2Params params = new Functionality2Params();
@@ -135,7 +161,9 @@ public class LEADSM24Resource {
     	params.periodStart=new Long(jsonObj.getLong("periodStart")).toString(); // 0
     	params.periodEnd  =new Long(jsonObj.getLong("periodEnd")).toString(); // 1414800000000
     	
-    	FunctionalityAbst f2 = new eu.leads.api.m24.func.Functionality2();
+//    	FunctionalityAbst f2 = new eu.leads.api.m24.func.Functionality2();
+    	FunctionalityAbst f2 = new eu.leads.api.m24.demo.Functionality2();
+//    	FunctionalityAbst f2 = new eu.leads.api.m24.demotest.Functionality2();
     	SortedSet<FunctionalityAbstResultRow> rows = f2.execute(params);
     	
     	JSONArray result = new JSONArray();
@@ -149,6 +177,9 @@ public class LEADSM24Resource {
     		rowJson.put("mentions", row.mentions_no);
     		result.put(rowJson);
     	}
+    	
+    	long end = System.currentTimeMillis();
+    	err.println("### Functionality 2 time: "+(end-start));
     	
         return result.toString();
     }

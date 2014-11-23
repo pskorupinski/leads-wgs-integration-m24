@@ -23,7 +23,7 @@ import eu.leads.infext.Useful;
 import eu.leads.infext.datastore.DataStoreSingleton;
 import eu.leads.infext.datastore.datastruct.UrlTimestamp;
 
-public class Functionality1 extends FunctionalityAbst {
+public class Functionality1 implements FunctionalityAbst {
 	
 	private static String ECOM_PROD_NAME = "ecom_prod_name";
 	private static String ECOM_PROD_PRICE_MAX = "ecom_prod_price_high";

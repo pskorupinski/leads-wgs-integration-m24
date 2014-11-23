@@ -13,24 +13,17 @@ import java.util.TreeSet;
 
 import org.json.JSONObject;
 
-import com.datastax.driver.core.ResultSet;
-import com.datastax.driver.core.Row;
-import com.datastax.driver.core.Session;
-
 import eu.leads.api.com.TimeConvertionUtils;
 import eu.leads.api.m24.FunctionalityAbst;
 import eu.leads.api.m24.FunctionalityAbstParams;
 import eu.leads.api.m24.FunctionalityAbstResultRow;
-import eu.leads.api.m24.demo.Functionality1A.UrlTsFqdnKeyword;
-import eu.leads.api.m24.model.Functionality1AParams;
 import eu.leads.api.m24.model.Functionality2Params;
 import eu.leads.api.m24.model.Functionality2ResultRow;
 import eu.leads.infext.Useful;
-import eu.leads.infext.datastore.DataStoreSingleton;
 import eu.leads.infext.datastore.impl.LeadsDataStore;
 import eu.leads.processor.web.QueryResults;
 
-public class Functionality2 extends FunctionalityAbst {
+public class Functionality2 implements FunctionalityAbst {
 	
 	private static String ARTICLE = "article_content";
 	
@@ -107,8 +100,6 @@ public class Functionality2 extends FunctionalityAbst {
 		
 		Set<KeywordRow> transientResultsSet = new HashSet<>();
 		
-		Session session = (Session) DataStoreSingleton.getDataStore().getFamilyStorageHandle(null);
-		
 		/*
 		 * 1. Filter pages with resource_type = article_content
 		 * 2. Filter by keywords
@@ -124,25 +115,26 @@ public class Functionality2 extends FunctionalityAbst {
 		 * AND (K.keywords like keywords1 OR K.keywords like keywords2 OR …);
 		 */
 		
-		String query1 = "SELECT K.uri AS uri, K.ts AS ts, K.keywords, "
+		String query1 = "SELECT K.uri, K.ts, K.keywords AS keywords, "
 				+ "K.sentiment AS sentiment, K.relevance AS relevance\n"
-				+ "FROM leads.keywords K\n"
-				+ "JOIN leads.page_core C ON C.uri = K.uri\n"
+				+ "FROM keywords K\n"
+				+ "JOIN page_core C ON C.uri = K.uri\n"
 				+ "WHERE C.ts = K.ts\n"
 				+ "AND K.partid like '"+ARTICLE+":000'\n"
-				+ "AND C.lang like "+ params.language +"\n"
+				+ "AND C.lang like '"+ params.language +"'\n"
 				+ "AND K.ts>="+ params.periodStart +" AND K.ts <="+ params.periodEnd +"\n"
-				+ "AND (";
+				+ "AND keywords IN (";
 		int keysNo = params.keywords.size();
 		for(int i=0; i<keysNo; i++) {
 			String keywords = params.keywords.get(i);
-			query1 += "K.keywords like '";
+			query1 += "'";
 			query1 += keywords;
-			if(i<keysNo-1) query1 += "' OR ";
-			else query1 += "');";
+			if(i<keysNo-1) query1 += "',";
+			else query1 += "')";
 		}
+		query1 += ";";
 		
-		System.out.println(query1);
+//		System.out.println(query1);
 		
 		QueryResults rs = LeadsDataStore.send_query_and_wait(query1);
 		if(rs != null) {
@@ -150,8 +142,8 @@ public class Functionality2 extends FunctionalityAbst {
 			for(String row : rows) {
 				JSONObject jsonRow = new JSONObject(row);
 				KeywordRow tempRow = new KeywordRow();
-				tempRow.url = jsonRow.getString("uri");
-				tempRow.timestamp  = new Long(jsonRow.getLong("ts"));
+				tempRow.url = jsonRow.getString("default.k.uri");
+				tempRow.timestamp  = new Long(jsonRow.getLong("default.k.ts"));
 				tempRow.keywords = jsonRow.getString("keywords");
 				tempRow.sentiment = jsonRow.getString("sentiment");
 				tempRow.relevance = jsonRow.getString("relevance");
@@ -204,10 +196,11 @@ public class Functionality2 extends FunctionalityAbst {
 	////////////////////////////////////////////////////////////
 	
 	public static void main(String[] args) {
+		LeadsDataStore.initialize("http://clu25.softnet.tuc.gr", 8080);
 		Functionality2 func2 = new Functionality2();
 		Functionality2Params params = new Functionality2Params();
 		params.language = "en";
-		params.periodStart = new Long(new Date().getTime()-6*1000*60*60*24L).toString();
+		params.periodStart = new Long(0L).toString();
 		params.periodEnd = new Long(new Date().getTime()).toString();
 		params.keywords = new ArrayList<String>() {{ add("adidas"); }};
 		Set<FunctionalityAbstResultRow> rows = func2.execute(params);

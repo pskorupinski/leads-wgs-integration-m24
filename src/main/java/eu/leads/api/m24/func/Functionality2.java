@@ -25,7 +25,7 @@ import eu.leads.api.m24.model.Functionality2ResultRow;
 import eu.leads.infext.Useful;
 import eu.leads.infext.datastore.DataStoreSingleton;
 
-public class Functionality2 extends FunctionalityAbst {
+public class Functionality2 implements FunctionalityAbst {
 	
 	private static String ARTICLE = "article_content";
 	

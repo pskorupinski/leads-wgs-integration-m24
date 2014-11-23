@@ -28,7 +28,7 @@ import eu.leads.infext.datastore.datastruct.UrlTimestamp;
 import eu.leads.infext.datastore.impl.LeadsDataStore;
 import eu.leads.processor.web.QueryResults;
 
-public class Functionality1A extends FunctionalityAbst {
+public class Functionality1A implements FunctionalityAbst {
 
 	private static String ECOM_PROD_NAME = "ecom_prod_name";
 	private static String ECOM_PROD_PRICE_MAX = "ecom_prod_price_high";
@@ -117,11 +117,9 @@ public class Functionality1A extends FunctionalityAbst {
 		Functionality1AParams params = (Functionality1AParams) paramsX;
 		SortedSet<FunctionalityAbstResultRow> resultsSet = new TreeSet<>();
 		
-		Session session = (Session) DataStoreSingleton.getDataStore().getFamilyStorageHandle(null);
-		
 		/*
 		 * 1. Filter pages with resource_type = ecom_prod_name
-		 * 2. Filter by keywords
+		 * 2. Filter by keywords and time
 		 * 
 		 *  SELECT uri, ts, fqdnurl
 		 *  FROM page_core C
@@ -136,21 +134,21 @@ public class Functionality1A extends FunctionalityAbst {
 		
 		List<UrlTsFqdnKeyword> urlsTsFqdnKeywordList = new ArrayList<>();
 
-		String query1 = "SELECT C.uri AS uri, C.ts AS ts, C.fqdnurl AS fqdn, K.keywords AS keywords\n" +
+		String query1 = "SELECT C.uri, C.ts, C.fqdnurl AS fqdn, K.keywords AS keywords\n" +
 				"FROM page_core C\n" +
 				"JOIN keywords K ON C.uri = K.uri\n" + 
 				"WHERE C.ts = K.ts\n" +
 				"AND K.partid like 'ecom_prod_name:000'\n"	+
-				"AND C.ts>="+ params.periodStart +" AND C.ts <="+ params.periodEnd +"\n" +
-				"AND (";
-		int keysNo = params.keywords.size();
+				"AND C.ts>="+ params.periodStart +" AND C.ts <="+ params.periodEnd +"\n";
+		int keysNo = params.keywords != null ? params.keywords.size() : 0;
+		if(keysNo > 0) query1 += "AND K.keywords IN (";
 		for(int i=0; i<keysNo; i++) {
 			String keywords = params.keywords.get(i);
-			query1 += "K.keywords like '";
-			query1 += keywords;
-			if(i<keysNo-1) query1 += "' OR ";
-			else query1 += "');";
-		}			
+			query1 += "'" + keywords;
+			if(i<keysNo-1) query1 += "',";
+			else query1 += "')";
+		}
+		query1 += ";";
 		
 //		System.out.println(query1);	
 		
@@ -159,8 +157,8 @@ public class Functionality1A extends FunctionalityAbst {
 			List<String> rows = rs.getResult();
 			for(String row : rows) {
 				JSONObject jsonRow = new JSONObject(row);
-				String url = jsonRow.getString("uri");
-				String ts  = new Long(jsonRow.getLong("ts")).toString();
+				String url = jsonRow.getString("default.c.uri");
+				String ts  = new Long(jsonRow.getLong("default.c.ts")).toString();
 				String fqdn = jsonRow.getString("fqdn");
 				String keywords = jsonRow.getString("keywords");
 				urlsTsFqdnKeywordList.add(new UrlTsFqdnKeyword(url, ts, fqdn, keywords));
@@ -185,21 +183,32 @@ public class Functionality1A extends FunctionalityAbst {
 		}
 		
 		HashMap<String,String> sitesCountries = new HashMap<>();
-		for(String site : sitesAndUrls.keySet()) {
-			String query2 = "SELECT country FROM leads.site\n" +
-				"WHERE uri = "+ site +" ORDER BY ts DESC LIMIT 1";
-			
-//			System.out.println(query2);
-			
-			QueryResults rs2 = LeadsDataStore.send_query_and_wait(query1);
-			if(rs2 != null && rs.getResult().size() == 1) {
-				String row = rs.getResult().get(0);
-				JSONObject jsonRow = new JSONObject(row);
-				String countryCode = jsonRow.getString("country");
-				if(params.country.contains(countryCode))
-					sitesCountries.put(site, countryCode);
-			}	
+		String query2base = "SELECT uri AS site, country AS country FROM site\n";
+		String query2end  = "ORDER BY ts DESC;";
+		String query2mid  = "WHERE uri IN (";
+		
+		List<String> sites = new ArrayList<>(sitesAndUrls.keySet());
+		int i;
+		for(i=0; i<sites.size()-1; i++) {
+			query2mid += "'"+sites.get(i)+"',";
 		}
+		query2mid += "'"+sites.get(i)+"')\n";
+		
+		String query2 = query2base+query2mid+query2end;
+			
+//		System.out.println(query2);
+			
+		QueryResults rs2 = LeadsDataStore.send_query_and_wait(query2);
+		if(rs2 != null) {
+			List<String> rows2 = rs2.getResult();
+			for(String row : rows2) {
+				JSONObject jsonRow = new JSONObject(row);
+				String site = jsonRow.getString("site");
+				String countryCode = jsonRow.getString("country");
+				if(sitesCountries.get(site)==null && params.country.contains(countryCode))
+					sitesCountries.put(site, countryCode);
+			}
+		}	
 		
 		/*
 		 * 5. Check whether resource "ecom_prod_name" exists. If yes, 
@@ -207,26 +216,45 @@ public class Functionality1A extends FunctionalityAbst {
 		for(String site : sitesCountries.keySet()) {
 			for(String keyword : params.keywords) {
 				HashMap<String,List<Long>> productVersionsMap = new HashMap<>();
-				for(UrlTsFqdnKeyword urlTs : sitesAndUrls.get(site)) {
-					String url = urlTs.url;
-					String timestamp = urlTs.ts;
+				
+				String query3base = "SELECT uri AS uri, ts AS ts, resourcepartvalue AS resourcepartvalue FROM resourcepart\n";
+				String query3end  = "AND partid='000'\n"
+						+ "AND resourceparttype='"+ECOM_PROD_NAME+"';";
+				
+				List<UrlTimestamp> keywordUrlTsList = new ArrayList<>();
+				
+				for(UrlTsFqdnKeyword urlTs : sitesAndUrls.get(site))
+					if(urlTs.keywords.equals(keyword))
+						keywordUrlTsList.add(new UrlTimestamp(urlTs.url, urlTs.ts));
+				
+				int partitionSize = 10;
+				List<List<UrlTimestamp>> urlTsListPartitions = new ArrayList<List<UrlTimestamp>>();
+				for (i = 0; i < keywordUrlTsList.size(); i += partitionSize) {
+					urlTsListPartitions.add(keywordUrlTsList.subList(i, i + Math.min(partitionSize, keywordUrlTsList.size() - i)));
+				}
+				for(List<UrlTimestamp> urlTsPart : urlTsListPartitions) {
+					String query3mid  = "WHERE (";
+					for(i=0; i<urlTsPart.size(); i++) {
+						String url = urlTsPart.get(i).url;
+						String ts  = urlTsPart.get(i).timestamp;
+						if(i<urlTsPart.size()-1) query3mid += "( uri like '"+url+"' AND ts="+ts+") OR ";
+						else query3mid += "( uri='"+url+"' AND ts="+ts+"))\n";
+					}
 					
-					if(urlTs.keywords.equals(keyword)) {
-						String query3 = "SELECT resourcepartvalue FROM leads.resourcepart\n"
-								+ "WHERE uri='"+url+"'\n"
-								+ "AND ts="+timestamp+"\n"
-								+ "AND partid='000'\n"
-								+ "AND resourceparttype='"+ECOM_PROD_NAME+"';";		
-						
-						System.out.println(query3);
-						ResultSet rs3 = session.execute(query3);	
-						if(rs3.iterator().hasNext()) {
-							Row row = rs3.iterator().next();
-							String prodName = row.getString(0);
+					String query3 = query3base + query3mid + query3end;
+											
+					System.out.println(query3);
+					QueryResults rs3 = LeadsDataStore.send_query_and_wait(query3);
+					if(rs3 != null) {
+						List<String> rows3 = rs3.getResult();
+						for(String row : rows3) {
+							JSONObject jsonRow = new JSONObject(row);
+							String ts   = new Long(jsonRow.getLong("ts")).toString();
+							String prodName = jsonRow.getString("resourcepartvalue");
 							List<Long> productVersions = productVersionsMap.get(prodName);
 							if(productVersions==null)
 								productVersions = new ArrayList<>();
-							productVersions.add(Long.parseLong(timestamp));
+							productVersions.add(Long.parseLong(ts));
 							productVersionsMap.put(prodName, productVersions);
 						}
 					}
@@ -274,12 +302,13 @@ public class Functionality1A extends FunctionalityAbst {
 	////////////////////////////////////////////////////////////
 	
 	public static void main(String[] args) {
+		LeadsDataStore.initialize("http://clu25.softnet.tuc.gr", 8080);
 		Functionality1A func1A = new Functionality1A();
 		Functionality1AParams params = new Functionality1AParams();
 		params.country = new ArrayList<String>() {{ add("US"); add("UK"); }};
 		params.periodStart = new Long(0L).toString();
 		params.periodEnd = new Long(new Date().getTime()).toString();
-		params.keywords = new ArrayList<String>() {{ add("adidas"); add("nike"); }};
+		params.keywords = new ArrayList<String>() {{ add("adidas"); }};
 		SortedSet<FunctionalityAbstResultRow> rows = func1A.execute(params);
 		int i=0;
 		for(FunctionalityAbstResultRow row : rows) {

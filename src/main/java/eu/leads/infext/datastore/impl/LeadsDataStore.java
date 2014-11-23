@@ -30,9 +30,10 @@ public class LeadsDataStore {
     	QueryResults res = null;
     	
     	try {
+    		System.err.println(sql);
 	        QueryStatus currentStatus = WebServiceClient.submitQuery("adidas",sql);
 	        while(!currentStatus.getStatus().equals("COMPLETED") && !currentStatus.getStatus().equals("FAILED")) {
-	            sleep(3000);
+	            sleep(200);
 	            currentStatus = WebServiceClient.getQueryStatus(currentStatus.getId());
 	//            System.out.print("s: " + currentStatus.toString());
 	//            System.out.println(", o: " + currentStatus.toString());

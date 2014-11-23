@@ -1,0 +1,871 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for leadsm24:leadsm24:war:0.1-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-javadoc-plugin is missing. @ line 144, column 21
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building leadsm24 0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.3:resources (default-resources) @ leadsm24 ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.1:compile (default-compile) @ leadsm24 ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.3:testResources (default-testResources) @ leadsm24 ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /data/workspace/m24demo/leads-wgs-integration-m24/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.1:testCompile (default-testCompile) @ leadsm24 ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.10:test (default-test) @ leadsm24 ---
+[INFO] Surefire report directory: /data/workspace/m24demo/leads-wgs-integration-m24/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+
+Results :
+
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- exec-maven-plugin:1.3.2:java (default) @ leadsm24 ---
+[WARNING] Warning: killAfter is now deprecated. Do you need it ? Please comment on MEXEC-6.
+15:03:42,371 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback.groovy]
+15:03:42,371 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
+15:03:42,372 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [file:/data/workspace/m24demo/leads-wgs-integration-m24/target/classes/logback.xml]
+15:03:42,373 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs multiple times on the classpath.
+15:03:42,373 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs at [jar:file:/home/nonlinear/.m2/repository/gr/tuc/softnet/webclient/1/webclient-1.jar!/logback.xml]
+15:03:42,373 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs at [file:/data/workspace/m24demo/leads-wgs-integration-m24/target/classes/logback.xml]
+15:03:42,572 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - debug attribute not set
+15:03:42,584 |-INFO in ch.qos.logback.classic.joran.action.LoggerContextListenerAction - Adding LoggerContextListener of type [ch.qos.logback.classic.jul.LevelChangePropagator] to the object stack
+15:03:42,627 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6e2d1249 - Propagating DEBUG level on Logger[ROOT] onto the JUL framework
+15:03:42,627 |-INFO in ch.qos.logback.classic.joran.action.LoggerContextListenerAction - Starting LoggerContextListener
+15:03:42,632 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.rolling.RollingFileAppender]
+15:03:42,640 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [errorFile]
+15:03:42,713 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+15:03:42,795 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy - No compression will be used
+15:03:42,798 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy - Will use the pattern logs/errors.%d.log for the active file
+15:03:42,806 |-INFO in c.q.l.core.rolling.DefaultTimeBasedFileNamingAndTriggeringPolicy - The date pattern is 'yyyy-MM-dd' from file name pattern 'logs/errors.%d.log'.
+15:03:42,806 |-INFO in c.q.l.core.rolling.DefaultTimeBasedFileNamingAndTriggeringPolicy - Roll-over at midnight.
+15:03:42,806 |-INFO in c.q.l.core.rolling.DefaultTimeBasedFileNamingAndTriggeringPolicy - Setting initial period to Tue Nov 11 22:44:30 CET 2014
+15:03:42,810 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[errorFile] - Active log file name: logs/errors.log
+15:03:42,810 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[errorFile] - File property is set to [logs/errors.log]
+15:03:43,330 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+15:03:43,334 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [STDOUT]
+15:03:43,338 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+15:03:43,339 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.FileAppender]
+15:03:43,339 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [appLog]
+15:03:43,340 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+15:03:43,341 |-INFO in ch.qos.logback.core.FileAppender[appLog] - File property is set to [logs/app.log]
+15:03:43,341 |-INFO in ch.qos.logback.classic.joran.action.RootLoggerAction - Setting level of ROOT logger to INFO
+15:03:43,341 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6e2d1249 - Propagating INFO level on Logger[ROOT] onto the JUL framework
+15:03:43,341 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [STDOUT] to Logger[ROOT]
+15:03:43,343 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [appLog] to Logger[ROOT]
+15:03:43,344 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.eclipse.jetty.server.AbstractConnector] to WARN
+15:03:43,344 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6e2d1249 - Propagating WARN level on Logger[org.eclipse.jetty.server.AbstractConnector] onto the JUL framework
+15:03:43,344 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.eclipse.jetty.server.handler.ContextHandler] to WARN
+15:03:43,344 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6e2d1249 - Propagating WARN level on Logger[org.eclipse.jetty.server.handler.ContextHandler] onto the JUL framework
+15:03:43,344 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.eclipse.jetty.webapp.StandardDescriptorProcessor] to WARN
+15:03:43,344 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6e2d1249 - Propagating WARN level on Logger[org.eclipse.jetty.webapp.StandardDescriptorProcessor] onto the JUL framework
+15:03:43,345 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.hibernate.validator.internal.engine.ConfigurationImpl] to WARN
+15:03:43,345 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6e2d1249 - Propagating WARN level on Logger[org.hibernate.validator.internal.engine.ConfigurationImpl] onto the JUL framework
+15:03:43,345 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.reflections.Reflections] to WARN
+15:03:43,345 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6e2d1249 - Propagating WARN level on Logger[org.reflections.Reflections] onto the JUL framework
+15:03:43,345 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [restx.factory.Factory] to WARN
+15:03:43,345 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6e2d1249 - Propagating WARN level on Logger[restx.factory.Factory] onto the JUL framework
+15:03:43,345 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [leadsm24] to DEBUG
+15:03:43,345 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6e2d1249 - Propagating DEBUG level on Logger[leadsm24] onto the JUL framework
+15:03:43,345 |-INFO in ch.qos.logback.classic.joran.action.RootLoggerAction - Setting level of ROOT logger to INFO
+15:03:43,345 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [errorFile] to Logger[ROOT]
+15:03:43,345 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - End of configuration.
+15:03:43,347 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@69823aef - Registering current configuration as safe fallback point
+
+2014-11-19 15:03:43,575 [leadsm24.AppServer.main()] [          ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+2014-11-19 15:03:43,872 [leadsm24.AppServer.main()] [          ] INFO  org.mortbay.log - Logging to Logger[org.mortbay.log] via org.mortbay.log.Slf4jLog
+2014-11-19 15:03:44,001 [leadsm24.AppServer.main()] [          ] INFO  restx.servlet.RestxMainRouterServlet - servlet <3 detected. use servlet3+ to get automatic baseUri detection
+2014-11-19 15:03:44,001 [leadsm24.AppServer.main()] [          ] INFO  restx.servlet.RestxMainRouterServlet - MINOR: baseUri cannot be found. Define it in restx.baseUri system property, or use Servlet 3+ API
+Note that is has no effect on restx behavior, it's just that it won't be able to properly display the startup banner.
+2014-11-19 15:03:44,659 [leadsm24.AppServer.main()] [          ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+2014-11-19 15:03:44,659 [leadsm24.AppServer.main()] [          ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ --
+
+2014-11-19 15:03:46,781 [leadsm24.AppServer.main()] [          ] WARN  / - unavailable
+java.lang.RuntimeException: java.lang.RuntimeException: Compilation failed:
+src/main/java/leadsm24/rest/LEADSM24Resource.java:10: error: package org.json does not exist
+import org.json.JSONArray;
+               ^
+src/main/java/leadsm24/rest/LEADSM24Resource.java:11: error: package org.json does not exist
+import org.json.JSONObject;
+               ^
+src/main/java/leadsm24/rest/LEADSM24Resource.java:25: error: package restx.annotations does not exist
+import restx.annotations.GET;
+                        ^
+src/main/java/leadsm24/rest/LEADSM24Resource.java:26: error: package restx.annotations does not exist
+import restx.annotations.RestxResource;
+                        ^
+src/main/java/leadsm24/rest/LEADSM24Resource.java:27: error: package restx.factory does not exist
+import restx.factory.Component;
+                    ^
+src/main/java/leadsm24/rest/LEADSM24Resource.java:28: error: package restx.security does not exist
+import restx.security.PermitAll;
+                     ^
+src/main/java/leadsm24/rest/LEADSM24Resource.java:30: error: cannot find symbol
+@Component @RestxResource
+ ^
+  symbol: class Component
+src/main/java/leadsm24/rest/LEADSM24Resource.java:30: error: cannot find symbol
+@Component @RestxResource
+            ^
+  symbol: class RestxResource
+src/main/java/leadsm24/AppModule.java:3: error: package restx.config does not exist
+import restx.config.ConfigLoader;
+                   ^
+src/main/java/leadsm24/AppModule.java:4: error: package restx.config does not exist
+import restx.config.ConfigSupplier;
+                   ^
+src/main/java/leadsm24/AppModule.java:5: error: package restx.factory does not exist
+import restx.factory.Provides;
+                    ^
+src/main/java/leadsm24/AppModule.java:7: error: package com.fasterxml.jackson.databind does not exist
+import com.fasterxml.jackson.databind.ObjectMapper;
+                                     ^
+src/main/java/leadsm24/AppModule.java:8: error: package com.google.common.base does not exist
+import com.google.common.base.Charsets;
+                             ^
+src/main/java/leadsm24/AppModule.java:9: error: package com.google.common.collect does not exist
+import com.google.common.collect.ImmutableSet;
+                                ^
+src/main/java/leadsm24/AppModule.java:10: error: package restx.security does not exist
+import restx.security.*;
+^
+src/main/java/leadsm24/AppModule.java:11: error: package restx.factory does not exist
+import restx.factory.Module;
+                    ^
+src/main/java/leadsm24/AppModule.java:12: error: package restx.factory does not exist
+import restx.factory.Provides;
+                    ^
+src/main/java/leadsm24/AppModule.java:13: error: package javax.inject does not exist
+import javax.inject.Named;
+                   ^
+src/main/java/leadsm24/AppModule.java:17: error: cannot find symbol
+@Module
+ ^
+  symbol: class Module
+src/main/java/leadsm24/AppModule.java:20: error: cannot find symbol
+    public SignatureKey signatureKey() {
+           ^
+  symbol:   class SignatureKey
+  location: class leadsm24.AppModule
+src/main/java/leadsm24/AppModule.java:31: error: cannot find symbol
+    public ConfigSupplier appConfigSupplier(ConfigLoader configLoader) {
+                                            ^
+  symbol:   class ConfigLoader
+  location: class leadsm24.AppModule
+src/main/java/leadsm24/AppModule.java:31: error: cannot find symbol
+    public ConfigSupplier appConfigSupplier(ConfigLoader configLoader) {
+           ^
+  symbol:   class ConfigSupplier
+  location: class leadsm24.AppModule
+src/main/java/leadsm24/AppModule.java:37: error: cannot find symbol
+    public CredentialsStrategy credentialsStrategy() {
+           ^
+  symbol:   class CredentialsStrategy
+  location: class leadsm24.AppModule
+src/main/java/leadsm24/AppModule.java:43: error: cannot find symbol
+            SecuritySettings securitySettings, CredentialsStrategy credentialsStrategy,
+            ^
+  symbol:   class SecuritySettings
+  location: class leadsm24.AppModule
+src/main/java/leadsm24/AppModule.java:43: error: cannot find symbol
+            SecuritySettings securitySettings, CredentialsStrategy credentialsStrategy,
+                                               ^
+  symbol:   class CredentialsStrategy
+  location: class leadsm24.AppModule
+src/main/java/leadsm24/AppModule.java:44: error: cannot find symbol
+            @Named("restx.admin.passwordHash") String defaultAdminPasswordHash, ObjectMapper mapper) {
+                                                                                ^
+  symbol:   class ObjectMapper
+  location: class leadsm24.AppModule
+src/main/java/leadsm24/AppModule.java:42: error: cannot find symbol
+    public BasicPrincipalAuthenticator basicPrincipalAuthenticator(
+           ^
+  symbol:   class BasicPrincipalAuthenticator
+  location: class leadsm24.AppModule
+src/main/java/leadsm24/AppServer.java:3: error: package com.google.common.base does not exist
+import com.google.common.base.Optional;
+                             ^
+src/main/java/leadsm24/AppServer.java:4: error: package restx.server does not exist
+import restx.server.WebServer;
+                   ^
+src/main/java/leadsm24/AppServer.java:5: error: package restx.server does not exist
+import restx.server.JettyWebServer;
+                   ^
+src/main/java/eu/leads/api/m24/demo/Functionality2.java:14: error: package org.json does not exist
+import org.json.JSONObject;
+               ^
+src/main/java/eu/leads/api/m24/demo/Functionality2.java:16: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.ResultSet;
+                               ^
+src/main/java/eu/leads/api/m24/demo/Functionality2.java:17: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Row;
+                               ^
+src/main/java/eu/leads/api/m24/demo/Functionality2.java:18: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Session;
+                               ^
+src/main/java/eu/leads/api/m24/demo/Functionality1A.java:13: error: package org.json does not exist
+import org.json.JSONObject;
+               ^
+src/main/java/eu/leads/api/m24/demo/Functionality1A.java:15: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.ResultSet;
+                               ^
+src/main/java/eu/leads/api/m24/demo/Functionality1A.java:16: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Row;
+                               ^
+src/main/java/eu/leads/api/m24/demo/Functionality1A.java:17: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Session;
+                               ^
+src/main/java/eu/leads/api/m24/demo/Functionality1A.java:29: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.QueryResults;
+                             ^
+src/main/java/eu/leads/api/m24/demo/Functionality2.java:31: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.QueryResults;
+                             ^
+src/main/java/eu/leads/api/m24/demo/Functionality1.java:11: error: package org.json does not exist
+import org.json.JSONObject;
+               ^
+src/main/java/eu/leads/api/m24/demo/Functionality1.java:13: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.ResultSet;
+                               ^
+src/main/java/eu/leads/api/m24/demo/Functionality1.java:14: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Row;
+                               ^
+src/main/java/eu/leads/api/m24/demo/Functionality1.java:15: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Session;
+                               ^
+src/main/java/eu/leads/api/m24/demo/Functionality1.java:28: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.QueryResults;
+                             ^
+src/main/java/eu/leads/api/m24/func/Functionality2.java:14: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.ResultSet;
+                               ^
+src/main/java/eu/leads/api/m24/func/Functionality2.java:15: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Row;
+                               ^
+src/main/java/eu/leads/api/m24/func/Functionality2.java:16: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Session;
+                               ^
+src/main/java/eu/leads/api/m24/func/Functionality1A.java:13: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.ResultSet;
+                               ^
+src/main/java/eu/leads/api/m24/func/Functionality1A.java:14: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Row;
+                               ^
+src/main/java/eu/leads/api/m24/func/Functionality1A.java:15: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Session;
+                               ^
+src/main/java/eu/leads/api/m24/func/Functionality1.java:11: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.ResultSet;
+                               ^
+src/main/java/eu/leads/api/m24/func/Functionality1.java:12: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Row;
+                               ^
+src/main/java/eu/leads/api/m24/func/Functionality1.java:13: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Session;
+                               ^
+src/main/java/eu/leads/infext/Useful.java:18: error: package org.hamcrest does not exist
+import org.hamcrest.Description;
+                   ^
+src/main/java/eu/leads/infext/Useful.java:19: error: package org.hamcrest does not exist
+import org.hamcrest.Factory;
+                   ^
+src/main/java/eu/leads/infext/Useful.java:20: error: package org.hamcrest does not exist
+import org.hamcrest.Matcher;
+                   ^
+src/main/java/eu/leads/infext/Useful.java:21: error: package org.hamcrest does not exist
+import org.hamcrest.TypeSafeMatcher;
+                   ^
+src/main/java/eu/leads/infext/Useful.java:22: error: package org.json does not exist
+import org.json.JSONArray;
+               ^
+src/main/java/eu/leads/infext/Useful.java:23: error: package org.json does not exist
+import org.json.JSONException;
+               ^
+src/main/java/eu/leads/infext/Useful.java:24: error: package org.json does not exist
+import org.json.JSONObject;
+               ^
+src/main/java/eu/leads/infext/Useful.java:307: error: cannot find symbol
+	public static Matcher<Object> matches(String regex) {
+	              ^
+  symbol:   class Matcher
+  location: class eu.leads.infext.Useful
+src/main/java/eu/leads/infext/Useful.java:285: error: cannot find symbol
+	static class StringMatchesMatcher extends TypeSafeMatcher<Object> {
+	                                          ^
+  symbol:   class TypeSafeMatcher
+  location: class eu.leads.infext.Useful
+src/main/java/eu/leads/infext/Useful.java:301: error: cannot find symbol
+	    public void describeTo(Description description) {
+	                           ^
+  symbol:   class Description
+  location: class eu.leads.infext.Useful.StringMatchesMatcher
+src/main/java/eu/leads/infext/datastore/impl/LeadsDataStore.java:6: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.QueryResults;
+                             ^
+src/main/java/eu/leads/infext/datastore/impl/LeadsDataStore.java:7: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.QueryStatus;
+                             ^
+src/main/java/eu/leads/infext/datastore/impl/LeadsDataStore.java:8: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.WebServiceClient;
+                             ^
+src/main/java/eu/leads/infext/datastore/impl/LeadsDataStore.java:29: error: cannot find symbol
+    public static QueryResults send_query_and_wait(String sql) {
+                  ^
+  symbol:   class QueryResults
+  location: class eu.leads.infext.datastore.impl.LeadsDataStore
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:3: error: package ch.lambdaj does not exist
+import static ch.lambdaj.Lambda.filter;
+                        ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:3: error: static import only from classes and interfaces
+import static ch.lambdaj.Lambda.filter;
+^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:19: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.BoundStatement;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:20: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Cluster;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:21: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.ColumnDefinitions;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:22: error: package com.datastax.driver.core.ColumnDefinitions does not exist
+import com.datastax.driver.core.ColumnDefinitions.Definition;
+                                                 ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:23: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.DataType;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:24: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Host;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:25: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Metadata;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:26: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.PreparedStatement;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:27: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.ResultSet;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:28: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Row;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:29: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Session;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:30: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.SimpleStatement;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:31: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Statement;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:40: error: cannot find symbol
+	private Cluster cluster;
+	        ^
+  symbol:   class Cluster
+  location: class eu.leads.infext.datastore.impl.CassandraCQLDataStore
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:41: error: cannot find symbol
+	private Session session;
+	        ^
+  symbol:   class Session
+  location: class eu.leads.infext.datastore.impl.CassandraCQLDataStore
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:400: error: cannot find symbol
+	private Iterator<Row> urisIterator = null;
+	                 ^
+  symbol:   class Row
+  location: class eu.leads.infext.datastore.impl.CassandraCQLDataStore
+src/main/java/leadsm24/rest/LEADSM24Resource.java:38: error: cannot find symbol
+    @GET("/F1")
+     ^
+  symbol:   class GET
+  location: class leadsm24.rest.LEADSM24Resource
+src/main/java/leadsm24/rest/LEADSM24Resource.java:39: error: cannot find symbol
+    @PermitAll
+     ^
+  symbol:   class PermitAll
+  location: class leadsm24.rest.LEADSM24Resource
+src/main/java/leadsm24/rest/LEADSM24Resource.java:82: error: cannot find symbol
+    @GET("/F1A")
+     ^
+  symbol:   class GET
+  location: class leadsm24.rest.LEADSM24Resource
+src/main/java/leadsm24/rest/LEADSM24Resource.java:83: error: cannot find symbol
+    @PermitAll
+     ^
+  symbol:   class PermitAll
+  location: class leadsm24.rest.LEADSM24Resource
+src/main/java/leadsm24/rest/LEADSM24Resource.java:121: error: cannot find symbol
+    @GET("/F2")
+     ^
+  symbol:   class GET
+  location: class leadsm24.rest.LEADSM24Resource
+src/main/java/leadsm24/rest/LEADSM24Resource.java:122: error: cannot find symbol
+    @PermitAll
+     ^
+  symbol:   class PermitAll
+  location: class leadsm24.rest.LEADSM24Resource
+src/main/java/leadsm24/AppModule.java:19: error: cannot find symbol
+    @Provides
+     ^
+  symbol:   class Provides
+  location: class leadsm24.AppModule
+src/main/java/leadsm24/AppModule.java:24: error: cannot find symbol
+    @Provides
+     ^
+  symbol:   class Provides
+  location: class leadsm24.AppModule
+src/main/java/leadsm24/AppModule.java:25: error: cannot find symbol
+    @Named("restx.admin.password")
+     ^
+  symbol:   class Named
+  location: class leadsm24.AppModule
+src/main/java/leadsm24/AppModule.java:30: error: cannot find symbol
+    @Provides
+     ^
+  symbol:   class Provides
+  location: class leadsm24.AppModule
+src/main/java/leadsm24/AppModule.java:36: error: cannot find symbol
+    @Provides
+     ^
+  symbol:   class Provides
+  location: class leadsm24.AppModule
+src/main/java/leadsm24/AppModule.java:44: error: cannot find symbol
+            @Named("restx.admin.passwordHash") String defaultAdminPasswordHash, ObjectMapper mapper) {
+             ^
+  symbol:   class Named
+  location: class leadsm24.AppModule
+src/main/java/leadsm24/AppModule.java:41: error: cannot find symbol
+    @Provides
+     ^
+  symbol:   class Provides
+  location: class leadsm24.AppModule
+src/main/java/eu/leads/infext/Useful.java:306: error: cannot find symbol
+	@Factory
+	 ^
+  symbol:   class Factory
+  location: class eu.leads.infext.Useful
+
+	at restx.classloader.CompilationManager.incrementalCompile(CompilationManager.java:340) ~[restx-classloader-0.33.1.jar:na]
+	at restx.RestxMainRouterFactory.build(RestxMainRouterFactory.java:381) ~[restx-core-0.33.1.jar:na]
+	at restx.RestxMainRouterFactory.newInstance(RestxMainRouterFactory.java:60) ~[restx-core-0.33.1.jar:na]
+	at restx.servlet.RestxMainRouterServlet.init(RestxMainRouterServlet.java:67) ~[restx-servlet-0.33.1.jar:na]
+	at org.eclipse.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:519) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletHolder.doStart(ServletHolder.java:331) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:747) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:265) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1250) [jetty-webapp-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:706) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:492) [jetty-webapp-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerCollection.doStart(HandlerCollection.java:229) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerCollection.doStart(HandlerCollection.java:229) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.Server.doStart(Server.java:277) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at restx.server.JettyWebServer.start(JettyWebServer.java:113) [restx-server-jetty-0.33.1.jar:na]
+	at restx.server.JettyWebServer.startAndAwait(JettyWebServer.java:118) [restx-server-jetty-0.33.1.jar:na]
+	at leadsm24.AppServer.main(AppServer.java:30) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_20]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_20]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_20]
+	at java.lang.reflect.Method.invoke(Method.java:483) ~[na:1.8.0_20]
+	at org.codehaus.mojo.exec.ExecJavaMojo$1.run(ExecJavaMojo.java:293) [exec-maven-plugin-1.3.2.jar:na]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_20]
+Caused by: java.lang.RuntimeException: Compilation failed:
+src/main/java/leadsm24/rest/LEADSM24Resource.java:10: error: package org.json does not exist
+import org.json.JSONArray;
+               ^
+src/main/java/leadsm24/rest/LEADSM24Resource.java:11: error: package org.json does not exist
+import org.json.JSONObject;
+               ^
+src/main/java/leadsm24/rest/LEADSM24Resource.java:25: error: package restx.annotations does not exist
+import restx.annotations.GET;
+                        ^
+src/main/java/leadsm24/rest/LEADSM24Resource.java:26: error: package restx.annotations does not exist
+import restx.annotations.RestxResource;
+                        ^
+src/main/java/leadsm24/rest/LEADSM24Resource.java:27: error: package restx.factory does not exist
+import restx.factory.Component;
+                    ^
+src/main/java/leadsm24/rest/LEADSM24Resource.java:28: error: package restx.security does not exist
+import restx.security.PermitAll;
+                     ^
+src/main/java/leadsm24/rest/LEADSM24Resource.java:30: error: cannot find symbol
+@Component @RestxResource
+ ^
+  symbol: class Component
+src/main/java/leadsm24/rest/LEADSM24Resource.java:30: error: cannot find symbol
+@Component @RestxResource
+            ^
+  symbol: class RestxResource
+src/main/java/leadsm24/AppModule.java:3: error: package restx.config does not exist
+import restx.config.ConfigLoader;
+                   ^
+src/main/java/leadsm24/AppModule.java:4: error: package restx.config does not exist
+import restx.config.ConfigSupplier;
+                   ^
+src/main/java/leadsm24/AppModule.java:5: error: package restx.factory does not exist
+import restx.factory.Provides;
+                    ^
+src/main/java/leadsm24/AppModule.java:7: error: package com.fasterxml.jackson.databind does not exist
+import com.fasterxml.jackson.databind.ObjectMapper;
+                                     ^
+src/main/java/leadsm24/AppModule.java:8: error: package com.google.common.base does not exist
+import com.google.common.base.Charsets;
+                             ^
+src/main/java/leadsm24/AppModule.java:9: error: package com.google.common.collect does not exist
+import com.google.common.collect.ImmutableSet;
+                                ^
+src/main/java/leadsm24/AppModule.java:10: error: package restx.security does not exist
+import restx.security.*;
+^
+src/main/java/leadsm24/AppModule.java:11: error: package restx.factory does not exist
+import restx.factory.Module;
+                    ^
+src/main/java/leadsm24/AppModule.java:12: error: package restx.factory does not exist
+import restx.factory.Provides;
+                    ^
+src/main/java/leadsm24/AppModule.java:13: error: package javax.inject does not exist
+import javax.inject.Named;
+                   ^
+src/main/java/leadsm24/AppModule.java:17: error: cannot find symbol
+@Module
+ ^
+  symbol: class Module
+src/main/java/leadsm24/AppModule.java:20: error: cannot find symbol
+    public SignatureKey signatureKey() {
+           ^
+  symbol:   class SignatureKey
+  location: class leadsm24.AppModule
+src/main/java/leadsm24/AppModule.java:31: error: cannot find symbol
+    public ConfigSupplier appConfigSupplier(ConfigLoader configLoader) {
+                                            ^
+  symbol:   class ConfigLoader
+  location: class leadsm24.AppModule
+src/main/java/leadsm24/AppModule.java:31: error: cannot find symbol
+    public ConfigSupplier appConfigSupplier(ConfigLoader configLoader) {
+           ^
+  symbol:   class ConfigSupplier
+  location: class leadsm24.AppModule
+src/main/java/leadsm24/AppModule.java:37: error: cannot find symbol
+    public CredentialsStrategy credentialsStrategy() {
+           ^
+  symbol:   class CredentialsStrategy
+  location: class leadsm24.AppModule
+src/main/java/leadsm24/AppModule.java:43: error: cannot find symbol
+            SecuritySettings securitySettings, CredentialsStrategy credentialsStrategy,
+            ^
+  symbol:   class SecuritySettings
+  location: class leadsm24.AppModule
+src/main/java/leadsm24/AppModule.java:43: error: cannot find symbol
+            SecuritySettings securitySettings, CredentialsStrategy credentialsStrategy,
+                                               ^
+  symbol:   class CredentialsStrategy
+  location: class leadsm24.AppModule
+src/main/java/leadsm24/AppModule.java:44: error: cannot find symbol
+            @Named("restx.admin.passwordHash") String defaultAdminPasswordHash, ObjectMapper mapper) {
+                                                                                ^
+  symbol:   class ObjectMapper
+  location: class leadsm24.AppModule
+src/main/java/leadsm24/AppModule.java:42: error: cannot find symbol
+    public BasicPrincipalAuthenticator basicPrincipalAuthenticator(
+           ^
+  symbol:   class BasicPrincipalAuthenticator
+  location: class leadsm24.AppModule
+src/main/java/leadsm24/AppServer.java:3: error: package com.google.common.base does not exist
+import com.google.common.base.Optional;
+                             ^
+src/main/java/leadsm24/AppServer.java:4: error: package restx.server does not exist
+import restx.server.WebServer;
+                   ^
+src/main/java/leadsm24/AppServer.java:5: error: package restx.server does not exist
+import restx.server.JettyWebServer;
+                   ^
+src/main/java/eu/leads/api/m24/demo/Functionality2.java:14: error: package org.json does not exist
+import org.json.JSONObject;
+               ^
+src/main/java/eu/leads/api/m24/demo/Functionality2.java:16: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.ResultSet;
+                               ^
+src/main/java/eu/leads/api/m24/demo/Functionality2.java:17: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Row;
+                               ^
+src/main/java/eu/leads/api/m24/demo/Functionality2.java:18: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Session;
+                               ^
+src/main/java/eu/leads/api/m24/demo/Functionality1A.java:13: error: package org.json does not exist
+import org.json.JSONObject;
+               ^
+src/main/java/eu/leads/api/m24/demo/Functionality1A.java:15: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.ResultSet;
+                               ^
+src/main/java/eu/leads/api/m24/demo/Functionality1A.java:16: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Row;
+                               ^
+src/main/java/eu/leads/api/m24/demo/Functionality1A.java:17: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Session;
+                               ^
+src/main/java/eu/leads/api/m24/demo/Functionality1A.java:29: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.QueryResults;
+                             ^
+src/main/java/eu/leads/api/m24/demo/Functionality2.java:31: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.QueryResults;
+                             ^
+src/main/java/eu/leads/api/m24/demo/Functionality1.java:11: error: package org.json does not exist
+import org.json.JSONObject;
+               ^
+src/main/java/eu/leads/api/m24/demo/Functionality1.java:13: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.ResultSet;
+                               ^
+src/main/java/eu/leads/api/m24/demo/Functionality1.java:14: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Row;
+                               ^
+src/main/java/eu/leads/api/m24/demo/Functionality1.java:15: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Session;
+                               ^
+src/main/java/eu/leads/api/m24/demo/Functionality1.java:28: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.QueryResults;
+                             ^
+src/main/java/eu/leads/api/m24/func/Functionality2.java:14: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.ResultSet;
+                               ^
+src/main/java/eu/leads/api/m24/func/Functionality2.java:15: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Row;
+                               ^
+src/main/java/eu/leads/api/m24/func/Functionality2.java:16: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Session;
+                               ^
+src/main/java/eu/leads/api/m24/func/Functionality1A.java:13: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.ResultSet;
+                               ^
+src/main/java/eu/leads/api/m24/func/Functionality1A.java:14: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Row;
+                               ^
+src/main/java/eu/leads/api/m24/func/Functionality1A.java:15: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Session;
+                               ^
+src/main/java/eu/leads/api/m24/func/Functionality1.java:11: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.ResultSet;
+                               ^
+src/main/java/eu/leads/api/m24/func/Functionality1.java:12: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Row;
+                               ^
+src/main/java/eu/leads/api/m24/func/Functionality1.java:13: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Session;
+                               ^
+src/main/java/eu/leads/infext/Useful.java:18: error: package org.hamcrest does not exist
+import org.hamcrest.Description;
+                   ^
+src/main/java/eu/leads/infext/Useful.java:19: error: package org.hamcrest does not exist
+import org.hamcrest.Factory;
+                   ^
+src/main/java/eu/leads/infext/Useful.java:20: error: package org.hamcrest does not exist
+import org.hamcrest.Matcher;
+                   ^
+src/main/java/eu/leads/infext/Useful.java:21: error: package org.hamcrest does not exist
+import org.hamcrest.TypeSafeMatcher;
+                   ^
+src/main/java/eu/leads/infext/Useful.java:22: error: package org.json does not exist
+import org.json.JSONArray;
+               ^
+src/main/java/eu/leads/infext/Useful.java:23: error: package org.json does not exist
+import org.json.JSONException;
+               ^
+src/main/java/eu/leads/infext/Useful.java:24: error: package org.json does not exist
+import org.json.JSONObject;
+               ^
+src/main/java/eu/leads/infext/Useful.java:307: error: cannot find symbol
+	public static Matcher<Object> matches(String regex) {
+	              ^
+  symbol:   class Matcher
+  location: class eu.leads.infext.Useful
+src/main/java/eu/leads/infext/Useful.java:285: error: cannot find symbol
+	static class StringMatchesMatcher extends TypeSafeMatcher<Object> {
+	                                          ^
+  symbol:   class TypeSafeMatcher
+  location: class eu.leads.infext.Useful
+src/main/java/eu/leads/infext/Useful.java:301: error: cannot find symbol
+	    public void describeTo(Description description) {
+	                           ^
+  symbol:   class Description
+  location: class eu.leads.infext.Useful.StringMatchesMatcher
+src/main/java/eu/leads/infext/datastore/impl/LeadsDataStore.java:6: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.QueryResults;
+                             ^
+src/main/java/eu/leads/infext/datastore/impl/LeadsDataStore.java:7: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.QueryStatus;
+                             ^
+src/main/java/eu/leads/infext/datastore/impl/LeadsDataStore.java:8: error: package eu.leads.processor.web does not exist
+import eu.leads.processor.web.WebServiceClient;
+                             ^
+src/main/java/eu/leads/infext/datastore/impl/LeadsDataStore.java:29: error: cannot find symbol
+    public static QueryResults send_query_and_wait(String sql) {
+                  ^
+  symbol:   class QueryResults
+  location: class eu.leads.infext.datastore.impl.LeadsDataStore
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:3: error: package ch.lambdaj does not exist
+import static ch.lambdaj.Lambda.filter;
+                        ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:3: error: static import only from classes and interfaces
+import static ch.lambdaj.Lambda.filter;
+^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:19: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.BoundStatement;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:20: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Cluster;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:21: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.ColumnDefinitions;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:22: error: package com.datastax.driver.core.ColumnDefinitions does not exist
+import com.datastax.driver.core.ColumnDefinitions.Definition;
+                                                 ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:23: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.DataType;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:24: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Host;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:25: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Metadata;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:26: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.PreparedStatement;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:27: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.ResultSet;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:28: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Row;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:29: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Session;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:30: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.SimpleStatement;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:31: error: package com.datastax.driver.core does not exist
+import com.datastax.driver.core.Statement;
+                               ^
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:40: error: cannot find symbol
+	private Cluster cluster;
+	        ^
+  symbol:   class Cluster
+  location: class eu.leads.infext.datastore.impl.CassandraCQLDataStore
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:41: error: cannot find symbol
+	private Session session;
+	        ^
+  symbol:   class Session
+  location: class eu.leads.infext.datastore.impl.CassandraCQLDataStore
+src/main/java/eu/leads/infext/datastore/impl/CassandraCQLDataStore.java:400: error: cannot find symbol
+	private Iterator<Row> urisIterator = null;
+	                 ^
+  symbol:   class Row
+  location: class eu.leads.infext.datastore.impl.CassandraCQLDataStore
+src/main/java/leadsm24/rest/LEADSM24Resource.java:38: error: cannot find symbol
+    @GET("/F1")
+     ^
+  symbol:   class GET
+  location: class leadsm24.rest.LEADSM24Resource
+src/main/java/leadsm24/rest/LEADSM24Resource.java:39: error: cannot find symbol
+    @PermitAll
+     ^
+  symbol:   class PermitAll
+  location: class leadsm24.rest.LEADSM24Resource
+src/main/java/leadsm24/rest/LEADSM24Resource.java:82: error: cannot find symbol
+    @GET("/F1A")
+     ^
+  symbol:   class GET
+  location: class leadsm24.rest.LEADSM24Resource
+src/main/java/leadsm24/rest/LEADSM24Resource.java:83: error: cannot find symbol
+    @PermitAll
+     ^
+  symbol:   class PermitAll
+  location: class leadsm24.rest.LEADSM24Resource
+src/main/java/leadsm24/rest/LEADSM24Resource.java:121: error: cannot find symbol
+    @GET("/F2")
+     ^
+  symbol:   class GET
+  location: class leadsm24.rest.LEADSM24Resource
+src/main/java/leadsm24/rest/LEADSM24Resource.java:122: error: cannot find symbol
+    @PermitAll
+     ^
+  symbol:   class PermitAll
+  location: class leadsm24.rest.LEADSM24Resource
+src/main/java/leadsm24/AppModule.java:19: error: cannot find symbol
+    @Provides
+     ^
+  symbol:   class Provides
+  location: class leadsm24.AppModule
+src/main/java/leadsm24/AppModule.java:24: error: cannot find symbol
+    @Provides
+     ^
+  symbol:   class Provides
+  location: class leadsm24.AppModule
+src/main/java/leadsm24/AppModule.java:25: error: cannot find symbol
+    @Named("restx.admin.password")
+     ^
+  symbol:   class Named
+  location: class leadsm24.AppModule
+src/main/java/leadsm24/AppModule.java:30: error: cannot find symbol
+    @Provides
+     ^
+  symbol:   class Provides
+  location: class leadsm24.AppModule
+src/main/java/leadsm24/AppModule.java:36: error: cannot find symbol
+    @Provides
+     ^
+  symbol:   class Provides
+  location: class leadsm24.AppModule
+src/main/java/leadsm24/AppModule.java:44: error: cannot find symbol
+            @Named("restx.admin.passwordHash") String defaultAdminPasswordHash, ObjectMapper mapper) {
+             ^
+  symbol:   class Named
+  location: class leadsm24.AppModule
+src/main/java/leadsm24/AppModule.java:41: error: cannot find symbol
+    @Provides
+     ^
+  symbol:   class Provides
+  location: class leadsm24.AppModule
+src/main/java/eu/leads/infext/Useful.java:306: error: cannot find symbol
+	@Factory
+	 ^
+  symbol:   class Factory
+  location: class eu.leads.infext.Useful
+
+	at restx.classloader.CompilationManager.compile(CompilationManager.java:504) ~[restx-classloader-0.33.1.jar:na]
+	at restx.classloader.CompilationManager.access$700(CompilationManager.java:50) ~[restx-classloader-0.33.1.jar:na]
+	at restx.classloader.CompilationManager$8.call(CompilationManager.java:332) ~[restx-classloader-0.33.1.jar:na]
+	at restx.classloader.CompilationManager$8.call(CompilationManager.java:310) ~[restx-classloader-0.33.1.jar:na]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[na:1.8.0_20]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[na:1.8.0_20]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[na:1.8.0_20]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) ~[na:1.8.0_20]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) ~[na:1.8.0_20]
+	... 1 common frames omitted
+2014-11-19 15:12:00,722 [Thread-3        ] [          ] INFO  o.e.j.s.listener.ELContextCleaner - javax.el.BeanELResolver purged
+2014-11-19 15:12:00,825 [Thread-3        ] [          ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced

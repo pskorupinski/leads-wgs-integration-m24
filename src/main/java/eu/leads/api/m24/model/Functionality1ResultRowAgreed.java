@@ -2,7 +2,7 @@ package eu.leads.api.m24.model;
 
 import eu.leads.api.m24.FunctionalityAbstResultRow;
 
-public class Functionality1ResultRowAgreed extends FunctionalityAbstResultRow {
+public class Functionality1ResultRowAgreed extends FunctionalityAbstResultRow implements Comparable<Functionality1ResultRowAgreed>  {
 	public String shop_name = null;
 	public String prod_name = null;
 	public String day = null;
@@ -81,6 +81,20 @@ public class Functionality1ResultRowAgreed extends FunctionalityAbstResultRow {
 		} else if (!day.equals(other.day))
 			return false;
 		return true;
+	}
+
+	@Override
+	public int compareTo(Functionality1ResultRowAgreed other) {
+		if(shop_name.equals(other.shop_name)) {
+			if(prod_name.equals(other.prod_name)) {
+				if(day.equals(other.day)) {
+						return 0;
+				}
+				else return day.compareTo(other.day);
+			}
+			else return prod_name.compareTo(other.prod_name);
+		}
+		else return shop_name.compareTo(other.shop_name);
 	}
 	
 	
