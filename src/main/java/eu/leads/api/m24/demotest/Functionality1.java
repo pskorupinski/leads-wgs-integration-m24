@@ -22,10 +22,11 @@ import eu.leads.api.m24.model.Functionality1AParams;
 import eu.leads.api.m24.model.Functionality1Params;
 import eu.leads.api.m24.model.Functionality1ResultRowAgreed;
 import eu.leads.infext.Useful;
-import eu.leads.infext.datastore.DataStoreSingleton;
-import eu.leads.infext.datastore.datastruct.UrlTimestamp;
-import eu.leads.infext.datastore.impl.LeadsDataStore;
 import eu.leads.processor.web.QueryResults;
+import eu.leads.datastore.DataStoreSingleton;
+import eu.leads.datastore.datastruct.UrlTimestamp;
+import eu.leads.datastore.impl.LeadsDataStore;
+import eu.leads.datastore.impl.LeadsQueryInterface;
 
 public class Functionality1 implements FunctionalityAbst {
 	
@@ -54,7 +55,7 @@ public class Functionality1 implements FunctionalityAbst {
 			query1 += "'" + Useful.fqdnToNutchUrl(params.shopName.get(i)) + "',";
 		query1 += "'" + Useful.fqdnToNutchUrl(params.shopName.get(i)) + "');";
 		
-		QueryResults rs = LeadsDataStore.send_query_and_wait(query1);
+		QueryResults rs = LeadsQueryInterface.execute(query1);
 		if(rs != null) {
 			List<String> rows = rs.getResult();
 			for(String row : rows) {
@@ -86,7 +87,7 @@ public class Functionality1 implements FunctionalityAbst {
 			
 		}
 		
-		QueryResults rs2 = LeadsDataStore.send_query_and_wait(query2);
+		QueryResults rs2 = LeadsQueryInterface.execute(query2);
 		if(rs2 != null) {
 			List<String> rows = rs2.getResult();
 			for(String row : rows) {
@@ -111,7 +112,7 @@ public class Functionality1 implements FunctionalityAbst {
 			
 		}
 		
-		QueryResults rs3 = LeadsDataStore.send_query_and_wait(query3);
+		QueryResults rs3 = LeadsQueryInterface.execute(query3);
 		if(rs3 != null) {
 			List<String> rows = rs3.getResult();
 			for(String row : rows) {
@@ -147,7 +148,7 @@ public class Functionality1 implements FunctionalityAbst {
 	////////////////////////////////////////////////////////////
 	
 	public static void main(String[] args) {
-		LeadsDataStore.initialize("http://clu25.softnet.tuc.gr", 8080);
+		LeadsQueryInterface.initialize("http://5.147.254.199", 8080);
 		Functionality1 func1 = new Functionality1();
 		Functionality1Params params = new Functionality1Params();
 		params.shopName = new ArrayList<String>() {{ add("www.holabirdsports.com"); add("www.wiggle.com"); }};

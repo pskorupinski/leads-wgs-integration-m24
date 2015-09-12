@@ -1,18 +1,26 @@
 package leadsm24;
 
+import restx.common.ConfigElement;
+import restx.common.RestxConfig;
 import restx.config.ConfigLoader;
 import restx.config.ConfigSupplier;
 import restx.factory.Provides;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.base.Charsets;
+import com.google.common.base.Predicates;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
+
 import restx.security.*;
+import restx.security.StdCORSAuthorizer.Builder;
 import restx.factory.Module;
 import restx.factory.Provides;
+
 import javax.inject.Named;
 
 import java.nio.file.Paths;
+import java.util.regex.Pattern;
 
 @Module
 public class AppModule {
@@ -26,10 +34,23 @@ public class AppModule {
     public String restxAdminPassword() {
         return "LEADSdemoWGS";
     }
+    
+    @Provides
+    public CORSAuthorizer getAuthorizer() {
+    	Builder builder = StdCORSAuthorizer.builder();
+    	StdCORSAuthorizer authorizer = builder.build();
+    	System.err.println(authorizer);
+    	return authorizer;    	
+    }
 
     @Provides
     public ConfigSupplier appConfigSupplier(ConfigLoader configLoader) {
         // Load settings.properties in leadsm24 package as a set of config entries
+    	ConfigSupplier configSupplier = configLoader.fromResource("leadsm24/settings");
+    	RestxConfig config = configSupplier.get();
+    	for(ConfigElement element : config.elements())
+    		System.setProperty(element.getKey(), element.getValue());
+    	
         return configLoader.fromResource("leadsm24/settings");
     }
 

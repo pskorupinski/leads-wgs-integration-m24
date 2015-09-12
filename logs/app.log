@@ -6268,3 +6268,564 @@ org.json.JSONException: JSONObject["ts"] not a string.
 2014-11-24 00:13:09,091 [main            ] [          ] INFO  restx.stats.RestxStatsCollector - collecting and sharing stats enabled - see http://restx.io/stats.html for details.
 2014-11-24 00:13:15,468 [qtp1256837057-24] [          ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /F1A ? inputJSON={"country":["UK","US"],"keywords":["adidas","nike"],"periodStart":0,"periodEnd":1415800000010} - per request factory created in 1.355 s
 2014-11-24 00:13:58,093 [qtp1256837057-24] [admin     ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /F1A ? inputJSON={"country":["UK","US"],"keywords":["adidas","nike"],"periodStart":0,"periodEnd":1415800000010} >> OK - 42.62 s
+2015-08-10 11:24:12,532 [main            ] [          ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+2015-08-10 11:24:14,462 [main            ] [          ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+2015-08-10 11:24:14,471 [main            ] [          ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8081/eu.leads.api/@/ui/
+ --
+
+2015-08-10 11:24:21,232 [pool-1-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 37 sources compiled in 5.928 s
+2015-08-10 11:24:23,536 [main            ] [          ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /leads/workm30/leads-wgs-integration-m24/.
+2015-08-10 11:24:24,474 [main            ] [          ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+2015-08-10 11:24:24,907 [main            ] [          ] INFO  restx.stats.RestxStatsCollector - collecting and sharing stats enabled - see http://restx.io/stats.html for details.
+2015-08-10 11:24:38,700 [qtp341878976-22 ] [          ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+2015-08-10 11:24:39,055 [qtp341878976-22 ] [          ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /FS - per request factory created in 1.072 s
+2015-08-10 11:24:39,120 [qtp341878976-22 ] [          ] WARN  restx.StdRestxMainRouter - request raised IllegalStateException: query param inputJSON is required
+java.lang.IllegalStateException: query param inputJSON is required
+	at restx.common.MorePreconditions.checkPresent(MorePreconditions.java:19) ~[restx-common-0.33.1.jar:na]
+	at leadsm24.rest.LEADSM24ResourceRouter$4.doRoute(LEADSM24ResourceRouter.java:141) ~[na:na]
+	at leadsm24.rest.LEADSM24ResourceRouter$4.doRoute(LEADSM24ResourceRouter.java:136) ~[na:na]
+	at restx.entity.StdEntityRoute.handle(StdEntityRoute.java:139) ~[restx-core-0.33.1.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.33.1.jar:na]
+	at restx.ResponseCloserFilter.handle(ResponseCloserFilter.java:28) ~[restx-core-0.33.1.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.33.1.jar:na]
+	at restx.CacheFilter$1.handle(CacheFilter.java:51) ~[restx-core-0.33.1.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.33.1.jar:na]
+	at restx.security.RestxSessionLogFilter.handle(RestxSessionLogFilter.java:43) ~[restx-core-0.33.1.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.33.1.jar:na]
+	at restx.security.RestxSessionCookieFilter.handle(RestxSessionCookieFilter.java:99) ~[restx-core-0.33.1.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.33.1.jar:na]
+	at restx.stats.RestxStatsCollectionFilter.handle(RestxStatsCollectionFilter.java:39) ~[restx-stats-admin-0.33.1.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.33.1.jar:na]
+	at restx.StdRestxMainRouter.route(StdRestxMainRouter.java:152) ~[restx-core-0.33.1.jar:na]
+	at restx.RestxMainRouterFactory$PerRequestFactoryLoader.route(RestxMainRouterFactory.java:217) [restx-core-0.33.1.jar:na]
+	at restx.RestxMainRouterFactory$RecordingMainRouter.route(RestxMainRouterFactory.java:174) [restx-core-0.33.1.jar:na]
+	at restx.RestxMainRouterFactory$CompilationManagerRouter.route(RestxMainRouterFactory.java:326) [restx-core-0.33.1.jar:na]
+	at restx.servlet.AbstractRestxMainRouterServlet.service(AbstractRestxMainRouterServlet.java:48) [restx-servlet-0.33.1.jar:na]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:770) [javax.servlet-api-3.0.1.jar:3.0.1]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:669) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:536) [jetty-security-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerList.handle(HandlerList.java:52) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.Server.handle(Server.java:365) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635) [jetty-http-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235) [jetty-http-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628) [jetty-io-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52) [jetty-io-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_20]
+2015-08-10 11:24:39,177 [qtp341878976-22 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /FS >> BAD_REQUEST - 94.25 ms
+2015-08-10 11:25:16,215 [qtp341878976-22 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /FS ? inputJSON={'key':'blahblah'} >> OK - 5.186 ms
+2015-08-10 11:47:14,662 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 2.074 s
+2015-08-10 11:50:55,978 [qtp341878976-49 ] [          ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /FS ? inputJSON=[{"Month":"Jan-11","Date":"01/01/2011","Unit_Sales":"100"},{"Month":"Mar-11","Date":"01/03/2011","Unit_Sales":"200"},{"Month":"Jun-11","Date":"01/06/2011","Unit_Sales":"300"}] - per request factory created in 211.3 ms
+2015-08-10 11:50:55,986 [qtp341878976-49 ] [          ] INFO  restx.security.CORSFilter - Unauthorized CORS request; Origin=null; Method=GET
+2015-08-10 11:50:56,188 [qtp341878976-49 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /FS ? inputJSON=[{"Month":"Jan-11","Date":"01/01/2011","Unit_Sales":"100"},{"Month":"Mar-11","Date":"01/03/2011","Unit_Sales":"200"},{"Month":"Jun-11","Date":"01/06/2011","Unit_Sales":"300"}] >> FORBIDDEN - 208.5 ms
+2015-08-10 11:52:58,490 [qtp341878976-52 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /FS ? inputJSON=[{"Month":"Jan-11","Date":"01/01/2011","Unit_Sales":"100"},{"Month":"Mar-11","Date":"01/03/2011","Unit_Sales":"200"},{"Month":"Jun-11","Date":"01/06/2011","Unit_Sales":"300"}] >> OK - 3.835 ms
+2015-08-10 12:00:18,175 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.027 s
+2015-08-10 12:06:08,346 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 703.6 ms
+2015-08-10 12:08:11,708 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 651.3 ms
+2015-08-10 12:08:26,124 [Thread-1        ] [          ] INFO  o.e.j.s.listener.ELContextCleaner - javax.el.BeanELResolver purged
+2015-08-10 12:08:26,196 [Thread-1        ] [          ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+2015-08-10 12:08:41,124 [main            ] [          ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+2015-08-10 12:08:42,322 [main            ] [          ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+2015-08-10 12:08:42,323 [main            ] [          ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8081/eu.leads.api/@/ui/
+ --
+
+2015-08-10 12:08:43,128 [main            ] [          ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /leads/workm30/leads-wgs-integration-m24/.
+2015-08-10 12:08:44,661 [main            ] [          ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+2015-08-10 12:08:44,831 [main            ] [          ] INFO  restx.stats.RestxStatsCollector - collecting and sharing stats enabled - see http://restx.io/stats.html for details.
+2015-08-10 12:08:49,707 [qtp341878976-22 ] [          ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+2015-08-10 12:08:50,008 [qtp341878976-22 ] [          ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /FS ? inputJSON=[{"Month":"Jan-11","Date":"01/01/2011","Unit_Sales":"100"},{"Month":"Mar-11","Date":"01/03/2011","Unit_Sales":"200"},{"Month":"Jun-11","Date":"01/06/2011","Unit_Sales":"300"}] - per request factory created in 825.7 ms
+2015-08-10 12:08:50,024 [qtp341878976-22 ] [          ] INFO  restx.security.CORSFilter - Unauthorized CORS request; Origin=null; Method=GET
+2015-08-10 12:08:50,035 [qtp341878976-22 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /FS ? inputJSON=[{"Month":"Jan-11","Date":"01/01/2011","Unit_Sales":"100"},{"Month":"Mar-11","Date":"01/03/2011","Unit_Sales":"200"},{"Month":"Jun-11","Date":"01/06/2011","Unit_Sales":"300"}] >> FORBIDDEN - 26.04 ms
+2015-08-10 12:50:29,781 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.104 s
+2015-08-10 12:56:48,248 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.076 s
+2015-08-10 12:58:35,053 [Thread-1        ] [          ] INFO  o.e.j.s.listener.ELContextCleaner - javax.el.BeanELResolver purged
+2015-08-10 12:58:35,110 [Thread-1        ] [          ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+2015-08-10 12:59:21,862 [main            ] [          ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+2015-08-10 12:59:23,095 [main            ] [          ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+2015-08-10 12:59:23,097 [main            ] [          ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8081/eu.leads.api/@/ui/
+ --
+
+2015-08-10 13:00:19,868 [main            ] [          ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /leads/workm30/leads-wgs-integration-m24/.
+2015-08-10 13:00:25,415 [main            ] [          ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+2015-08-10 13:00:25,567 [main            ] [          ] INFO  restx.stats.RestxStatsCollector - collecting and sharing stats enabled - see http://restx.io/stats.html for details.
+2015-08-10 13:01:28,418 [qtp164332069-25 ] [          ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+2015-08-10 13:01:28,894 [qtp164332069-25 ] [          ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /FS ? inputJSON=[{"Month":"Jan-11","Date":"01/01/2011","Unit_Sales":"100"},{"Month":"Mar-11","Date":"01/03/2011","Unit_Sales":"200"},{"Month":"Jun-11","Date":"01/06/2011","Unit_Sales":"300"}] - per request factory created in 53.34 s
+2015-08-10 13:01:28,938 [qtp164332069-25 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /FS ? inputJSON=[{"Month":"Jan-11","Date":"01/01/2011","Unit_Sales":"100"},{"Month":"Mar-11","Date":"01/03/2011","Unit_Sales":"200"},{"Month":"Jun-11","Date":"01/06/2011","Unit_Sales":"300"}] >> OK - 40.96 ms
+2015-08-10 13:04:14,471 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.674 s
+2015-08-10 13:04:38,630 [main            ] [          ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+2015-08-10 13:04:39,718 [main            ] [          ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+2015-08-10 13:04:39,719 [main            ] [          ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8081/eu.leads.api/@/ui/
+ --
+
+2015-08-10 13:04:40,221 [main            ] [          ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /leads/workm30/leads-wgs-integration-m24/.
+2015-08-10 13:04:41,105 [main            ] [          ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+2015-08-10 13:04:41,276 [main            ] [          ] INFO  restx.stats.RestxStatsCollector - collecting and sharing stats enabled - see http://restx.io/stats.html for details.
+2015-08-10 13:04:48,327 [qtp341878976-22 ] [          ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+2015-08-10 13:04:48,686 [qtp341878976-22 ] [          ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /FS ? inputJSON=[{"Month":"Jan-11","Date":"01/01/2011","Unit_Sales":"100"},{"Month":"Mar-11","Date":"01/03/2011","Unit_Sales":"200"},{"Month":"Jun-11","Date":"01/06/2011","Unit_Sales":"300"}] - per request factory created in 876.7 ms
+2015-08-10 13:04:48,716 [qtp341878976-22 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /FS ? inputJSON=[{"Month":"Jan-11","Date":"01/01/2011","Unit_Sales":"100"},{"Month":"Mar-11","Date":"01/03/2011","Unit_Sales":"200"},{"Month":"Jun-11","Date":"01/06/2011","Unit_Sales":"300"}] >> OK - 28.91 ms
+2015-08-10 13:05:36,489 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 3.651 s
+2015-08-10 13:08:20,536 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 583.1 ms
+2015-08-10 13:08:30,949 [qtp341878976-26 ] [          ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /FS ? inputJSON=[{"Month":"Jan-11","Date":"01/01/2011","Unit_Sales":"100"},{"Month":"Mar-11","Date":"01/03/2011","Unit_Sales":"200"},{"Month":"Jun-11","Date":"01/06/2011","Unit_Sales":"300"}] - per request factory created in 396.1 ms
+2015-08-10 13:08:30,976 [qtp341878976-26 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /FS ? inputJSON=[{"Month":"Jan-11","Date":"01/01/2011","Unit_Sales":"100"},{"Month":"Mar-11","Date":"01/03/2011","Unit_Sales":"200"},{"Month":"Jun-11","Date":"01/06/2011","Unit_Sales":"300"}] >> OK - 24.82 ms
+2015-08-10 13:10:34,769 [qtp341878976-28 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /FS ? inputJSON=[{"Month":"Jan-11","Date":"01/01/2011","Unit Sales":"100"},{"Month":"Mar-11","Date":"01/03/2011","Unit Sales":"200"},{"Month":"Jun-11","Date":"01/06/2011","Unit Sales":"300"}] >> OK - 3.699 ms
+2015-08-10 13:12:02,588 [qtp341878976-30 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /FS ? inputJSON=[{"Month":"Jan-11","Date":"01/01/2011","Unit Sales":"100"},{"Month":"Mar-11","Date":"01/03/2011","Unit Sales":"200"},{"Month":"Jun-11","Date":"01/06/2011","Unit Sales":"300"}] >> OK - 5.334 ms
+2015-08-10 16:33:27,588 [qtp341878976-230] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /FS ? inputJSON=[{"Month":"Jan-11","Date":"01/01/2011","Unit Sales":"100"},{"Month":"Mar-11","Date":"01/03/2011","Unit Sales":"200"},{"Month":"Jun-11","Date":"01/06/2011","Unit Sales":"300"}] >> OK - 242.0 ms
+2015-08-10 16:34:01,866 [qtp341878976-230] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /FS ? inputJSON=[{"Month":"Jan-11","Date":"01/01/2011","Unit Sales":"100"},{"Month":"Mar-11","Date":"01/03/2011","Unit Sales":"200"},{"Month":"Jun-11","Date":"01/06/2011","Unit Sales":"300"}] >> OK - 4.797 ms
+2015-08-10 16:34:20,785 [qtp341878976-230] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /FS ? inputJSON=[{"Month":"Jan-11","Date":"01/01/2011","Unit Sales":"100"},{"Month":"Mar-11","Date":"01/03/2011","Unit Sales":"200"},{"Month":"Jun-11","Date":"01/06/2011","Unit Sales":"300"}] >> OK - 1.067 ms
+2015-08-10 17:48:14,174 [qtp341878976-305] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /FS ? inputJSON=[{"Month":"Jan-11","Date":"01/01/2011","Unit Sales":"100"},{"Month":"Mar-11","Date":"01/03/2011","Unit Sales":"200"},{"Month":"Jun-11","Date":"01/06/2011","Unit Sales":"300"}] >> OK - 190.6 ms
+2015-08-10 17:48:21,444 [qtp341878976-307] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /FS ? inputJSON=[{"Month":"Jan-11","Date":"01/01/2011","Unit Sales":"100"},{"Month":"Mar-11","Date":"01/03/2011","Unit Sales":"200"},{"Month":"Jun-11","Date":"01/06/2011","Unit Sales":"300"}] >> OK - 1.947 ms
+2015-08-10 17:49:00,446 [qtp341878976-307] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /FS ? inputJSON=[{"Month":"Jan-11","Date":"01/01/2011","Unit Sales":"100"},{"Month":"Mar-11","Date":"01/03/2011","Unit Sales":"200"},{"Month":"Jun-11","Date":"01/06/2011","Unit Sales":"300"}] >> OK - 1.425 ms
+2015-08-10 17:49:37,137 [qtp341878976-308] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /FS ? inputJSON=[{"Month":"Jan-11","Date":"01/01/2011","Unit Sales":"100"},{"Month":"Mar-11","Date":"01/03/2011","Unit Sales":"200"},{"Month":"Jun-11","Date":"01/06/2011","Unit Sales":"300"}] >> OK - 1.356 ms
+2015-08-10 17:50:44,444 [qtp341878976-309] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /FS ? inputJSON=[{"Month":"Jan-11","Date":"01/01/2011","Unit Sales":"100"},{"Month":"Mar-11","Date":"01/03/2011","Unit Sales":"200"},{"Month":"Jun-11","Date":"01/06/2011","Unit Sales":"300"}] >> OK - 2.020 ms
+2015-08-10 17:52:46,857 [qtp341878976-311] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /FS ? inputJSON=[{"Month":"Jan-11","Date":"01/01/2011","Unit Sales":"100"},{"Month":"Mar-11","Date":"01/03/2011","Unit Sales":"200"},{"Month":"Jun-11","Date":"01/06/2011","Unit Sales":"300"}] >> OK - 2.277 ms
+2015-08-10 17:53:04,152 [qtp341878976-311] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /FS ? inputJSON=[{"Month":"Jan-11","Date":"01/01/2011","Unit Sales":"100"},{"Month":"Mar-11","Date":"01/03/2011","Unit Sales":"200"},{"Month":"Jun-11","Date":"01/06/2011","Unit Sales":"300"}] >> OK - 3.038 ms
+2015-08-10 17:53:20,754 [qtp341878976-311] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /FS ? inputJSON=[{"Month":"Jan-11","Date":"01/01/2011","Unit Sales":"100"},{"Month":"Mar-11","Date":"01/03/2011","Unit Sales":"200"},{"Month":"Jun-11","Date":"01/06/2011","Unit Sales":"300"}] >> OK - 1.932 ms
+2015-08-10 17:57:17,637 [qtp341878976-316] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /FS ? inputJSON=[{"Month":"Jan-11","Date":"01/01/2011","Unit Sales":"100"},{"Month":"Mar-11","Date":"01/03/2011","Unit Sales":"200"},{"Month":"Jun-11","Date":"01/06/2011","Unit Sales":"300"}] >> OK - 8.345 ms
+2015-08-10 17:58:33,569 [Thread-1        ] [          ] INFO  o.e.j.s.listener.ELContextCleaner - javax.el.BeanELResolver purged
+2015-08-10 17:58:33,633 [Thread-1        ] [          ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+2015-08-11 17:31:12,755 [main            ] [          ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+2015-08-11 17:31:14,025 [main            ] [          ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+2015-08-11 17:31:14,032 [main            ] [          ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8081/eu.leads.api/@/ui/
+ --
+
+2015-08-11 17:31:14,842 [main            ] [          ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /leads/workm30/leads-wgs-integration-m24/.
+2015-08-11 17:31:16,071 [main            ] [          ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+2015-08-11 17:31:16,193 [main            ] [          ] INFO  restx.stats.RestxStatsCollector - collecting and sharing stats enabled - see http://restx.io/stats.html for details.
+2015-08-11 17:32:26,214 [qtp341878976-23 ] [          ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+2015-08-11 17:32:26,548 [qtp341878976-23 ] [          ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /FS ? inputJSON=[{"Product Name":"adidas adiPure adios Boost 2","Product Price":100.99,"Week":1,"Shop":"Shop 1","Category":"adidas Boost"},{"Product Name":"Nike Free Special One","Product Price":89.99,"Week":1,"Shop":"Shop 2","Category":"Nike Free"},{"Product Name":"Nike Free Another One","Product Price":99.99,"Week":1,"Shop":"Shop 1","Category":"Nike Free"}] - per request factory created in 817.3 ms
+2015-08-11 17:32:26,568 [qtp341878976-23 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /FS ? inputJSON=[{"Product Name":"adidas adiPure adios Boost 2","Product Price":100.99,"Week":1,"Shop":"Shop 1","Category":"adidas Boost"},{"Product Name":"Nike Free Special One","Product Price":89.99,"Week":1,"Shop":"Shop 2","Category":"Nike Free"},{"Product Name":"Nike Free Another One","Product Price":99.99,"Week":1,"Shop":"Shop 1","Category":"Nike Free"}] >> OK - 19.39 ms
+2015-08-11 17:34:08,162 [qtp341878976-23 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /FS ? inputJSON=[{"Product Name":"adidas adiPure adios Boost 2","Product Price":100.99,"Week":1,"Shop":"Shop 1","Category":"adidas Boost"},{"Product Name":"Nike Free Special One","Product Price":89.99,"Week":1,"Shop":"Shop 2","Category":"Nike Free"},{"Product Name":"Nike Free Another One","Product Price":99.99,"Week":1,"Shop":"Shop 1","Category":"Nike Free"}] >> OK - 1.457 ms
+2015-08-11 17:35:38,288 [qtp341878976-26 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /FS ? inputJSON=[{"Product Name":"adidas adiPure adios Boost 2","Product Price":100.99,"Week":1,"Shop":"Shop 1","Category":"adidas Boost"},{"Product Name":"Nike Free Special One","Product Price":89.99,"Week":1,"Shop":"Shop 2","Category":"Nike Free"},{"Product Name":"Nike Free Another One","Product Price":99.99,"Week":1,"Shop":"Shop 1","Category":"Nike Free"}] >> OK - 4.274 ms
+2015-08-11 17:40:37,620 [Thread-1        ] [          ] INFO  o.e.j.s.listener.ELContextCleaner - javax.el.BeanELResolver purged
+2015-08-11 17:40:37,706 [Thread-1        ] [          ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+2015-08-11 17:44:39,812 [main            ] [          ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+2015-08-11 17:44:41,286 [main            ] [          ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+2015-08-11 17:44:41,289 [main            ] [          ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8081/eu.leads.api/@/ui/
+ --
+
+2015-08-11 17:44:42,200 [main            ] [          ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /leads/workm30/leads-wgs-integration-m24/.
+2015-08-11 17:44:43,624 [main            ] [          ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+2015-08-11 17:44:43,918 [main            ] [          ] INFO  restx.stats.RestxStatsCollector - collecting and sharing stats enabled - see http://restx.io/stats.html for details.
+2015-08-11 17:45:03,988 [qtp341878976-22 ] [          ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+2015-08-11 17:45:04,429 [qtp341878976-22 ] [          ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /FS ? inputJSON=[{"Product Name":"adidas adiPure adios Boost 2","Product Price":100.99,"Week":"Week 1","Shop":"Shop 1","Category":"adidas Boost"},{"Product Name":"Nike Free Special One","Product Price":89.99,"Week":"Week 1","Shop":"Shop 2","Category":"Nike Free"},{"Product Name":"Nike Free Another One","Product Price":99.99,"Week":"Week 1","Shop":"Shop 1","Category":"Nike Free"},{"Product Name":"Nike Free Another One","Product Price":99.99,"Week":"Week 2","Shop":"Shop 1","Category":"Nike Free"}] - per request factory created in 847.1 ms
+2015-08-11 17:45:04,463 [qtp341878976-22 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /FS ? inputJSON=[{"Product Name":"adidas adiPure adios Boost 2","Product Price":100.99,"Week":"Week 1","Shop":"Shop 1","Category":"adidas Boost"},{"Product Name":"Nike Free Special One","Product Price":89.99,"Week":"Week 1","Shop":"Shop 2","Category":"Nike Free"},{"Product Name":"Nike Free Another One","Product Price":99.99,"Week":"Week 1","Shop":"Shop 1","Category":"Nike Free"},{"Product Name":"Nike Free Another One","Product Price":99.99,"Week":"Week 2","Shop":"Shop 1","Category":"Nike Free"}] >> OK - 30.04 ms
+2015-08-11 18:01:17,279 [qtp341878976-38 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /FS ? inputJSON=[{"Product Name":"adidas adiPure adios Boost 2","Product Price":100.99,"Week":"Week 1","Shop":"Shop 1","Category":"adidas Boost"},{"Product Name":"Nike Free Special One","Product Price":89.99,"Week":"Week 1","Shop":"Shop 2","Category":"Nike Free"},{"Product Name":"Nike Free Another One","Product Price":99.99,"Week":"Week 1","Shop":"Shop 1","Category":"Nike Free"},{"Product Name":"Nike Free Another One","Product Price":99.99,"Week":"Week 2","Shop":"Shop 1","Category":"Nike Free"}] >> OK - 287.6 ms
+2015-08-11 18:02:18,794 [qtp341878976-39 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /FS ? inputJSON=[{"Product Name":"adidas adiPure adios Boost 2","Product Price":100.99,"Week":"Week 1","Shop":"Shop 1","Category":"adidas Boost"},{"Product Name":"Nike Free Special One","Product Price":89.99,"Week":"Week 1","Shop":"Shop 2","Category":"Nike Free"},{"Product Name":"Nike Free Another One","Product Price":99.99,"Week":"Week 1","Shop":"Shop 1","Category":"Nike Free"},{"Product Name":"Nike Free Another One","Product Price":99.99,"Week":"Week 2","Shop":"Shop 1","Category":"Nike Free"}] >> OK - 5.174 ms
+2015-08-11 18:02:48,904 [qtp341878976-39 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /FS ? inputJSON=[{"Product Name":"adidas adiPure adios Boost 2","Product Price":100.99,"Week":"Week 1","Shop":"Shop 1","Category":"adidas Boost"},{"Product Name":"Nike Free Special One","Product Price":89.99,"Week":"Week 1","Shop":"Shop 2","Category":"Nike Free"},{"Product Name":"Nike Free Another One","Product Price":99.99,"Week":"Week 1","Shop":"Shop 1","Category":"Nike Free"},{"Product Name":"Nike Free Another One","Product Price":99.99,"Week":"Week 2","Shop":"Shop 1","Category":"Nike Free"}] >> OK - 4.016 ms
+2015-08-11 18:04:38,705 [qtp341878976-42 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /FS ? inputJSON=[{"Product Name":"adidas adiPure adios Boost 2","Product Price":100.99,"Week":"Week 1","Shop":"Shop 1","Category":"adidas Boost"},{"Product Name":"Nike Free Special One","Product Price":89.99,"Week":"Week 1","Shop":"Shop 2","Category":"Nike Free"},{"Product Name":"Nike Free Another One","Product Price":99.99,"Week":"Week 1","Shop":"Shop 1","Category":"Nike Free"},{"Product Name":"Nike Free Another One","Product Price":99.99,"Week":"Week 2","Shop":"Shop 1","Category":"Nike Free"}] >> OK - 1.424 ms
+2015-08-11 18:09:09,636 [qtp341878976-46 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /FS ? inputJSON=[{"Product Name":"adidas adiPure adios Boost 2","Product Price":100.99,"Week":"Week 1","Shop":"Shop 1","Category":"adidas Boost"},{"Product Name":"Nike Free Special One","Product Price":89.99,"Week":"Week 1","Shop":"Shop 2","Category":"Nike Free"},{"Product Name":"Nike Free Another One","Product Price":99.99,"Week":"Week 1","Shop":"Shop 1","Category":"Nike Free"},{"Product Name":"Nike Free Another One","Product Price":99.99,"Week":"Week 2","Shop":"Shop 1","Category":"Nike Free"}] >> OK - 4.877 ms
+2015-08-11 18:11:27,686 [qtp341878976-49 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /FS ? inputJSON=[{"Product Name":"adidas adiPure adios Boost 2","Product Price":100.99,"Week":"Week 1","Shop":"Shop 1","Category":"adidas Boost"},{"Product Name":"Nike Free Special One","Product Price":89.99,"Week":"Week 1","Shop":"Shop 2","Category":"Nike Free"},{"Product Name":"Nike Free Another One","Product Price":99.99,"Week":"Week 1","Shop":"Shop 1","Category":"Nike Free"},{"Product Name":"Nike Free Another One","Product Price":99.99,"Week":"Week 2","Shop":"Shop 1","Category":"Nike Free"}] >> OK - 202.9 ms
+2015-08-11 18:13:51,039 [qtp341878976-52 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /FS ? inputJSON=[{"Product Name":"adidas adiPure adios Boost 2","Product Price":100.99,"Week":"Week 1","Shop":"Shop 1","Category":"adidas Boost"},{"Product Name":"Nike Free Special One","Product Price":89.99,"Week":"Week 1","Shop":"Shop 2","Category":"Nike Free"},{"Product Name":"Nike Free Another One","Product Price":99.99,"Week":"Week 1","Shop":"Shop 1","Category":"Nike Free"},{"Product Name":"Nike Free Another One","Product Price":99.99,"Week":"Week 2","Shop":"Shop 1","Category":"Nike Free"}] >> OK - 1.209 ms
+2015-08-11 18:16:59,558 [qtp341878976-56 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /FS ? inputJSON=[{"Product Name":"adidas adiPure adios Boost 2","Product Price":100.99,"Week":"Week 1","Shop":"Shop 1","Category":"adidas Boost"},{"Product Name":"Nike Free Special One","Product Price":89.99,"Week":"Week 1","Shop":"Shop 2","Category":"Nike Free"},{"Product Name":"Nike Free Another One","Product Price":99.99,"Week":"Week 1","Shop":"Shop 1","Category":"Nike Free"},{"Product Name":"Nike Free Another One","Product Price":99.99,"Week":"Week 2","Shop":"Shop 1","Category":"Nike Free"}] >> OK - 2.627 ms
+2015-08-11 18:30:30,829 [qtp341878976-69 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /FS ? inputJSON=[{"Product Name":"adidas adiPure adios Boost 2","Product Price":100.99,"Week":"Week 1","Shop":"Shop 1","Category":"adidas Boost"},{"Product Name":"Nike Free Special One","Product Price":89.99,"Week":"Week 1","Shop":"Shop 2","Category":"Nike Free"},{"Product Name":"Nike Free Another One","Product Price":99.99,"Week":"Week 1","Shop":"Shop 1","Category":"Nike Free"},{"Product Name":"Nike Free Another One","Product Price":99.99,"Week":"Week 2","Shop":"Shop 1","Category":"Nike Free"}] >> OK - 195.3 ms
+2015-08-11 18:31:02,762 [qtp341878976-71 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /FS ? inputJSON=[{"Product Name":"adidas adiPure adios Boost 2","Product Price":100.99,"Week":"Week 1","Shop":"Shop 1","Category":"adidas Boost"},{"Product Name":"Nike Free Special One","Product Price":89.99,"Week":"Week 1","Shop":"Shop 2","Category":"Nike Free"},{"Product Name":"Nike Free Another One","Product Price":99.99,"Week":"Week 1","Shop":"Shop 1","Category":"Nike Free"},{"Product Name":"Nike Free Another One","Product Price":99.99,"Week":"Week 2","Shop":"Shop 1","Category":"Nike Free"}] >> OK - 4.464 ms
+2015-08-11 18:31:27,120 [qtp341878976-71 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /FS ? inputJSON=[{"Product Name":"adidas adiPure adios Boost 2","Product Price":100.99,"Week":"Week 1","Shop":"Shop 1","Category":"adidas Boost"},{"Product Name":"Nike Free Special One","Product Price":89.99,"Week":"Week 1","Shop":"Shop 2","Category":"Nike Free"},{"Product Name":"Nike Free Another One","Product Price":99.99,"Week":"Week 1","Shop":"Shop 1","Category":"Nike Free"},{"Product Name":"Nike Free Another One","Product Price":99.99,"Week":"Week 2","Shop":"Shop 1","Category":"Nike Free"}] >> OK - 8.179 ms
+2015-08-11 18:36:54,245 [qtp341878976-76 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /FS ? inputJSON=[{"Product Name":"adidas adiPure adios Boost 2","Product Price":100.99,"Week":"Week 1","Shop":"Shop 1","Category":"adidas Boost"},{"Product Name":"Nike Free Special One","Product Price":89.99,"Week":"Week 1","Shop":"Shop 2","Category":"Nike Free"},{"Product Name":"Nike Free Another One","Product Price":99.99,"Week":"Week 1","Shop":"Shop 1","Category":"Nike Free"},{"Product Name":"Nike Free Another One","Product Price":99.99,"Week":"Week 2","Shop":"Shop 1","Category":"Nike Free"}] >> OK - 4.698 ms
+2015-08-11 18:38:05,156 [qtp341878976-78 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /FS ? inputJSON=[{"Product Name":"adidas adiPure adios Boost 2","Product Price":100.99,"Week":"Week 1","Shop":"Shop 1","Category":"adidas Boost"},{"Product Name":"Nike Free Special One","Product Price":89.99,"Week":"Week 1","Shop":"Shop 2","Category":"Nike Free"},{"Product Name":"Nike Free Another One","Product Price":99.99,"Week":"Week 1","Shop":"Shop 1","Category":"Nike Free"},{"Product Name":"Nike Free Another One","Product Price":99.99,"Week":"Week 2","Shop":"Shop 1","Category":"Nike Free"}] >> OK - 1.423 ms
+2015-08-11 18:38:51,049 [qtp341878976-78 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /FS ? inputJSON=[{"Product Name":"adidas adiPure adios Boost 2","Product Price":100.99,"Week":"Week 1","Shop":"Shop 1","Category":"adidas Boost"},{"Product Name":"Nike Free Special One","Product Price":89.99,"Week":"Week 1","Shop":"Shop 2","Category":"Nike Free"},{"Product Name":"Nike Free Another One","Product Price":99.99,"Week":"Week 1","Shop":"Shop 1","Category":"Nike Free"},{"Product Name":"Nike Free Another One","Product Price":99.99,"Week":"Week 2","Shop":"Shop 1","Category":"Nike Free"}] >> OK - 1.333 ms
+2015-08-11 18:41:06,266 [qtp341878976-81 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /FS ? inputJSON=[{"Product Name":"adidas adiPure adios Boost 2","Product Price":100.99,"Week":"Week 1","Shop":"Shop 1","Category":"adidas Boost"},{"Product Name":"Nike Free Special One","Product Price":89.99,"Week":"Week 1","Shop":"Shop 2","Category":"Nike Free"},{"Product Name":"Nike Free Another One","Product Price":99.99,"Week":"Week 1","Shop":"Shop 1","Category":"Nike Free"},{"Product Name":"Nike Free Another One","Product Price":99.99,"Week":"Week 2","Shop":"Shop 1","Category":"Nike Free"}] >> OK - 186.4 ms
+2015-08-11 18:43:44,960 [qtp341878976-84 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /FS ? inputJSON=[{"Product Name":"adidas adiPure adios Boost 2","Product Price":100.99,"Week":"Week 1","Shop":"Shop 1","Category":"adidas Boost"},{"Product Name":"Nike Free Special One","Product Price":89.99,"Week":"Week 1","Shop":"Shop 2","Category":"Nike Free"},{"Product Name":"Nike Free Another One","Product Price":99.99,"Week":"Week 1","Shop":"Shop 1","Category":"Nike Free"},{"Product Name":"Nike Free Another One","Product Price":99.99,"Week":"Week 2","Shop":"Shop 1","Category":"Nike Free"}] >> OK - 3.272 ms
+2015-08-11 18:44:53,287 [qtp341878976-85 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /FS ? inputJSON=[{"Product Name":"adidas adiPure adios Boost 2","Product Price":100.99,"Week":"Week 1","Shop":"Shop 1","Category":"adidas Boost"},{"Product Name":"Nike Free Special One","Product Price":89.99,"Week":"Week 1","Shop":"Shop 2","Category":"Nike Free"},{"Product Name":"Nike Free Another One","Product Price":99.99,"Week":"Week 1","Shop":"Shop 1","Category":"Nike Free"},{"Product Name":"Nike Free Another One","Product Price":99.99,"Week":"Week 2","Shop":"Shop 1","Category":"Nike Free"}] >> OK - 4.324 ms
+2015-08-11 18:49:09,307 [qtp341878976-89 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /FS ? inputJSON=[{"Product Name":"adidas adiPure adios Boost 2","Product Price":100.99,"Week":"Week 1","Shop":"Shop 1","Category":"adidas Boost"},{"Product Name":"Nike Free Special One","Product Price":89.99,"Week":"Week 1","Shop":"Shop 2","Category":"Nike Free"},{"Product Name":"Nike Free Another One","Product Price":99.99,"Week":"Week 1","Shop":"Shop 1","Category":"Nike Free"},{"Product Name":"Nike Free Another One","Product Price":99.99,"Week":"Week 2","Shop":"Shop 1","Category":"Nike Free"}] >> OK - 3.427 ms
+2015-08-11 18:50:10,957 [qtp341878976-91 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /FS ? inputJSON=[{"Product Name":"adidas adiPure adios Boost 2","Product Price":100.99,"Week":"Week 1","Shop":"Shop 1","Category":"adidas Boost"},{"Product Name":"Nike Free Special One","Product Price":89.99,"Week":"Week 1","Shop":"Shop 2","Category":"Nike Free"},{"Product Name":"Nike Free Another One","Product Price":99.99,"Week":"Week 1","Shop":"Shop 1","Category":"Nike Free"},{"Product Name":"Nike Free Another One","Product Price":99.99,"Week":"Week 2","Shop":"Shop 1","Category":"Nike Free"}] >> OK - 1.097 ms
+2015-08-11 18:51:19,253 [qtp341878976-92 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /FS ? inputJSON=[{"Product Name":"adidas adiPure adios Boost 2","Product Price":100.99,"Week":"Week 1","Shop":"Shop 1","Category":"adidas Boost"},{"Product Name":"Nike Free Special One","Product Price":89.99,"Week":"Week 1","Shop":"Shop 2","Category":"Nike Free"},{"Product Name":"Nike Free Another One","Product Price":99.99,"Week":"Week 1","Shop":"Shop 1","Category":"Nike Free"},{"Product Name":"Nike Free Another One","Product Price":99.99,"Week":"Week 2","Shop":"Shop 1","Category":"Nike Free"}] >> OK - 186.3 ms
+2015-08-12 17:53:17,090 [qtp341878976-140] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /FS ? inputJSON=[{"Product Name":"adidas adiPure adios Boost 2","Product Price":100.99,"Week":"Week 1","Shop":"Shop 1","Category":"adidas Boost"},{"Product Name":"Nike Free Special One","Product Price":89.99,"Week":"Week 1","Shop":"Shop 2","Category":"Nike Free"},{"Product Name":"Nike Free Another One","Product Price":99.99,"Week":"Week 1","Shop":"Shop 1","Category":"Nike Free"},{"Product Name":"Nike Free Another One","Product Price":99.99,"Week":"Week 2","Shop":"Shop 1","Category":"Nike Free"}] >> OK - 270.7 ms
+2015-08-12 17:59:57,577 [qtp341878976-148] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /FS ? inputJSON=[{"Product Name":"adidas adiPure adios Boost 2","Product Price":100.99,"Week":"Week 1","Shop":"Shop 1","Category":"adidas Boost"},{"Product Name":"Nike Free Special One","Product Price":89.99,"Week":"Week 1","Shop":"Shop 2","Category":"Nike Free"},{"Product Name":"Nike Free Another One","Product Price":99.99,"Week":"Week 1","Shop":"Shop 1","Category":"Nike Free"},{"Product Name":"Nike Free Another One","Product Price":99.99,"Week":"Week 2","Shop":"Shop 1","Category":"Nike Free"}] >> OK - 3.581 ms
+2015-08-12 18:00:01,497 [qtp341878976-148] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /FS ? inputJSON=[{"Product Name":"adidas adiPure adios Boost 2","Product Price":100.99,"Week":"Week 1","Shop":"Shop 1","Category":"adidas Boost"},{"Product Name":"Nike Free Special One","Product Price":89.99,"Week":"Week 1","Shop":"Shop 2","Category":"Nike Free"},{"Product Name":"Nike Free Another One","Product Price":99.99,"Week":"Week 1","Shop":"Shop 1","Category":"Nike Free"},{"Product Name":"Nike Free Another One","Product Price":99.99,"Week":"Week 2","Shop":"Shop 1","Category":"Nike Free"}] >> OK - 1.413 ms
+2015-08-17 11:27:55,613 [main            ] [          ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+2015-08-17 11:27:57,388 [main            ] [          ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+2015-08-17 11:27:57,414 [main            ] [          ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8081/eu.leads.api/@/ui/
+ --
+
+2015-08-17 11:28:02,657 [pool-1-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 4.458 s
+2015-08-17 11:28:16,452 [main            ] [          ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /leads/workm30/leads-wgs-integration-m24/.
+2015-08-17 11:28:17,068 [main            ] [          ] INFO  restx.stats.RestxStatsCollector - sharing stats on http://stats.restx.io/api/v1/stats failed. Response code: 503
+2015-08-17 11:28:17,078 [main            ] [          ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+2015-08-17 11:28:17,225 [main            ] [          ] INFO  restx.stats.RestxStatsCollector - collecting and sharing stats enabled - see http://restx.io/stats.html for details.
+2015-08-17 11:29:32,819 [main            ] [          ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+2015-08-17 11:29:34,022 [main            ] [          ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+2015-08-17 11:29:34,023 [main            ] [          ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8081/eu.leads.api/@/ui/
+ --
+
+2015-08-17 11:29:38,611 [pool-1-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 4.195 s
+2015-08-17 11:29:40,305 [main            ] [          ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /leads/workm30/leads-wgs-integration-m24/.
+2015-08-17 11:29:41,043 [main            ] [          ] INFO  restx.stats.RestxStatsCollector - sharing stats on http://stats.restx.io/api/v1/stats failed. Response code: 503
+2015-08-17 11:29:41,056 [main            ] [          ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+2015-08-17 11:29:41,222 [main            ] [          ] INFO  restx.stats.RestxStatsCollector - collecting and sharing stats enabled - see http://restx.io/stats.html for details.
+2015-08-17 11:31:10,421 [qtp164332069-25 ] [          ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+2015-08-17 11:31:10,869 [qtp164332069-25 ] [          ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /file ? name=visit-sequences.csv - per request factory created in 931.0 ms
+2015-08-17 11:32:03,962 [qtp164332069-27 ] [          ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /file ? name=visit-sequences.csv - per request factory created in 209.7 ms
+2015-08-17 11:32:25,101 [qtp164332069-25 ] [          ] WARN  restx.StdRestxMainRouter - request raised IllegalStateException: component of name Name{name='my.configSupplier', clazz=restx.config.ConfigSupplier[AppClassLoader]} not found
+java.lang.IllegalStateException: component of name Name{name='my.configSupplier', clazz=restx.config.ConfigSupplier[AppClassLoader]} not found
+	at restx.common.MorePreconditions.checkPresent(MorePreconditions.java:19) ~[restx-common-0.33.1.jar:na]
+	at restx.factory.Factory.getComponent(Factory.java:814) ~[restx-factory-0.33.1.jar:na]
+	at leadsm24.rest.LEADSM24Resource.visualization2(LEADSM24Resource.java:219) ~[classes/:na]
+	at leadsm24.rest.LEADSM24ResourceRouter$6.doRoute(LEADSM24ResourceRouter.java:202) ~[na:na]
+	at leadsm24.rest.LEADSM24ResourceRouter$6.doRoute(LEADSM24ResourceRouter.java:198) ~[na:na]
+	at restx.entity.StdEntityRoute.handle(StdEntityRoute.java:139) ~[restx-core-0.33.1.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.33.1.jar:na]
+	at restx.ResponseCloserFilter.handle(ResponseCloserFilter.java:28) ~[restx-core-0.33.1.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.33.1.jar:na]
+	at restx.security.CORSFilter.handle(CORSFilter.java:93) ~[restx-core-0.33.1.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.33.1.jar:na]
+	at restx.CacheFilter$1.handle(CacheFilter.java:51) ~[restx-core-0.33.1.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.33.1.jar:na]
+	at restx.security.RestxSessionLogFilter.handle(RestxSessionLogFilter.java:43) ~[restx-core-0.33.1.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.33.1.jar:na]
+	at restx.security.RestxSessionCookieFilter.handle(RestxSessionCookieFilter.java:99) ~[restx-core-0.33.1.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.33.1.jar:na]
+	at restx.stats.RestxStatsCollectionFilter.handle(RestxStatsCollectionFilter.java:39) ~[restx-stats-admin-0.33.1.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.33.1.jar:na]
+	at restx.StdRestxMainRouter.route(StdRestxMainRouter.java:152) ~[restx-core-0.33.1.jar:na]
+	at restx.RestxMainRouterFactory$PerRequestFactoryLoader.route(RestxMainRouterFactory.java:217) [restx-core-0.33.1.jar:na]
+	at restx.RestxMainRouterFactory$RecordingMainRouter.route(RestxMainRouterFactory.java:174) [restx-core-0.33.1.jar:na]
+	at restx.RestxMainRouterFactory$CompilationManagerRouter.route(RestxMainRouterFactory.java:326) [restx-core-0.33.1.jar:na]
+	at restx.servlet.AbstractRestxMainRouterServlet.service(AbstractRestxMainRouterServlet.java:48) [restx-servlet-0.33.1.jar:na]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:770) [javax.servlet-api-3.0.1.jar:3.0.1]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:669) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:536) [jetty-security-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerList.handle(HandlerList.java:52) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.Server.handle(Server.java:365) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635) [jetty-http-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235) [jetty-http-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628) [jetty-io-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52) [jetty-io-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_20]
+2015-08-17 11:32:25,335 [qtp164332069-25 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=visit-sequences.csv >> BAD_REQUEST - 1.241 min
+2015-08-17 11:38:28,733 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 2.275 s
+2015-08-17 11:48:12,191 [main            ] [          ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+2015-08-17 11:48:13,460 [main            ] [          ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+2015-08-17 11:48:13,462 [main            ] [          ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8081/eu.leads.api/@/ui/
+ --
+
+2015-08-17 11:48:18,193 [pool-1-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 2 sources compiled in 4.373 s
+2015-08-17 11:48:19,731 [main            ] [          ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /leads/workm30/leads-wgs-integration-m24/.
+2015-08-17 11:48:20,231 [main            ] [          ] INFO  restx.stats.RestxStatsCollector - sharing stats on http://stats.restx.io/api/v1/stats failed. Response code: 503
+2015-08-17 11:48:20,243 [main            ] [          ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+2015-08-17 11:48:20,366 [main            ] [          ] INFO  restx.stats.RestxStatsCollector - collecting and sharing stats enabled - see http://restx.io/stats.html for details.
+2015-08-17 11:48:40,400 [qtp164332069-24 ] [          ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+2015-08-17 11:48:40,870 [qtp164332069-24 ] [          ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /FS ? inputJSON=[{"Month":"Jan-11","Date":"01/01/2011","Unit Sales":"100"},{"Month":"Mar-11","Date":"01/03/2011","Unit Sales":"200"},{"Month":"Jun-11","Date":"01/06/2011","Unit Sales":"300"}] - per request factory created in 875.7 ms
+2015-08-17 11:48:40,922 [qtp164332069-24 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /FS ? inputJSON=[{"Month":"Jan-11","Date":"01/01/2011","Unit Sales":"100"},{"Month":"Mar-11","Date":"01/03/2011","Unit Sales":"200"},{"Month":"Jun-11","Date":"01/06/2011","Unit Sales":"300"}] >> OK - 49.84 ms
+2015-08-17 11:49:54,230 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 2.313 s
+2015-08-17 11:50:12,419 [main            ] [          ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+2015-08-17 11:50:13,716 [main            ] [          ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+2015-08-17 11:50:13,717 [main            ] [          ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8081/eu.leads.api/@/ui/
+ --
+
+2015-08-17 11:50:14,560 [main            ] [          ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /leads/workm30/leads-wgs-integration-m24/.
+2015-08-17 11:50:15,863 [main            ] [          ] INFO  restx.stats.RestxStatsCollector - sharing stats on http://stats.restx.io/api/v1/stats failed. Response code: 503
+2015-08-17 11:50:15,887 [main            ] [          ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+2015-08-17 11:50:16,038 [main            ] [          ] INFO  restx.stats.RestxStatsCollector - collecting and sharing stats enabled - see http://restx.io/stats.html for details.
+2015-08-17 11:50:21,720 [qtp164332069-24 ] [          ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+2015-08-17 11:50:22,154 [qtp164332069-24 ] [          ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /file ? name=visit-sequences.csv - per request factory created in 808.7 ms
+2015-08-17 11:50:49,815 [qtp164332069-24 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=visit-sequences.csv >> OK - 27.66 s
+2015-08-17 13:54:59,594 [qtp164332069-148] [          ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /file ? name=visit-sequences.csv - per request factory created in 236.1 ms
+2015-08-17 13:55:10,536 [qtp164332069-148] [          ] INFO  restx.stats.RestxStatsCollector - sharing stats on http://stats.restx.io/api/v1/stats failed. Response code: 503
+2015-08-17 13:55:10,537 [qtp164332069-148] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=visit-sequences.csv >> OK - 10.94 s
+2015-08-17 13:56:48,874 [qtp164332069-148] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=visit-sequences.csv >> OK - 2.822 s
+2015-08-17 13:59:18,970 [qtp164332069-152] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=visit-sequences.csv >> OK - 9.753 s
+2015-08-17 13:59:40,929 [qtp164332069-152] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=visit-sequences.csv >> OK - 5.903 s
+2015-08-17 14:00:35,052 [qtp164332069-153] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=visit-sequences.csv >> OK - 3.247 s
+2015-08-17 14:06:05,462 [qtp164332069-159] [          ] INFO  restx.stats.RestxStatsCollector - sharing stats on http://stats.restx.io/api/v1/stats failed. Response code: 503
+2015-08-17 14:06:05,463 [qtp164332069-159] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=visit-sequences.csv >> OK - 3.414 s
+2015-08-17 14:07:04,824 [qtp164332069-160] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=visit-sequences.csv >> OK - 4.292 s
+2015-08-17 14:09:09,209 [qtp164332069-162] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=visit-sequences.csv >> OK - 3.949 s
+2015-08-17 14:10:03,378 [qtp164332069-162] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=visit-sequences.csv >> OK - 4.794 s
+2015-08-17 14:17:51,387 [qtp164332069-170] [          ] INFO  restx.stats.RestxStatsCollector - sharing stats on http://stats.restx.io/api/v1/stats failed. Response code: 503
+2015-08-17 14:17:51,388 [qtp164332069-170] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=visit-sequences.csv >> OK - 159.9 ms
+2015-08-17 14:18:00,397 [qtp164332069-170] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=visit-sequences.csv >> OK - 114.2 ms
+2015-08-17 14:18:12,739 [qtp164332069-171] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=visit-sequences.csv >> OK - 85.99 ms
+2015-08-17 14:24:55,325 [qtp164332069-177] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=visit-sequences.csv >> OK - 121.6 ms
+2015-08-17 14:27:37,232 [qtp164332069-180] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=visit-sequences.csv >> OK - 104.5 ms
+2015-08-17 14:28:31,758 [qtp164332069-181] [          ] INFO  restx.stats.RestxStatsCollector - sharing stats on http://stats.restx.io/api/v1/stats failed. Response code: 503
+2015-08-17 14:28:31,759 [qtp164332069-181] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=visit-sequences.csv >> OK - 330.0 ms
+2015-08-17 14:28:41,502 [qtp164332069-182] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=visit-sequences.csv >> OK - 97.41 ms
+2015-08-17 14:28:55,640 [qtp164332069-182] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=visit-sequences.csv >> OK - 104.0 ms
+2015-08-17 14:29:14,051 [qtp164332069-181] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=visit-sequences.csv >> OK - 98.60 ms
+2015-08-17 14:29:32,594 [qtp164332069-181] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=visit-sequences.csv >> OK - 92.25 ms
+2015-08-17 14:29:52,684 [qtp164332069-181] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=visit-sequences.csv >> OK - 101.8 ms
+2015-08-17 14:34:05,677 [qtp164332069-187] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=visit-sequences.csv >> OK - 89.07 ms
+2015-08-17 14:35:25,266 [qtp164332069-188] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=visit-sequences.csv >> OK - 98.52 ms
+2015-08-17 14:42:12,981 [qtp164332069-195] [          ] INFO  restx.stats.RestxStatsCollector - sharing stats on http://stats.restx.io/api/v1/stats failed. Response code: 503
+2015-08-17 14:42:12,982 [qtp164332069-195] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=visit-sequences.csv >> OK - 189.7 ms
+2015-08-17 14:44:46,854 [qtp164332069-197] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=visit-sequences.csv >> OK - 122.4 ms
+2015-08-17 14:47:11,839 [qtp164332069-200] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=visit-sequences.csv >> OK - 103.9 ms
+2015-08-17 14:49:16,820 [main            ] [          ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+2015-08-17 14:49:18,462 [main            ] [          ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+2015-08-17 14:49:18,463 [main            ] [          ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8081/eu.leads.api/@/ui/
+ --
+
+2015-08-17 14:49:22,392 [pool-1-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 3.467 s
+2015-08-17 14:49:23,462 [main            ] [          ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /leads/workm30/leads-wgs-integration-m24/.
+2015-08-17 14:49:24,175 [main            ] [          ] INFO  restx.stats.RestxStatsCollector - sharing stats on http://stats.restx.io/api/v1/stats failed. Response code: 503
+2015-08-17 14:49:24,184 [main            ] [          ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+2015-08-17 14:49:24,284 [main            ] [          ] INFO  restx.stats.RestxStatsCollector - collecting and sharing stats enabled - see http://restx.io/stats.html for details.
+2015-08-17 14:49:47,253 [pool-5-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - classpath resource updated: files/vis2-sample.json
+2015-08-17 14:49:50,894 [pool-5-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - classpath resource updated: files/vis2-sample.json
+2015-08-17 14:50:46,167 [pool-5-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - classpath resource updated: files/vis2-sample.json
+2015-08-17 14:51:33,465 [pool-5-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - classpath resource updated: files/vis2-sample.json
+2015-08-17 14:52:19,060 [pool-5-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - classpath resource updated: files/vis2-sample.json
+2015-08-17 14:52:31,293 [pool-5-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - classpath resource updated: files/vis2-sample.json
+2015-08-17 14:52:50,694 [pool-5-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - classpath resource updated: files/vis2-sample.json
+2015-08-17 14:52:57,157 [pool-5-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - classpath resource updated: files/vis2-sample.json
+2015-08-17 14:54:03,131 [pool-5-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - classpath resource updated: files/vis2-sample.json
+2015-08-17 14:54:13,306 [pool-5-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - classpath resource updated: files/vis2-sample.json
+2015-08-17 14:55:01,058 [pool-5-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - classpath resource updated: files/vis2-sample.json
+2015-08-17 14:55:09,667 [pool-5-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - classpath resource updated: files/vis2-sample.csv
+2015-08-17 14:56:14,502 [qtp164332069-31 ] [          ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+2015-08-17 14:56:14,884 [qtp164332069-31 ] [          ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /file ? name=vis2-sample.csv - per request factory created in 789.8 ms
+2015-08-17 14:56:14,930 [qtp164332069-31 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=vis2-sample.csv >> OK - 45.15 ms
+2015-08-17 14:56:56,925 [pool-5-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - classpath resource updated: files/vis2-sample.csv
+2015-08-17 14:57:01,916 [qtp164332069-31 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=vis2-sample.csv >> OK - 2.609 ms
+2015-08-17 14:57:51,652 [qtp164332069-33 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=vis2-sample.csv >> OK - 1.982 ms
+2015-08-17 14:57:57,590 [qtp164332069-33 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=vis2-sample.csv >> OK - 9.113 ms
+2015-08-17 14:59:29,792 [qtp164332069-35 ] [          ] INFO  restx.stats.RestxStatsCollector - sharing stats on http://stats.restx.io/api/v1/stats failed. Response code: 503
+2015-08-17 14:59:29,793 [qtp164332069-35 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=vis2-sample.csv >> OK - 91.90 ms
+2015-08-17 15:03:27,684 [qtp164332069-39 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=vis2-sample.csv >> OK - 7.108 ms
+2015-08-17 15:04:26,777 [qtp164332069-38 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=vis2-sample.csv >> OK - 6.155 ms
+2015-08-17 15:04:42,319 [qtp164332069-40 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=vis2-sample.csv >> OK - 1.962 ms
+2015-08-17 15:05:29,269 [qtp164332069-40 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=vis2-sample.csv >> OK - 1.816 ms
+2015-08-17 15:07:00,838 [qtp164332069-42 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=vis2-sample.csv >> OK - 1.658 ms
+2015-08-17 15:07:46,610 [qtp164332069-43 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=vis2-sample.csv >> OK - 2.791 ms
+2015-08-17 15:09:07,457 [qtp164332069-44 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=vis2-sample.csv >> OK - 3.245 ms
+2015-08-17 15:49:08,810 [qtp164332069-84 ] [          ] INFO  restx.stats.RestxStatsCollector - sharing stats on http://stats.restx.io/api/v1/stats failed. Response code: 503
+2015-08-17 15:49:08,811 [qtp164332069-84 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /VIS1 ? inputJSON={"keywords":null,"websites":null,"startweek":"","endweek":""} >> OK - 71.77 ms
+2015-08-17 15:57:26,786 [qtp164332069-92 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=vis2-sample.csv >> OK - 4.472 ms
+2015-08-17 16:15:13,918 [qtp164332069-110] [          ] INFO  restx.stats.RestxStatsCollector - sharing stats on http://stats.restx.io/api/v1/stats failed. Response code: 503
+2015-08-17 16:15:13,919 [qtp164332069-110] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /VIS1 ? inputJSON={"keywords":null,"websites":null,"startweek":"","endweek":""} >> OK - 79.16 ms
+2015-08-17 16:25:29,964 [qtp164332069-120] [          ] INFO  restx.stats.RestxStatsCollector - sharing stats on http://stats.restx.io/api/v1/stats failed. Response code: 503
+2015-08-17 16:25:29,965 [qtp164332069-120] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=vis2-sample.csv >> OK - 72.03 ms
+2015-08-17 16:28:03,176 [qtp164332069-123] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=vis2-sample.csv >> OK - 5.157 ms
+2015-08-18 11:35:10,499 [qtp164332069-344] [          ] INFO  restx.stats.RestxStatsCollector - sharing stats on http://stats.restx.io/api/v1/stats failed. Exception: java.net.UnknownHostException: stats.restx.io
+2015-08-18 11:35:10,500 [qtp164332069-344] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=vis2-sample.csv >> OK - 7.176 ms
+2015-08-18 11:49:46,105 [qtp164332069-359] [          ] INFO  restx.stats.RestxStatsCollector - sharing stats on http://stats.restx.io/api/v1/stats failed. Response code: 503
+2015-08-18 11:49:46,107 [qtp164332069-359] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=vis2-sample.csv >> OK - 94.66 ms
+2015-08-18 13:36:43,143 [qtp164332069-465] [          ] INFO  restx.stats.RestxStatsCollector - sharing stats on http://stats.restx.io/api/v1/stats failed. Response code: 503
+2015-08-18 13:36:43,145 [qtp164332069-465] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=vis2-sample.csv >> OK - 77.15 ms
+2015-08-18 13:39:27,090 [qtp164332069-467] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=vis2-sample.csv >> OK - 2.300 ms
+2015-08-18 14:14:04,532 [qtp164332069-502] [          ] INFO  restx.stats.RestxStatsCollector - sharing stats on http://stats.restx.io/api/v1/stats failed. Response code: 503
+2015-08-18 14:14:04,533 [qtp164332069-502] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /VIS1 ? inputJSON={"keywords":null,"websites":null,"startweek":"","endweek":""} >> OK - 325.3 ms
+2015-08-18 14:14:51,521 [qtp164332069-503] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /VIS1 ? inputJSON={"keywords":["adidas Boost","Nike Free","Nike Something"],"websites":["Shop 2"],"startweek":"2015-W32","endweek":"2015-W34"} >> OK - 1.652 ms
+2015-08-18 14:15:00,436 [qtp164332069-503] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=vis2-sample.csv >> OK - 1.954 ms
+2015-08-18 14:17:00,175 [qtp164332069-505] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /VIS1 ? inputJSON={"keywords":null,"websites":null,"startweek":"","endweek":""} >> OK - 1.896 ms
+2015-08-18 14:17:06,824 [qtp164332069-505] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=vis2-sample.csv >> OK - 1.825 ms
+2015-08-18 14:17:28,628 [qtp164332069-505] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /VIS1 ? inputJSON={"keywords":null,"websites":null,"startweek":"","endweek":""} >> OK - 1.050 ms
+2015-08-18 14:22:29,372 [qtp164332069-510] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=vis2-sample.csv >> OK - 3.990 ms
+2015-08-18 14:22:31,170 [qtp164332069-510] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=vis2-sample.csv >> OK - 2.011 ms
+2015-08-18 14:22:32,404 [qtp164332069-510] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=vis2-sample.csv >> OK - 1.682 ms
+2015-08-18 14:22:33,149 [qtp164332069-510] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=vis2-sample.csv >> OK - 1.640 ms
+2015-08-18 14:22:40,711 [qtp164332069-511] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /VIS1 ? inputJSON={"keywords":null,"websites":null,"startweek":"","endweek":""} >> OK - 7.582 ms
+2015-08-18 14:22:42,323 [qtp164332069-511] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /VIS1 ? inputJSON={"keywords":null,"websites":null,"startweek":"","endweek":""} >> OK - 5.648 ms
+2015-08-18 15:08:43,999 [qtp164332069-556] [          ] INFO  restx.stats.RestxStatsCollector - sharing stats on http://stats.restx.io/api/v1/stats failed. Response code: 503
+2015-08-18 15:08:44,002 [qtp164332069-556] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=vis2-sample.csv >> OK - 175.6 ms
+2015-08-18 15:09:46,236 [qtp164332069-557] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=vis2-sample.csv >> OK - 1.575 ms
+2015-08-18 15:23:08,849 [qtp164332069-571] [          ] INFO  restx.stats.RestxStatsCollector - sharing stats on http://stats.restx.io/api/v1/stats failed. Response code: 503
+2015-08-18 15:23:08,850 [qtp164332069-571] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=vis2-sample.csv >> OK - 72.28 ms
+2015-08-18 15:24:20,736 [qtp164332069-572] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=vis2-sample.csv >> OK - 2.425 ms
+2015-08-18 15:28:37,058 [qtp164332069-575] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=vis2-sample.csv >> OK - 1.555 ms
+2015-08-18 15:35:08,890 [qtp164332069-583] [          ] INFO  restx.stats.RestxStatsCollector - sharing stats on http://stats.restx.io/api/v1/stats failed. Response code: 503
+2015-08-18 15:35:08,890 [qtp164332069-583] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=vis2-sample.csv >> OK - 69.22 ms
+2015-08-18 15:37:25,552 [qtp164332069-585] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=vis2-sample.csv >> OK - 2.449 ms
+2015-08-18 15:37:34,299 [qtp164332069-585] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=vis2-sample.csv >> OK - 966.4 μs
+2015-08-18 15:38:17,663 [qtp164332069-586] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=vis2-sample.csv >> OK - 2.065 ms
+2015-08-18 15:41:39,379 [qtp164332069-590] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=vis2-sample.csv >> OK - 2.725 ms
+2015-08-18 15:43:35,125 [qtp164332069-591] [          ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /file ? name=vis2-sample.csv - per request factory created in 229.3 ms
+2015-08-18 15:43:35,129 [qtp164332069-591] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=vis2-sample.csv >> OK - 1.999 ms
+2015-08-18 15:44:50,230 [qtp164332069-592] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=vis2-sample.csv >> OK - 5.335 ms
+2015-08-18 15:46:40,077 [qtp164332069-594] [          ] INFO  restx.stats.RestxStatsCollector - sharing stats on http://stats.restx.io/api/v1/stats failed. Response code: 503
+2015-08-18 15:46:40,078 [qtp164332069-594] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=vis2-sample.csv >> OK - 73.39 ms
+2015-08-18 15:50:43,522 [qtp164332069-598] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=vis2-sample.csv >> OK - 2.044 ms
+2015-08-18 15:51:21,172 [qtp164332069-599] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /file ? name=vis2-sample.csv >> OK - 2.412 ms
+2015-09-01 12:48:58,351 [main            ] [          ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+2015-09-01 12:48:59,787 [main            ] [          ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+2015-09-01 12:48:59,820 [main            ] [          ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8081/eu.leads.api/@/ui/
+ --
+
+2015-09-01 12:49:00,795 [main            ] [          ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /leads/workm30/leads-wgs-integration-m24/.
+2015-09-01 12:49:02,317 [main            ] [          ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+2015-09-01 12:49:02,639 [main            ] [          ] INFO  restx.stats.RestxStatsCollector - collecting and sharing stats enabled - see http://restx.io/stats.html for details.
+2015-09-01 12:51:06,775 [qtp164332069-27 ] [          ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+2015-09-01 12:51:07,190 [qtp164332069-27 ] [          ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /VIS1 ? inputJSON={"keywords":["adidas Boost"],"websites":["Shop 1"],"startweek":"2015-W36","endweek":"2015-W38"} - per request factory created in 905.5 ms
+2015-09-01 12:51:07,228 [qtp164332069-27 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /VIS1 ? inputJSON={"keywords":["adidas Boost"],"websites":["Shop 1"],"startweek":"2015-W36","endweek":"2015-W38"} >> OK - 36.58 ms
+2015-09-01 13:02:55,919 [qtp164332069-38 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /VIS1 ? inputJSON={"keywords":["Nike Free","Nike Something"],"websites":["Shop 2"],"startweek":"2015-W36","endweek":"2015-W40"} >> OK - 416.0 ms
+2015-09-01 13:11:52,307 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 5.435 s
+2015-09-01 13:12:14,369 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.837 s
+2015-09-01 13:12:42,020 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 2.105 s
+2015-09-01 13:12:52,913 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.757 s
+2015-09-01 13:13:02,579 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.315 s
+2015-09-01 13:13:15,659 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.176 s
+2015-09-01 13:13:30,132 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.411 s
+2015-09-01 13:14:43,902 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.309 s
+2015-09-01 13:14:49,830 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.268 s
+2015-09-01 13:15:00,330 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.082 s
+2015-09-01 13:15:04,608 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.069 s
+2015-09-01 13:15:15,333 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.166 s
+2015-09-01 13:21:31,690 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.024 s
+2015-09-01 13:22:07,888 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.123 s
+2015-09-01 13:22:24,067 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.412 s
+2015-09-01 13:22:49,794 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.076 s
+2015-09-01 13:23:15,615 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.157 s
+2015-09-01 13:23:20,648 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.266 s
+2015-09-01 13:23:23,569 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.056 s
+2015-09-01 13:23:39,525 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.102 s
+2015-09-01 13:23:56,887 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.203 s
+2015-09-01 13:23:58,733 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.107 s
+2015-09-01 13:24:28,414 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.130 s
+2015-09-01 13:33:50,273 [main            ] [          ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+2015-09-01 13:33:51,595 [main            ] [          ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+2015-09-01 13:33:51,596 [main            ] [          ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8081/eu.leads.api/@/ui/
+ --
+
+2015-09-01 13:33:55,770 [pool-1-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 3.798 s
+2015-09-01 13:33:57,650 [main            ] [          ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /leads/workm30/leads-wgs-integration-m24/.
+2015-09-01 13:33:58,945 [main            ] [          ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+2015-09-01 13:33:59,210 [main            ] [          ] INFO  restx.stats.RestxStatsCollector - collecting and sharing stats enabled - see http://restx.io/stats.html for details.
+2015-09-01 13:34:23,201 [qtp164332069-25 ] [          ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+2015-09-01 13:34:23,553 [qtp164332069-25 ] [          ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /VIS1 ? inputJSON={"keywords":["adidas Boost","Nike Something"],"websites":["Shop 1","Shop 2"],"startweek":"2015-W36","endweek":"2015-W40"} - per request factory created in 688.4 ms
+2015-09-01 13:34:23,606 [qtp164332069-25 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /VIS1 ? inputJSON={"keywords":["adidas Boost","Nike Something"],"websites":["Shop 1","Shop 2"],"startweek":"2015-W36","endweek":"2015-W40"} >> OK - 51.96 ms
+2015-09-01 14:12:27,505 [qtp164332069-63 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /VIS2 ? inputJSON={"cat1name":"a","cat1keys":["adidas Boost"],"cat2name":"b","cat2keys":["Nike Free"],"websites":["Site 1"],"startweek":"2015-09-01","endweek":"2015-09-24"} >> OK - 435.1 ms
+2015-09-01 14:16:57,174 [qtp164332069-68 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /VIS2 ? inputJSON={"cat1name":"a","cat1keys":["Nike Free"],"cat2name":"b","cat2keys":["Nike Something"],"websites":["Site 2"],"startday":"2015-09-10","endday":"2015-09-24"} >> OK - 2.130 ms
+2015-09-02 18:41:19,077 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.769 s
+2015-09-02 19:25:22,978 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 140.8 ms
+2015-09-02 19:25:23,297 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 134.2 ms
+2015-09-02 19:26:36,763 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 122.9 ms
+2015-09-02 19:26:39,245 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 163.1 ms
+2015-09-02 19:26:50,541 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 187.6 ms
+2015-09-02 19:27:14,536 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 139.8 ms
+2015-09-02 19:27:29,819 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 186.7 ms
+2015-09-02 19:29:06,175 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 191.2 ms
+2015-09-02 19:37:19,104 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 189.7 ms
+2015-09-02 19:37:22,099 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 200.0 ms
+2015-09-02 19:37:44,605 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 215.6 ms
+2015-09-02 19:38:11,405 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 220.6 ms
+2015-09-02 19:38:20,314 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 240.0 ms
+2015-09-02 19:38:24,221 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 241.4 ms
+2015-09-02 19:39:39,183 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 247.6 ms
+2015-09-02 19:40:37,713 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 218.8 ms
+2015-09-02 19:41:29,575 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.131 s
+2015-09-02 19:42:18,766 [qtp164332069-155] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /VIS2 ? inputJSON={"cat1name":"a","cat1keys":["adidas Boost"],"cat2name":"b","cat2keys":["Nike Free","Nike Something"],"websites":["Site 1"],"startday":"2015-09-17","endday":"2015-09-30"} >> OK - 1.267 s
+2015-09-02 19:42:20,432 [qtp164332069-155] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /VIS2 ? inputJSON={"cat1name":"a","cat1keys":["adidas Boost"],"cat2name":"b","cat2keys":["Nike Free","Nike Something"],"websites":["Site 1"],"startday":"2015-09-17","endday":"2015-09-30"} >> OK - 1.498 ms
+2015-09-02 19:43:37,974 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.080 s
+2015-09-02 19:43:41,035 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.410 s
+2015-09-02 19:43:44,248 [qtp164332069-158] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /VIS2 ? inputJSON={"cat1name":"a","cat1keys":["adidas Boost"],"cat2name":"b","cat2keys":["Nike Free","Nike Something"],"websites":["Site 1"],"startday":"2015-09-17","endday":"2015-09-30"} >> OK - 2.326 ms
+2015-09-02 20:19:34,739 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 2 sources compiled in 1.328 s
+2015-09-02 20:20:35,047 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 229.5 ms
+2015-09-02 20:21:56,294 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 359.0 ms
+2015-09-02 20:22:00,868 [main            ] [          ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+2015-09-02 20:22:02,226 [main            ] [          ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+2015-09-02 20:22:02,229 [main            ] [          ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8081/eu.leads.api/@/ui/
+ --
+
+2015-09-02 20:22:02,908 [main            ] [          ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /leads/workm30/leads-wgs-integration-m24/.
+2015-09-02 20:22:04,650 [main            ] [          ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+2015-09-02 20:22:04,936 [main            ] [          ] INFO  restx.stats.RestxStatsCollector - collecting and sharing stats enabled - see http://restx.io/stats.html for details.
+2015-09-02 20:25:37,560 [qtp164332069-28 ] [          ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+2015-09-02 20:25:37,881 [qtp164332069-28 ] [          ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /VIS2 ? inputJSON={"cat1name":"a","cat1keys":["adidas Boost"],"cat2name":"b","cat2keys":["Nike Free","Nike Something"],"websites":["Site 1"],"startday":"2015-09-01","endday":"2015-09-23"} - per request factory created in 709.8 ms
+2015-09-02 20:25:37,915 [qtp164332069-28 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /VIS2 ? inputJSON={"cat1name":"a","cat1keys":["adidas Boost"],"cat2name":"b","cat2keys":["Nike Free","Nike Something"],"websites":["Site 1"],"startday":"2015-09-01","endday":"2015-09-23"} >> OK - 33.79 ms
+2015-09-02 20:34:25,326 [qtp164332069-37 ] [          ] INFO  restx.stats.RestxStatsCollector - sharing stats on http://stats.restx.io/api/v1/stats failed. Exception: java.net.SocketTimeoutException: Read timed out
+2015-09-02 20:34:25,327 [qtp164332069-37 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /VIS2 ? inputJSON={"cat1name":"a","cat1keys":["adidas Boost"],"cat2name":"b","cat2keys":["Nike Free","Nike Something"],"websites":["Site 1"],"startday":"2015-09-01","endday":"2015-09-30"} >> OK - 5.390 s
+2015-09-02 20:37:26,826 [qtp164332069-40 ] [          ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /VIS2 ? inputJSON={"cat1name":"a","cat1keys":["adidas Boost"],"cat2name":"b","cat2keys":["Nike Free","Nike Something"],"websites":["Site 1"],"startday":"2015-09-01","endday":"2015-09-30"} - per request factory created in 203.4 ms
+2015-09-02 20:37:26,829 [qtp164332069-40 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /VIS2 ? inputJSON={"cat1name":"a","cat1keys":["adidas Boost"],"cat2name":"b","cat2keys":["Nike Free","Nike Something"],"websites":["Site 1"],"startday":"2015-09-01","endday":"2015-09-30"} >> OK - 1.297 ms
+2015-09-02 20:51:21,729 [qtp164332069-54 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /VIS2 ? inputJSON={"cat1name":"a","cat1keys":["adidas Boost"],"cat2name":"b","cat2keys":["Nike Free","Nike Something"],"websites":["Site 1"],"startday":"2015-09-01","endday":"2015-09-30"} >> OK - 509.3 ms
+2015-09-02 20:53:19,150 [qtp164332069-57 ] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /VIS2 ? inputJSON={"cat1name":"ay","cat1keys":["Nike Free"],"cat2name":"b","cat2keys":["Nike Something"],"websites":["Site 1"],"startday":"2015-09-01","endday":"2015-09-23"} >> OK - 1.795 ms
+2015-09-02 21:43:29,849 [qtp164332069-106] [          ] INFO  restx.stats.RestxStatsCollector - sharing stats on http://stats.restx.io/api/v1/stats failed. Exception: java.net.SocketTimeoutException: Read timed out
+2015-09-02 21:43:29,850 [qtp164332069-106] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /VIS2 ? inputJSON={"cat1name":"a","cat1keys":["adidas Boost"],"cat2name":"b","cat2keys":["Nike Free","Nike Something"],"websites":["Site 1"],"startday":"2015-09-01","endday":"2015-09-30"} >> OK - 5.984 s
+2015-09-02 21:49:03,336 [qtp164332069-112] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /VIS2 ? inputJSON={"cat1name":"a","cat1keys":["adidas Boost"],"cat2name":"b","cat2keys":["Nike Free"],"websites":["Site 1"],"startday":"2015-09-01","endday":"2015-09-30"} >> OK - 4.434 ms
+2015-09-02 22:05:56,974 [qtp164332069-129] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /VIS2 ? inputJSON={"cat1name":"a","cat1keys":["adidas Boost"],"cat2name":"b","cat2keys":["Nike Free","Nike Something"],"websites":["Site 2"],"startday":"2015-09-01","endday":"2015-09-30"} >> OK - 624.9 ms
+2015-09-02 22:08:06,680 [qtp164332069-132] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /VIS2 ? inputJSON={"cat1name":"a","cat1keys":["adidas Boost"],"cat2name":"b","cat2keys":["Nike Free","Nike Something"],"websites":["Site 1"],"startday":"2015-09-01","endday":"2015-09-30"} >> OK - 2.141 ms
+2015-09-02 22:11:08,712 [qtp164332069-135] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /VIS2 ? inputJSON={"cat1name":"b","cat1keys":["adidas Boost"],"cat2name":"g","cat2keys":["adidas Boost"],"websites":["Site 1"],"startday":"2015-09-01","endday":"2015-09-30"} >> OK - 3.241 ms
+2015-09-02 22:13:03,812 [qtp164332069-137] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /VIS2 ? inputJSON={"cat1name":"a","cat1keys":["adidas Boost"],"cat2name":"b","cat2keys":["Nike Free"],"websites":["Site 1"],"startday":"2015-09-01","endday":"2015-09-17"} >> OK - 1.746 ms
+2015-09-02 22:18:19,770 [qtp164332069-142] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /VIS2 ? inputJSON={"cat1name":"a","cat1keys":["adidas Boost"],"cat2name":"b","cat2keys":["Nike Free"],"websites":["Site 1"],"startday":"2015-09-01","endday":"2015-09-30"} >> OK - 476.4 ms
+2015-09-02 22:20:58,415 [qtp164332069-146] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /VIS2 ? inputJSON={"cat1name":"a","cat1keys":["adidas Boost"],"cat2name":"b","cat2keys":["Nike Free"],"websites":["Site 1"],"startday":"2015-09-01","endday":"2015-09-30"} >> OK - 1.845 ms
+2015-09-02 22:37:11,549 [qtp164332069-162] [          ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /VIS2 ? inputJSON={"cat1name":"a","cat1keys":["Nike Free"],"cat2name":"b","cat2keys":["Nike Free","Nike Something"],"websites":["Site 1"],"startday":"2015-09-01","endday":"2015-09-30"} >> OK - 487.0 ms
+2015-09-07 15:59:34,517 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.785 s
+2015-09-07 16:03:49,800 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 219.8 ms
+2015-09-07 16:04:03,358 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 230.7 ms
+2015-09-07 16:04:45,824 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 2.148 s

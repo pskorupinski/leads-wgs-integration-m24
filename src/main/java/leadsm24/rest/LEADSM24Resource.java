@@ -1,10 +1,15 @@
 package leadsm24.rest;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
 import java.util.Set;
 import java.util.SortedSet;
 
@@ -13,6 +18,9 @@ import leadsm24.Roles;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import com.google.common.base.Optional;
+
+import eu.leads.api.m24.CommonMethods;
 import eu.leads.api.m24.FunctionalityAbst;
 import eu.leads.api.m24.FunctionalityAbstResultRow;
 import eu.leads.api.m24.demo.Functionality1;
@@ -24,19 +32,27 @@ import eu.leads.api.m24.model.Functionality1Params;
 import eu.leads.api.m24.model.Functionality1ResultRowAgreed;
 import eu.leads.api.m24.model.Functionality2Params;
 import eu.leads.api.m24.model.Functionality2ResultRow;
+import eu.leads.api.m36.VisualizationsProcessing;
 import eu.leads.infext.datastore.impl.LeadsDataStore;
 import restx.annotations.GET;
 import restx.annotations.RestxResource;
+import restx.common.RestxConfig;
+import restx.config.ConfigLoader;
+import restx.config.ConfigSupplier;
 import restx.factory.Component;
+import restx.factory.Factory;
+import restx.factory.Name;
 import restx.security.PermitAll;
 
 @Component @RestxResource
 public class LEADSM24Resource {
 	
 	private PrintStream err = System.err;
+	private VisualizationsProcessing vp = new VisualizationsProcessing();
 
 	private void init() {
 		LeadsDataStore.initialize("http://clu25.softnet.tuc.gr", 8080);
+		
 //    	System.setOut(new PrintStream(new OutputStream() {
 //			@Override
 //			public void write(int b) throws IOException {}
@@ -183,6 +199,173 @@ public class LEADSM24Resource {
     	
         return result.toString();
     }
+    
+    @GET("/FS")
+    @PermitAll    
+    public String simpleFunctionality(String inputJSON) {
+    	System.out.println(inputJSON);
+		return inputJSON;
+    }
+    
+    @GET("/VIS1")
+    @PermitAll 
+    /**
+     * 
+     * @param inputJSON stringified JSON Object with elements:
+     *    - keywords, 
+     *    - websites,
+     *    - startts,
+     *    - endts
+     * 
+     * @return stringified JSON Array with elements with fields:
+     *    - "Product Name", 	eg. "adidas adiPure adios Boost 2",
+	 *	  - "Product Price",	eg. 100.99,
+	 *	  - "Week",				eg. "Week 1",
+	 *	  - "Shop",				eg. "Shop 1",
+	 *	  - "Category",			eg. "adidas Boost"
+	 *
+     */
+    public String visualization1(String inputJSON) {
+    	System.out.println(inputJSON);
+    	return vp.process(1, inputJSON);
+    	
+//    	List<JSONObject> results = new ArrayList<>();
+//    	
+//    	JSONObject obj1 = new JSONObject();
+//    	obj1.append("Product Name", "adidas adiPure adios Boost 2");
+//    	obj1.append("Product Price", 100.99);
+//    	obj1.append("Week", "Week 1");
+//    	obj1.append("Shop", "Shop 1");
+//    	obj1.append("Category", "adidas Boost");
+//    	results.add(obj1);
+//    	
+//    	JSONObject obj2 = new JSONObject();
+//    	obj2.append("Product Name", "Nike Free Special One");
+//    	obj2.append("Product Price", 89.99);
+//    	obj2.append("Week", "Week 1");
+//    	obj2.append("Shop", "Shop 2");
+//    	obj2.append("Category", "Nike Free");
+//    	results.add(obj2);
+//    	
+//    	JSONObject obj3 = new JSONObject();
+//    	obj3.append("Product Name", "Nike Free Another One");
+//    	obj3.append("Product Price", 99.99);
+//    	obj3.append("Week", "Week 1");
+//    	obj3.append("Shop", "Shop 1");
+//    	obj3.append("Category", "Nike Free");
+//    	results.add(obj3);
+//    	
+//    	JSONObject obj4 = new JSONObject();
+//    	obj4.append("Product Name", "Nike Free Another One");
+//    	obj4.append("Product Price", 99.99);
+//    	obj4.append("Week", "Week 2");
+//    	obj4.append("Shop", "Shop 1");
+//    	obj4.append("Category", "Nike Free");
+//    	results.add(obj4);    	
+//
+//    	JSONArray outputJSON = new JSONArray(results);
+//    	String outputJSONString = outputJSON.toString();
+//		return outputJSONString;
+    }
+    
+    @GET("/VIS2")
+    @PermitAll 
+    /**
+     * 
+     * @param inputJSON stringified JSON Object with elements:
+     *    - cat1name,
+     *    - cat1keys,
+     *    - cat2name,
+     *    - cat2keys,
+     *    - websites,
+     *    - startday,
+     *    - endday
+     * 
+     * @return CSV string of structure:
+     *    - category-sentiment-site-keywords,count
+     *    e.g. Nike-positive-site1-Nike Free,13
+     * 
+     * 
+     */
+    public String visualization2(String inputJSON) {
+    	System.out.println(inputJSON);
+    	return vp.process(2, inputJSON);
+    	
+//    	Map<String,Integer> results = new HashMap<>();
+//    	
+//    	String category; String sentiment; String site; String keywords;
+//    	Integer count;
+//    	
+//    	category = "adidas";
+//    	sentiment = "positive";
+//    	site = "site1";
+//    	keywords = "adidas Boost";
+//    	count = 7;
+//    	results.put(
+//    			CommonMethods.formCsvString(category,sentiment,site,keywords),
+//    			count);
+//    	
+//    	category = "adidas";
+//    	sentiment = "negative";
+//    	site = "site1";
+//    	keywords = "adidas Boost";
+//    	count = 11;
+//    	results.put(
+//    			CommonMethods.formCsvString(category,sentiment,site,keywords),
+//    			count);    	
+//    	
+//    	category = "Nike";
+//    	sentiment = "positive";
+//    	site = "site1";
+//    	keywords = "Nike Free";
+//    	count = 13;
+//    	results.put(
+//    			CommonMethods.formCsvString(category,sentiment,site,keywords),
+//    			count);      	
+//    	
+//    	category = "Nike";
+//    	sentiment = "negative";
+//    	site = "site2";
+//    	keywords = "Nike Skyknit";
+//    	count = 15;
+//    	results.put(
+//    			CommonMethods.formCsvString(category,sentiment,site,keywords),
+//    			count);     	
+//    	
+//    	String csvString = CommonMethods.mapToJsonString(results);
+//    	
+//    	System.err.println(csvString);
+//    	
+//		return csvString;
+    }
+    
+    @GET("/file")
+    @PermitAll    
+    public String file(String name) {
+    	
+    	if(name == null || name.length()<1)
+    		return "{}";
+    	
+    	System.out.println(name);
+	 
+	    String files = System.getProperty("resource.files");
+	    
+	    if(files == null)
+	    	return "{}";
+	    
+    	String path = files + name;
+    	String content;
+		try {
+			content = new Scanner(new File(path)).useDelimiter("\\Z").next();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+			return "{}";
+		}
+	    
+		return content;
+    }
+    
+    
     
 }
 

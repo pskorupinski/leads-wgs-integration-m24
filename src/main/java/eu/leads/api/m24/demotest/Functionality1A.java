@@ -20,9 +20,8 @@ import eu.leads.api.m24.FunctionalityAbstParams;
 import eu.leads.api.m24.FunctionalityAbstResultRow;
 import eu.leads.api.m24.model.Functionality1AParams;
 import eu.leads.api.m24.model.Functionality1AReturnRow;
+import eu.leads.datastore.impl.LeadsQueryInterface;
 import eu.leads.infext.Useful;
-import eu.leads.infext.datastore.DataStoreSingleton;
-import eu.leads.infext.datastore.impl.LeadsDataStore;
 import eu.leads.processor.web.QueryResults;
 
 public class Functionality1A implements FunctionalityAbst {
@@ -138,7 +137,7 @@ public class Functionality1A implements FunctionalityAbst {
 		
 //		System.out.println(query1);	
 		
-		QueryResults rs = LeadsDataStore.send_query_and_wait(query1);
+		QueryResults rs = LeadsQueryInterface.execute(query1);
 		if(rs != null) {
 			List<String> rows = rs.getResult();
 			for(String row : rows) {
@@ -174,7 +173,7 @@ public class Functionality1A implements FunctionalityAbst {
 			
 //			System.out.println(query2);
 			
-			QueryResults rs2 = LeadsDataStore.send_query_and_wait(query2);
+			QueryResults rs2 = LeadsQueryInterface.execute(query2);
 			if(rs2 != null && rs2.getResult().size() == 1) {
 				String row = rs2.getResult().get(0);
 				JSONObject jsonRow = new JSONObject(row);
@@ -202,7 +201,7 @@ public class Functionality1A implements FunctionalityAbst {
 								+ "AND resourceparttype='"+ECOM_PROD_NAME+"';";		
 						
 						System.out.println(query3);
-						QueryResults rs3 = LeadsDataStore.send_query_and_wait(query3);
+						QueryResults rs3 = LeadsQueryInterface.execute(query3);
 						if(rs3 != null && rs3.getResult().size() == 1) {
 							String row = rs3.getResult().get(0);
 							JSONObject jsonRow = new JSONObject(row);
@@ -258,6 +257,7 @@ public class Functionality1A implements FunctionalityAbst {
 	////////////////////////////////////////////////////////////
 	
 	public static void main(String[] args) {
+		LeadsQueryInterface.initialize("http://5.147.254.199", 8080);
 		Functionality1A func1A = new Functionality1A();
 		Functionality1AParams params = new Functionality1AParams();
 		params.country = new ArrayList<String>() {{ add("US"); add("UK"); }};

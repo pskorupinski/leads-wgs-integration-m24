@@ -22,6 +22,7 @@ import eu.leads.api.m24.FunctionalityAbstParams;
 import eu.leads.api.m24.FunctionalityAbstResultRow;
 import eu.leads.api.m24.model.Functionality1AParams;
 import eu.leads.api.m24.model.Functionality1AReturnRow;
+import eu.leads.datastore.impl.LeadsQueryInterface;
 import eu.leads.infext.Useful;
 import eu.leads.infext.datastore.DataStoreSingleton;
 import eu.leads.infext.datastore.datastruct.UrlTimestamp;
@@ -152,7 +153,7 @@ public class Functionality1A implements FunctionalityAbst {
 		
 //		System.out.println(query1);	
 		
-		QueryResults rs = LeadsDataStore.send_query_and_wait(query1);
+		QueryResults rs = LeadsQueryInterface.execute(query1);
 		if(rs != null) {
 			List<String> rows = rs.getResult();
 			for(String row : rows) {
@@ -302,7 +303,7 @@ public class Functionality1A implements FunctionalityAbst {
 	////////////////////////////////////////////////////////////
 	
 	public static void main(String[] args) {
-		LeadsDataStore.initialize("http://clu25.softnet.tuc.gr", 8080);
+		LeadsDataStore.initialize("http://5.147.254.199", 8080);
 		Functionality1A func1A = new Functionality1A();
 		Functionality1AParams params = new Functionality1AParams();
 		params.country = new ArrayList<String>() {{ add("US"); add("UK"); }};
