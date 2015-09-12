@@ -13,7 +13,6 @@ import org.json.JSONObject;
 import eu.leads.api.m24.FunctionalityAbst;
 import eu.leads.api.m24.FunctionalityAbstParams;
 import eu.leads.api.m24.FunctionalityAbstResultRow;
-import eu.leads.api.m24.demo.Functionality2.KeywordRow;
 import eu.leads.api.m36.model.Fun2M36ResultRow;
 import eu.leads.api.m36.model.FunM36JsonParams;
 import eu.leads.datastore.impl.LeadsQueryInterface;
@@ -222,6 +221,7 @@ public class Fun2M36 implements FunctionalityAbst {
 	}
 
 }
+
 
 
 

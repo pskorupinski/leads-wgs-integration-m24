@@ -6829,6 +6829,7 @@ java.lang.IllegalStateException: component of name Name{name='my.configSupplier'
 2015-09-07 16:03:49,800 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 219.8 ms
 2015-09-07 16:04:03,358 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 230.7 ms
 2015-09-07 16:04:45,824 [pool-2-thread-1 ] [          ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 2.148 s
+<<<<<<< HEAD
 2015-09-11 18:41:01,807 [main            ] [          ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
 2015-09-11 18:41:03,390 [main            ] [          ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
 2015-09-11 18:41:03,412 [main            ] [          ] INFO  restx.RestxMainRouterFactory - 
@@ -6842,3 +6843,5 @@ java.lang.IllegalStateException: component of name Name{name='my.configSupplier'
 2015-09-11 18:41:10,181 [main            ] [          ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /leads/workm30/leads-wgs-integration-m24/.
 2015-09-11 18:41:11,168 [main            ] [          ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
 2015-09-11 18:41:11,658 [main            ] [          ] INFO  restx.stats.RestxStatsCollector - collecting and sharing stats enabled - see http://restx.io/stats.html for details.
+=======
+>>>>>>> 7a96ba364520179e2e3425dadb4b589701061833

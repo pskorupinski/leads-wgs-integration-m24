@@ -228,44 +228,6 @@ public class LEADSM24Resource {
     public String visualization1(String inputJSON) {
     	System.out.println(inputJSON);
     	return vp.process(1, inputJSON);
-    	
-//    	List<JSONObject> results = new ArrayList<>();
-//    	
-//    	JSONObject obj1 = new JSONObject();
-//    	obj1.append("Product Name", "adidas adiPure adios Boost 2");
-//    	obj1.append("Product Price", 100.99);
-//    	obj1.append("Week", "Week 1");
-//    	obj1.append("Shop", "Shop 1");
-//    	obj1.append("Category", "adidas Boost");
-//    	results.add(obj1);
-//    	
-//    	JSONObject obj2 = new JSONObject();
-//    	obj2.append("Product Name", "Nike Free Special One");
-//    	obj2.append("Product Price", 89.99);
-//    	obj2.append("Week", "Week 1");
-//    	obj2.append("Shop", "Shop 2");
-//    	obj2.append("Category", "Nike Free");
-//    	results.add(obj2);
-//    	
-//    	JSONObject obj3 = new JSONObject();
-//    	obj3.append("Product Name", "Nike Free Another One");
-//    	obj3.append("Product Price", 99.99);
-//    	obj3.append("Week", "Week 1");
-//    	obj3.append("Shop", "Shop 1");
-//    	obj3.append("Category", "Nike Free");
-//    	results.add(obj3);
-//    	
-//    	JSONObject obj4 = new JSONObject();
-//    	obj4.append("Product Name", "Nike Free Another One");
-//    	obj4.append("Product Price", 99.99);
-//    	obj4.append("Week", "Week 2");
-//    	obj4.append("Shop", "Shop 1");
-//    	obj4.append("Category", "Nike Free");
-//    	results.add(obj4);    	
-//
-//    	JSONArray outputJSON = new JSONArray(results);
-//    	String outputJSONString = outputJSON.toString();
-//		return outputJSONString;
     }
     
     @GET("/VIS2")
@@ -290,53 +252,6 @@ public class LEADSM24Resource {
     public String visualization2(String inputJSON) {
     	System.out.println(inputJSON);
     	return vp.process(2, inputJSON);
-    	
-//    	Map<String,Integer> results = new HashMap<>();
-//    	
-//    	String category; String sentiment; String site; String keywords;
-//    	Integer count;
-//    	
-//    	category = "adidas";
-//    	sentiment = "positive";
-//    	site = "site1";
-//    	keywords = "adidas Boost";
-//    	count = 7;
-//    	results.put(
-//    			CommonMethods.formCsvString(category,sentiment,site,keywords),
-//    			count);
-//    	
-//    	category = "adidas";
-//    	sentiment = "negative";
-//    	site = "site1";
-//    	keywords = "adidas Boost";
-//    	count = 11;
-//    	results.put(
-//    			CommonMethods.formCsvString(category,sentiment,site,keywords),
-//    			count);    	
-//    	
-//    	category = "Nike";
-//    	sentiment = "positive";
-//    	site = "site1";
-//    	keywords = "Nike Free";
-//    	count = 13;
-//    	results.put(
-//    			CommonMethods.formCsvString(category,sentiment,site,keywords),
-//    			count);      	
-//    	
-//    	category = "Nike";
-//    	sentiment = "negative";
-//    	site = "site2";
-//    	keywords = "Nike Skyknit";
-//    	count = 15;
-//    	results.put(
-//    			CommonMethods.formCsvString(category,sentiment,site,keywords),
-//    			count);     	
-//    	
-//    	String csvString = CommonMethods.mapToJsonString(results);
-//    	
-//    	System.err.println(csvString);
-//    	
-//		return csvString;
     }
     
     @GET("/VIS1S")
