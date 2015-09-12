@@ -25,16 +25,73 @@
 	</repositories>
 
 	<dependencies>
-		<dependency>
-		  <groupId>gr.tuc.softnet</groupId>
-		  <artifactId>webclient</artifactId>
-		  <version>1</version>
-		</dependency>
-	    <dependency>
-	      <groupId>com.datastax.cassandra</groupId>
-	      <artifactId>cassandra-driver-core</artifactId>
-	      <version>2.1.0</version>
-	    </dependency>
+	
+	   <dependency>
+          <groupId>gr.tuc.softnet</groupId>
+          <artifactId>leads-query-processor-plugins</artifactId>
+          <version>1.0-SNAPSHOT</version>
+		   <exclusions>
+			   <exclusion>
+				   <groupId>log4j</groupId>
+				   <artifactId>log4j</artifactId>
+			   </exclusion>
+			   <exclusion>
+				   <groupId>org.apache.logging.log4j</groupId>
+				   <artifactId>log4j-core</artifactId>
+			   </exclusion>
+			   <exclusion>
+				   <groupId>org.apache.tajo</groupId>
+				   <artifactId>tajo-jdbc</artifactId>
+	
+			   </exclusion>
+			   <exclusion>
+				   <groupId>org.hibernate</groupId>
+				   <artifactId>hibernate-search-engine</artifactId>
+			   </exclusion>
+			   <exclusion>
+				   <groupId>org.hibernate</groupId>
+				   <artifactId>hibernate-search-analyzers</artifactId>
+			   </exclusion>
+			   <exclusion>
+				   <groupId>org.hibernate</groupId>
+				   <artifactId>hibernate-search-infinispan</artifactId>
+			   </exclusion>
+			   <exclusion>
+				   <groupId>org.hibernate.hql</groupId>
+				   <artifactId>hibernate-hql-lucene</artifactId>
+			   </exclusion>
+			   <exclusion>
+				   <groupId>org.infinispan</groupId>
+				   <artifactId>infinispan-core</artifactId>
+			   </exclusion>
+			   <exclusion>
+				   <groupId>org.infinispan</groupId>
+				   <artifactId>infinispan-client-hotrod</artifactId>
+			   </exclusion>
+			   <exclusion>
+				   <groupId>org.infinispan</groupId>
+				   <artifactId>infinispan-server-hotrod</artifactId>
+			   </exclusion>
+			   <exclusion>
+				   <groupId>org.infinispan</groupId>
+				   <artifactId>infinispan-lucene-directory</artifactId>
+			   </exclusion>
+			   <exclusion>
+				   <groupId>org.infinispan</groupId>
+				   <artifactId>infinispan-remote-query-server</artifactId>
+			   </exclusion>
+			   <exclusion>
+				   <groupId>org.infinispan</groupId>
+				   <artifactId>infinispan-server-core</artifactId>
+			   </exclusion>
+			   <exclusion>
+				   <groupId>org.infinispan</groupId>
+				   <artifactId>infinispan-query</artifactId>
+			   </exclusion>
+		   </exclusions>
+       </dependency>
+       
+       
 	
 		 <dependency>
 			<groupId>org.json</groupId>

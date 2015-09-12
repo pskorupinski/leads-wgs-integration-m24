@@ -3,6 +3,7 @@ import java.util.List;
 
 import org.json.JSONObject;
 
+import eu.leads.datastore.impl.LeadsQueryInterface;
 import eu.leads.infext.datastore.datastruct.UrlTimestamp;
 import eu.leads.infext.datastore.impl.LeadsDataStore;
 import eu.leads.processor.web.QueryResults;
@@ -12,7 +13,7 @@ public class LeadsStorageQuery {
 
 	public static void main(String[] args) {
 
-		LeadsDataStore.initialize("http://clu25.softnet.tuc.gr", 8080);
+		LeadsDataStore.initialize("http://5.147.254.199", 8080);
 		
 		String query1 = "SELECT uri AS uri, ts AS ts\n"
 				+ "FROM keywords\n"
@@ -45,7 +46,7 @@ public class LeadsStorageQuery {
 				+ "OR ( uri='com.holabirdsports.www:http/running/shoes/cross-country/adidas-xcs-5-spike-mens-blackearth-greeninfrared.html' AND ts=1410878847108))\r\n"
 				+ "ORDER BY uri, ts;";
 		
-		QueryResults rs = LeadsDataStore.send_query_and_wait(query4);
+		QueryResults rs = LeadsQueryInterface.execute(query2);
 		if(rs != null) {
 			List<String> rows = rs.getResult();
 			for(String row : rows) {
