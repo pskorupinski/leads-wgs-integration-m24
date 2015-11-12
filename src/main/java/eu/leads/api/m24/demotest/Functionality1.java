@@ -24,7 +24,8 @@ import eu.leads.api.m24.model.Functionality1ResultRowAgreed;
 import eu.leads.infext.Useful;
 import eu.leads.processor.web.QueryResults;
 import eu.leads.datastore.DataStoreSingleton;
-import eu.leads.datastore.datastruct.UrlTimestamp;
+import eu.leads.datastore.datastruct.StringPair;
+import eu.leads.datastore.datastruct.StringPair;
 import eu.leads.datastore.impl.LeadsDataStore;
 import eu.leads.datastore.impl.LeadsQueryInterface;
 
@@ -39,8 +40,8 @@ public class Functionality1 implements FunctionalityAbst {
 		Functionality1Params params = (Functionality1Params) paramsX;
 		SortedSet<FunctionalityAbstResultRow> resultsSet = new TreeSet<>();
 		
-		List<UrlTimestamp> urlsTsList = new ArrayList<>();
-		List<UrlTimestamp> urlsTsList2= new ArrayList<>();
+		List<StringPair> urlsTsList = new ArrayList<>();
+		List<StringPair> urlsTsList2= new ArrayList<>();
 		
 		/*
 		 * 1. Get all pages of the shop
@@ -62,7 +63,7 @@ public class Functionality1 implements FunctionalityAbst {
 				JSONObject jsonRow = new JSONObject(row);
 				String url = jsonRow.getString("uri");
 				String ts  = new Long(jsonRow.getLong("ts")).toString();
-				urlsTsList.add(new UrlTimestamp(url, ts));
+				urlsTsList.add(new StringPair(url, ts));
 			}
 		}
 		
@@ -80,8 +81,8 @@ public class Functionality1 implements FunctionalityAbst {
 		query2 += "AND ( ";
 		
 		for(i=0; i<urlsTsList.size(); i++) {
-			String url = urlsTsList.get(i).url;
-			String ts  = urlsTsList.get(i).timestamp;
+			String url = urlsTsList.get(i).str1;
+			String ts  = urlsTsList.get(i).str2;
 			if(i<urlsTsList.size()-1) query2 += "( uri like '"+url+"' AND ts="+ts+") OR ";
 			else query2 += "( uri='"+url+"' AND ts='"+ts+"));";
 			
@@ -94,7 +95,7 @@ public class Functionality1 implements FunctionalityAbst {
 				JSONObject jsonRow = new JSONObject(row);
 				String url = jsonRow.getString("uri");
 				String ts  = new Long(jsonRow.getLong("ts")).toString();
-				urlsTsList2.add(new UrlTimestamp(url, ts));
+				urlsTsList2.add(new StringPair(url, ts));
 			}
 		}
 		
@@ -105,8 +106,8 @@ public class Functionality1 implements FunctionalityAbst {
 				+ "WHERE ";
 		
 		for(i=0; i<urlsTsList2.size(); i++) {
-			String url = urlsTsList.get(i).url;
-			String ts  = urlsTsList.get(i).timestamp;
+			String url = urlsTsList.get(i).str1;
+			String ts  = urlsTsList.get(i).str2;
 			if(i<urlsTsList.size()-1) query2 += "( uri like '"+url+"' AND ts="+ts+") OR ";
 			else query2 += "( uri='"+url+"' AND ts='"+ts+"));";
 			

@@ -154,10 +154,10 @@ public class Fun2M36 implements FunctionalityAbst {
 				+ "WHERE C.ts = K.ts\n"
 				+ "AND K.partid like '"+ARTICLE+":000'\n"
 				+ "AND K.ts >= "+ startts +" AND K.ts <= "+ endts +"\n"
-				+ "AND C.fqdnurl IN ('";
-		int sitesNo = websites.size();
+				+ "AND C.fqdnurl IN (";
+		int sitesNo = fqdnUrls.size();
 		for(int i=0; i<sitesNo; i++) {
-			String site = websites.get(i);
+			String site = fqdnUrls.get(i);
 			query1 += "'";
 			query1 += site;
 			if(i<sitesNo-1) query1 += "',";
@@ -185,7 +185,7 @@ public class Fun2M36 implements FunctionalityAbst {
 			List<String> rows = rs.getResult();
 			for(String row : rows) {
 				JSONObject jsonRow = new JSONObject(row);
-				String website   = jsonRow.getString("website");
+				String website   = LEADSUtils.nutchUrlToFullyQualifiedDomainName(jsonRow.getString("website"));
 				String keyword   = jsonRow.getString("keywords");
 				String sentimentStr = jsonRow.getString("sentiment");
 				Double sentiment = Double.parseDouble(sentimentStr);
@@ -208,7 +208,7 @@ public class Fun2M36 implements FunctionalityAbst {
 			values.add(website);
 			values.add(keyword);
 			Fun2M36ResultRow fun2m36ResultRow = new Fun2M36ResultRow(values, count);
-			resultRows.add(fun2m36ResultRow);
+			resultRows.add(fun2m36ResultRow); // TODO FIX IT!!!!
 		}
 		
 		/*

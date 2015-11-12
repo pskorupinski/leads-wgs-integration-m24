@@ -15,6 +15,7 @@ public class LeadsDataStore {
 	public static boolean initialize(String url, int p) {
 		try {
 			if(!isInitialized) {
+				System.err.println("Initializing LeadsDataStore at "+url);
 				if(!WebServiceClient.initialize(url, p))
 					System.exit(-1);
 				isInitialized = true;

@@ -51,7 +51,6 @@ public class LEADSM24Resource {
 	private VisualizationsProcessing vp = new VisualizationsProcessing();
 
 	private void init() {
-		LeadsDataStore.initialize("http://clu25.softnet.tuc.gr", 8080);
 		
 //    	System.setOut(new PrintStream(new OutputStream() {
 //			@Override
@@ -251,7 +250,9 @@ public class LEADSM24Resource {
      */
     public String visualization2(String inputJSON) {
     	System.out.println(inputJSON);
-    	return vp.process(2, inputJSON);
+    	String retval = vp.process(2, inputJSON);
+    	System.out.println(retval);
+    	return retval;
     }
     
     @GET("/VIS1S")
@@ -344,11 +345,11 @@ public class LEADSM24Resource {
     			CommonMethods.formCsvString(category,sentiment,site,keywords),
     			count);     	
     	
-    	String csvString = CommonMethods.mapToJsonString(results);
+    	String jsonString = CommonMethods.mapToJsonString(results);
     	
-    	System.err.println(csvString);
+    	System.err.println(jsonString);
     	
-		return csvString;
+		return jsonString;
     }
     
     @GET("/file")
